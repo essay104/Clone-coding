@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Java script -->
+    <script defer src="./script.js"></script>
+    <!-- font awesome -->
+    <script
+      src="https://kit.fontawesome.com/aa285c689f.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- css -->
+    <link rel="stylesheet" href="./style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="wrap">
+      <section class="openning-page">
+        <h1>ToDoList</h1>
+        <div class="spinnerbox">
+          <div class="spinner hidden"></div>
+        </div>
+      </section>
+      <section class="TodoList-page">
+        <header>
+          <div class="header-title">
+            <h1>ToDoList</h1>
+          </div>
+        </header>
+        <form action="https://localhost:3000" method="post">
+          <h1>오늘의 할 일을 입력하세요</h1>
+          <div class="input-todos">
+            <input
+              class="input-text"
+              type="text"
+              placeholder="과유불급, 최대 5개까지 입력하세요"
+            />
+            <input class="input-submit" type="submit" value="◀" />
+          </div>
+        </form>
+        <div class="TodoList-result">
+          <ul></ul>
+          <div class="Todo-inform">
+            <div class="todo-delete">
+              <i class="fas fa-trash-can"><span>All delete</span></i>
+            </div>
+            <span>*자정에 초기화 됩니다</span>
+          </div>
+          <div class="left-time">
+            <span>오늘 남은 시간</span>
+            <span class="left-time-event"></span>
+          </div>
+          <div class="complete-mission"></div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

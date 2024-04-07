@@ -1,0 +1,121 @@
+@import url(./reset.css);
+
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#container {
+  width: 100%;
+  height: 60vh;
+  border: 1px solid #000;
+  position: relative;
+  overflow: hidden;
+}
+
+#container::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0) 95%,
+      rgba(0, 0, 0, 0.2)
+    ),
+    linear-gradient(to left, rgba(0, 0, 0, 0) 95%, rgba(0, 0, 0, 0.2)),
+    linear-gradient(rgba(0, 0, 0, 0) 80%, rgba(0, 0, 0, 0.4));
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.nav-bar {
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.slide_pagers {
+  width: 1420px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1px;
+}
+
+.slide_pagers li {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.2);
+  font-size: 12px;
+  text-align: left;
+  padding: 20px;
+  font-weight: bold;
+  color: #fff;
+  transition: all 0.3s;
+  cursor: pointer;
+  position: relative;
+}
+
+.slide_pagers span {
+  font-size: 18px;
+  font-weight: bold;
+  z-index: -1;
+}
+
+.slide_pagers li:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.slide_pagers .active:before {
+  content: "";
+  position: absolute;
+  background: #0077ff;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  animation: slide 5s linear;
+  z-index: -1;
+}
+
+@keyframes slide {
+  0% {
+    width: 0;
+  }
+
+  25% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.arrow {
+  font-size: 30px;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  margin-top: 10px;
+  margin-left: 10px;
+  color: rgba(255, 255, 255, 0.5);
+  opacity: 0;
+  transition: all 0.5s;
+}
+
+.arrow:hover {
+  opacity: 1;
+  cursor: pointer;
+  color: #fff;
+}

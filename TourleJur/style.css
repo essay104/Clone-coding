@@ -1,0 +1,126 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+:root {
+  --mainColor: #0d4633;
+  --bgColor: #f7f0da;
+  --fontColor: #f0f0f0;
+  --fontColor2: #6c6c6a;
+  --subColor: #144c36;
+  --subColor2: #dadfcb;
+}
+
+@font-face {
+  font-family: "NanumBarunGothic";
+  font-style: normal;
+  font-weight: 400;
+  src: url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot");
+  src: url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot?#iefix") format("embedded-opentype"), url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.woff") format("woff"), url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.ttf") format("truetype");
+}
+@font-face {
+  font-family: "NanumBarunGothic";
+  font-style: normal;
+  font-weight: 700;
+  src: url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot");
+  src: url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot?#iefix") format("embedded-opentype"), url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.woff") format("woff"), url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "NanumBarunGothic";
+  font-style: normal;
+  font-weight: 300;
+  src: url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot");
+  src: url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot?#iefix") format("embedded-opentype"), url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.woff") format("woff"), url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.ttf") format("truetype");
+}
+.nanumbarungothic * {
+  font-family: "NanumBarunGothic", sans-serif;
+}
+
+body {
+  background: var(--bgColor);
+}
+
+header {
+  width: 100%;
+  min-width: 1080px;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--mainColor);
+  color: var(--fontColor);
+  font-family: "NanumBarunGothic", sans-serif;
+}
+header .header-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+header .header-container .headerTop {
+  width: 100%;
+  height: 105px;
+  border-bottom: 1px solid #6c6c6a;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  font-weight: 100;
+  padding: 0 23%;
+}
+header .header-container .headerTop .headerTop-left {
+  display: flex;
+  gap: 25px;
+  font-size: 20px;
+}
+header .header-container .headerTop .headerTop-right nav {
+  display: flex;
+  gap: 10px;
+  position: relative;
+}
+header .header-container .headerTop .headerTop-right ul {
+  display: flex;
+  font-size: 10px;
+  gap: 10px;
+  align-items: center;
+  margin-left: 90px;
+}
+header .header-container .headerTop .headerTop-right ul li:nth-child(4) {
+  border: 1px solid #dadfcb;
+  padding: 5px;
+  line-height: 15px;
+}
+header .header-container .headerTop .headerTop-right div {
+  position: absolute;
+  top: -38px;
+  right: -48px;
+}
+header .header-container .headerBottom {
+  display: flex;
+  justify-content: center;
+  width: 50%;
+  height: 40px;
+}
+header .header-container .headerBottom nav {
+  width: 1050px;
+}
+header .header-container .headerBottom nav ul {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  line-height: 40px;
+}
+header .header-container .header-toggle {
+  width: 100%;
+  height: 190px;
+  background: rgba(13, 70, 51, 0.3);
+}/*# sourceMappingURL=style.css.map */
