@@ -1,0 +1,164 @@
+[
+  {
+    "number": 1,
+    "name": "태조 이성계",
+    "reignPeriod": "1392년 - 1398년",
+    "totalYears": 6
+  },
+  {
+    "number": 2,
+    "name": "정종 이방원",
+    "reignPeriod": "1398년 - 1400년",
+    "totalYears": 2
+  },
+  {
+    "number": 3,
+    "name": "태종 이방직",
+    "reignPeriod": "1400년 - 1418년",
+    "totalYears": 18
+  },
+  {
+    "number": 4,
+    "name": "세종 이황제",
+    "reignPeriod": "1418년 - 1450년",
+    "totalYears": 32
+  },
+  {
+    "number": 5,
+    "name": "문종 이황",
+    "reignPeriod": "1450년 - 1452년",
+    "totalYears": 2
+  },
+  {
+    "number": 6,
+    "name": "단종 이성계",
+    "reignPeriod": "1452년 - 1455년",
+    "totalYears": 3
+  },
+  {
+    "number": 7,
+    "name": "세조 이유",
+    "reignPeriod": "1455년 - 1468년",
+    "totalYears": 13
+  },
+  {
+    "number": 8,
+    "name": "예종 이윤",
+    "reignPeriod": "1469년 - 1469년",
+    "totalYears": 0
+  },
+  {
+    "number": 9,
+    "name": "성종 이현",
+    "reignPeriod": "1469년 - 1494년",
+    "totalYears": 25
+  },
+  {
+    "number": 10,
+    "name": "연산군 이환",
+    "reignPeriod": "1494년 - 1506년",
+    "totalYears": 12
+  },
+  {
+    "number": 11,
+    "name": "중종 이홍",
+    "reignPeriod": "1506년 - 1544년",
+    "totalYears": 38
+  },
+  {
+    "number": 12,
+    "name": "인종 이홍",
+    "reignPeriod": "1544년 - 1545년",
+    "totalYears": 1
+  },
+  {
+    "number": 13,
+    "name": "명종 이환",
+    "reignPeriod": "1545년 - 1567년",
+    "totalYears": 22
+  },
+  {
+    "number": 14,
+    "name": "선조 이성계",
+    "reignPeriod": "1567년 - 1608년",
+    "totalYears": 41
+  },
+  {
+    "number": 15,
+    "name": "광해군 이방원",
+    "reignPeriod": "1608년 - 1623년",
+    "totalYears": 15
+  },
+  {
+    "number": 16,
+    "name": "인조 이인제",
+    "reignPeriod": "1623년 - 1649년",
+    "totalYears": 26
+  },
+  {
+    "number": 17,
+    "name": "효종 이현",
+    "reignPeriod": "1649년 - 1659년",
+    "totalYears": 10
+  },
+  {
+    "number": 18,
+    "name": "현종 이도",
+    "reignPeriod": "1659년 - 1674년",
+    "totalYears": 15
+  },
+  {
+    "number": 19,
+    "name": "숙종 이융",
+    "reignPeriod": "1674년 - 1720년",
+    "totalYears": 46
+  },
+  {
+    "number": 20,
+    "name": "경종 이유",
+    "reignPeriod": "1720년 - 1724년",
+    "totalYears": 4
+  },
+  {
+    "number": 21,
+    "name": "영조 이순",
+    "reignPeriod": "1724년 - 1776년",
+    "totalYears": 52
+  },
+  {
+    "number": 22,
+    "name": "정조 이학",
+    "reignPeriod": "1776년 - 1800년",
+    "totalYears": 24
+  },
+  {
+    "number": 23,
+    "name": "순조 이준",
+    "reignPeriod": "1800년 - 1834년",
+    "totalYears": 34
+  },
+  {
+    "number": 24,
+    "name": "헌종 이홍",
+    "reignPeriod": "1834년 - 1849년",
+    "totalYears": 15
+  },
+  {
+    "number": 25,
+    "name": "철종 이응",
+    "reignPeriod": "1849년 - 1863년",
+    "totalYears": 14
+  },
+  {
+    "number": 26,
+    "name": "고종 이명박",
+    "reignPeriod": "1863년 - 1907년",
+    "totalYears": 44
+  },
+  {
+    "number": 27,
+    "name": "순종 이현",
+    "reignPeriod": "1907년 - 1910년",
+    "totalYears": 3
+  }
+]
