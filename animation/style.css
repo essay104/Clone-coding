@@ -6,7 +6,7 @@ body {
 
 video {
   width: 100%;
-  height: 100vh;
+  height: 1000px;
   object-fit: cover;
   filter: brightness(0.6);
   position: absolute;
@@ -43,6 +43,10 @@ article {
   color: #fff;
 }
 
+.section01 h1 {
+  margin-bottom: 15px;
+}
+
 .section01 .section01-texts {
   position: absolute;
   left: 5%;
@@ -52,12 +56,24 @@ article {
 /* section02 */
 
 .section02 {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
 }
 
-header {
+.section02-contents {
+  width: 100%;
+  height: 100%;
   padding: 20px;
   background: rgba(255, 255, 255, 0.6);
-  border-radius: 20px 20px 0 0;
+  border-radius: 20px;
+}
+
+.section02-contents header {
+  padding: 20px;
+  margin-top: 20px;
 }
 
 header .section02-texts {
@@ -132,4 +148,179 @@ header .article-info p {
   color: #000;
   font-size: 12px;
   line-height: 16px;
+}
+
+.section02-article {
+  width: 450px;
+  height: 590px;
+  overflow: hidden;
+  font-size: 12px;
+  margin: auto auto;
+  margin-top: 40px;
+}
+
+.section02-article img {
+  width: 375px;
+  height: 200px;
+  float: right;
+  padding: 5px;
+}
+
+/* section04 */
+
+.section03 {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.8)),
+    url("./src/section04bg.jpeg") center/cover no-repeat;
+  color: #fff;
+}
+
+.section03 h1 {
+  margin-bottom: 15px;
+}
+
+.section03 .section03-texts {
+  position: absolute;
+  left: 5%;
+  bottom: 10%;
+}
+
+/* section04 */
+
+.section04 {
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.section04 header {
+}
+
+.section04 header img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  filter: saturate(1.5);
+}
+
+.section04-container .section04-container-header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.section04 .section04-container .section04-container-header h1 {
+  font-weight: 500;
+  letter-spacing: 5px;
+}
+
+.section04-container-main {
+  display: flex;
+  width: 100%;
+  height: 400px;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.section04-foods {
+  display: flex;
+  justify-content: space-between;
+  width: 415px;
+  height: 100px;
+  align-content: start;
+}
+
+/* section05 */
+
+.section05 {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5)),
+    url("./src/section06bg.jpg") center/cover no-repeat;
+  color: #fff;
+}
+
+.section05 h1 {
+  margin-bottom: 15px;
+}
+
+.section05 .section05-texts {
+  position: absolute;
+  left: 5%;
+  bottom: 10%;
+}
+
+/* section06 */
+
+.section06 {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.sns {
+  width: 390px;
+  height: 150px;
+  background: #000;
+  background: rgba(255, 255, 255, 0.6);
+  border: 3px solid #ddd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.sns img {
+  width: 50px;
+  height: 50px;
+}
+
+.sns-info .sns-name {
+  font-size: 14px;
+}
+
+.sns-info .sns-domain {
+  font-size: 20px;
+}
+
+
+/* section07 */
+
+.section07 {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.sns {
+  width: 390px;
+  height: 150px;
+  background: #000;
+  background: rgba(255, 255, 255, 0.6);
+  border: 3px solid #ddd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.sns img {
+  width: 50px;
+  height: 50px;
+}
+
+.sns-info .sns-name {
+  font-size: 14px;
+}
+
+.sns-info .sns-domain {
+  font-size: 20px;
 }

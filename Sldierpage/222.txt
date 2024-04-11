@@ -1,0 +1,8 @@
+* pager click 했을때 해당 이미지의 dataset or id or imgs.length 를 컴퓨터가 기억하고 있어야함
+이후 해당 이미지의 dataset+1 부터 슬라이드 이벤트가 실행되어야함
+
+
+
+콘테이너에 마우스를 오버 했을때 autoSlide 이벤트가 멈추고
+leave하면 해당 이미지부터 다시 classlist 이벤트가 실행되어야함
+혹은 leave했을때 classlist를 add하는 이벤트 추가

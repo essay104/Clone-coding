@@ -39,6 +39,7 @@ const autoSlider = () => {
     autoChange();
   }, 5000);
 };
+
 autoSlider();
 
 const stopSlider = () => {
@@ -54,7 +55,6 @@ container.addEventListener("mouseleave", () => {
 });
 
 const pagerChange = (e) => {
-  const target = e.target.dataset.index;
   reset();
   for (let i = 0; i < pagers.length; i++) {
     if (target == i) {
