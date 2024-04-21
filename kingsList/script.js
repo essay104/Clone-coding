@@ -1,6 +1,7 @@
-const data = fetch("setting.json").then((response) => response.json());
+const data = fetch("./setting.json").then((response) => response.json());
 
 const outPut = document.querySelector(".output");
+const form = document.querySelector("form");
 const result = document.querySelector(".result");
 
 const createID = (king) => {
@@ -34,3 +35,7 @@ const importData = () => {
 outPut.addEventListener("click", importData);
 
 console.log(data);
+
+outPut.addEventListener("click", () => {
+  console.log("check");
+});
