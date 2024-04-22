@@ -1,0 +1,219 @@
+@import "reset";
+
+body {
+  width: 100%;
+  height: 180vh;
+  position: relative;
+  header {
+    width: 100%;
+    height: 147px;
+    background: var(--mainColor);
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+  }
+}
+
+.header-top {
+  width: 100%;
+  min-width: 1020px;
+  height: 104px;
+  border-bottom: 1px solid var(--fontColor2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .header-topcontents {
+    width: 1020px;
+    height: inherit;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .header-top-left {
+      display: flex;
+      gap: 25px;
+      font-size: 20px;
+      color: var(--fontColor);
+    }
+    .header-logo {
+      margin-left: 160px;
+      display: flex;
+      align-items: center;
+    }
+    .header-top-right {
+      display: flex;
+      color: var(--fontColor);
+      font-size: 10px;
+      font-weight: lighter;
+      position: relative;
+      & ul {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-right: 12px;
+        & li:nth-child(4) {
+          padding: 1px 10px;
+          border: 1px solid var(--fontColor);
+        }
+        & img {
+          margin-bottom: 35px;
+        }
+      }
+    }
+  }
+}
+
+.header-bottom {
+  width: 100%;
+  min-width: 940px;
+  height: 43px;
+  display: flex;
+  justify-content: center;
+  .header-bottomcontents {
+    width: 940px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    & ul {
+      display: flex;
+      gap: 80px;
+      font-weight: 500;
+      color: var(--fontColor);
+      cursor: pointer;
+    }
+  }
+}
+
+.main-img {
+  position: sticky;
+  width: 100%;
+  height: 460px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--bgColor2);
+  top: 147px;
+  left: 0;
+  z-index: -999;
+  & .main_img {
+    width: 1400px;
+    height: 460px;
+    background: url("./img/img_main2.jpg") bottom;
+  }
+}
+
+.main-section {
+  width: 100%;
+  height: 1200px;
+  position: relative;
+  z-index: 10;
+  background: var(--bgColor);
+
+  .main-section-inner {
+    width: 1020px;
+    height: 100%;
+    margin: 0 auto;
+    border: 1px solid #f00;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+    .section01 {
+      width: 1000px;
+      height: 403px;
+      position: absolute;
+      top: 30px;
+      display: flex;
+      gap: 10px;
+      .section01-slider01 {
+        width: 395px;
+        height: 403px;
+        background: #fff;
+      }
+      .section01-slider02 {
+        width: 595px;
+        height: 403px;
+        background: #fff;
+      }
+    }
+    .section02 {
+      width: 1000px;
+      height: 170px;
+      position: absolute;
+      top: 445px;
+      display: flex;
+      gap: 10px;
+    }
+    .section03 {
+      width: 1000px;
+      height: 260px;
+      position: absolute;
+      top: 647px;
+      display: flex;
+      gap: 12px;
+    }
+    .section04 {
+      width: 1000px;
+      height: 135px;
+      position: absolute;
+      top: 940px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      .section04-imgs {
+        display: flex;
+        gap: 10px;
+      }
+      .section04-notice {
+        width: 394px;
+        height: 130px;
+        background: var(--bgColor2);
+        padding: 17px;
+        .section04-notice-top {
+          display: flex;
+          justify-content: space-between;
+          .section04-notice-title {
+            font-size: 18px;
+            color: var(--mainColor);
+            font-weight: 500;
+          }
+          .section04-notice-plus {
+            width: 30px;
+            height: 30px;
+            border: 1px solid var(--fontColor2);
+            color: var(--fontColor2);
+            font-size: 18px;
+            text-align: center;
+          }
+        }
+        .section04-notice-bottom {
+          margin-top: 1rem;
+          display: flex;
+          flex-direction: column;
+          gap: 3px;
+          font-size: 10px;
+          font-weight: 100;
+        }
+      }
+    }
+  }
+}
+
+.main-section-bottom {
+  width: 100%;
+  height: 70px;
+  // background: var(--bgColor);
+  .main-section-bottom-content {
+    width: 1020px;
+    height: inherit;
+    margin: 0 auto;
+    border: 1px solid #f00;
+  }
+}
+
+footer {
+  width: 100%;
+  height: 210px;
+  background: var(--bgbottom);
+}
