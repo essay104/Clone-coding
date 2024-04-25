@@ -1,9 +1,9 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import Home from "./Pages/Home";
-import Movies from "./Pages/Movies";
 import MovieDetail from "./Pages/MovieDetail";
-import Navigation from "./components/Navigation";
+import Movies from "./Pages/Movies";
+import Navigation from "./Components/Navigation";
 
 function App() {
   return (
