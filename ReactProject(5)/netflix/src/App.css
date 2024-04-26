@@ -1,0 +1,80 @@
+/* reset */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Navigation */
+
+.totalbar {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 80px;
+  background: rgba(0, 0, 0, 1);
+  padding: 0 30px;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.totalbar .nav {
+  display: flex;
+}
+
+.nav-item {
+  text-decoration: none;
+  color: #fff;
+  margin: 2px 20px 0;
+  transition: all 0.3s;
+}
+.nav-item:hover {
+  color: #f00;
+  cursor: pointer;
+}
+
+form {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+form #search-bar {
+  border-radius: 5px;
+  outline: none;
+  padding: 3px;
+}
+
+form label {
+  width: 80px;
+  height: 35px;
+  background: #000;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.5rem;
+  text-align: center;
+  border: 1px solid crimson;
+  color: crimson;
+  transition: all 0.3s;
+  line-height: 1.8rem;
+}
+
+form label:hover {
+  border: 1px solid #fff;
+  color: #fff;
+  background: crimson;
+}

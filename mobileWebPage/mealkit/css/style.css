@@ -973,3 +973,154 @@ input[id="food-type-tab1"]:checked ~ .food-type-tabs .tab6 {
 .company-info-more {
   display: block;
 }
+
+/* detail */
+
+.goods-detail-slider-outer {
+  position: relative;
+  width: 100%;
+  height: 350px;
+}
+
+.goods-detail-slider-outer {
+  width: 100%;
+  height: 350px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.pagers {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.pagers span {
+  display: inline-block;
+  background: #222;
+  width: 8px;
+  height: 8px;
+  margin-left: 10px;
+  border-radius: 100%;
+}
+
+.pagers span.active {
+  background: var(--crimson);
+}
+
+.goods-info {
+  padding: 20px;
+}
+
+.goods-rating {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.stars .fas {
+  color: var(--gold);
+}
+
+.stars em {
+  font-style: normal;
+  font-size: 14px;
+  color: var(--royalblue);
+}
+
+.goods-info .goods-title h3 {
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+.goods-info .goods-title div {
+  justify-content: flex-start;
+  gap: 15px;
+  font-size: 18px;
+  margin: 14px 0 25px;
+}
+
+.goods-delivery-info {
+  display: flex;
+  gap: 10px;
+  border-top: 1px solid var(--cloudy-gray);
+  border-bottom: 1px solid var(--cloudy-gray);
+  padding: 20px 0;
+}
+
+.goods-delivery-info b {
+  flex: 5;
+}
+
+.goods-delivery-info div {
+  flex: 8;
+}
+
+.goods-delivery-info div span {
+  display: block;
+}
+
+.goods-delivery-info div span em {
+  font-style: normal;
+  color: var(--silver-gray);
+}
+
+.goods-detail {
+  padding: 20px;
+}
+
+.goods-detail img {
+  width: 100%;
+}
+
+.goods-detail p {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.goods-accordion .title {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--cloudy-gray);
+  height: 40px;
+  padding-left: 10px;
+  position: relative;
+}
+
+.goods-accordion .title::after {
+  content: "\2b";
+  font-family: fontawesome;
+  position: absolute;
+  right: 20px;
+}
+
+.goods-accordion .detail {
+  display: none;
+}
+
+.goods-accordion .detail img {
+  width: 100%;
+}
+
+.goods-order-info {
+  background: #fff;
+  box-shadow: 0 -5px -5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border-radius: 10px 10px 0 0;
+  width: 100%;
+}
+
+.goods-order-choice {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.goods-order-choice .wish {
+  font-size: 26px;
+}
+
+.btn-order-choice {
+  background: var(--royalblue);
+}
