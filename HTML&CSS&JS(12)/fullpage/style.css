@@ -10,6 +10,7 @@ body {
   display: flex;
   justify-content: center;
   position: relative;
+  background: radial-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 1));
 }
 
 .section {
@@ -17,18 +18,10 @@ body {
 }
 
 #sc0 {
-  background-image: linear-gradient(
-    to top,
-    #3f51b1 0%,
-    #5a55ae 13%,
-    #7b5fac 25%,
-    #8f6aae 38%,
-    #a86aa4 50%,
-    #cc6b8e 62%,
-    #f18271 75%,
-    #f3a469 87%,
-    #f7c978 100%
-  );
+  object-fit: cover;
+  background-color: rgba(0, 0, 0, 0.8);
+  background-repeat: no-repeat;
+  transition: all 0.3s;
 }
 
 #nav-icon {
@@ -76,9 +69,10 @@ body {
 .section-contents .event-script {
   width: 700px;
   height: 500px;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(0, 0, 0, 0.8);
   border: 1px solid #fff;
   padding: 5%;
+  color: #fff;
 }
 
 .event-slider {
