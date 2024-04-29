@@ -28,7 +28,7 @@ titleArrow.addEventListener("click", () => {
 
 let imgSrc = `./img/sc01/${imgs[0]}`;
 img.src = imgSrc;
-sc0.style.background = `url(./img/sc01/${imgs[0]}`;
+sc0.style.backgroundImage = `url(./img/sc01/${imgs[0]}`;
 
 let i = 0;
 
@@ -53,5 +53,5 @@ changeImg = (direction) => {
     }
   }
   img.src = `./img/sc01/${imgs[i]}`;
-  sc0.style.background = `url(./img/sc01/${imgs[i]})`;
+  sc0.style.backgroundImage = `url(./img/sc01/${imgs[i]})`;
 };
