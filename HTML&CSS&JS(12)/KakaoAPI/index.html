@@ -6,20 +6,29 @@
     <!-- style&css -->
     <link rel="stylesheet" href="style.css" />
     <script defer src="./script.js"></script>
+    <!-- <script defer src="./mainscript.js"></script> -->
     <!-- fontawesome -->
     <script
       src="https://kit.fontawesome.com/aa285c689f.js"
       crossorigin="anonymous"
     ></script>
+    <!-- kakao map API -->
+    <script
+      type="text/javascript"
+      src="//dapi.kakao.com/v2/maps/sdk.js?appkey=6bdff65c01523c0d8bebfec721a1f4f4"
+    ></script>
   </head>
   <body>
     <div class="container">
-      <div id="map" style="width: 60%; height: 100vh"></div>
-      <script
-        type="text/javascript"
-        src="//dapi.kakao.com/v2/maps/sdk.js?appkey=6bdff65c01523c0d8bebfec721a1f4f4
-        "
-      ></script>
+      <div id="map">
+        <div class="marker store01"></div>
+        <div class="marker store02"></div>
+        <div class="marker store03"></div>
+        <div class="marker store04"></div>
+        <div class="marker store05"></div>
+        <div class="marker store06"></div>
+        <div class="marker store07"></div>
+      </div>
       <div class="comment">
         <div class="comment-header">
           <h1>맛집 코멘트</h1>
@@ -47,7 +56,12 @@
               <div class="user-img"></div>
               <div class="user-name">User01</div>
             </div>
-            <input type="textarea" placeholder="당신의 한줄평을 입력해주세요" />
+            <input
+              id="textarea"
+              type="textarea"
+              placeholder="당신의 한줄평을 입력해주세요"
+            />
+            <label class="submit" for="textarea">제출</label>
             <div class="store-rating">
               <p>별점을 선택해주세요</p>
               <div class="rating-stars">
@@ -57,6 +71,26 @@
                 <i class="fa-solid fa-star"></i>
                 <i class="fa-solid fa-star"></i>
               </div>
+            </div>
+          </div>
+        </div>
+        <div class="btn">
+          <i class="fa-solid fa-user-tie"></i>
+        </div>
+      </div>
+    </div>
+    <div class="modal">
+      <div class="modal-container">
+        <div class="modal-contents">
+          <div class="modal-header">
+            <h1>마쓰무라돈까스</h1>
+            <button>X</button>
+          </div>
+          <div class="modal-main">
+            <div class="modal-img"></div>
+            <div class="modal-content">
+              <div class="modal-menu"></div>
+              <div class="modal-route"></div>
             </div>
           </div>
         </div>

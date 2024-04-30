@@ -1,0 +1,114 @@
+.store01,
+.store02,
+.store03,
+.store04,
+.store05,
+.store06,
+.store07 {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  font-size: 0.8rem;
+  border-radius: 100%;
+  cursor: pointer;
+  transition: all 0.5s;
+  border: 3px solid #000;
+  position: relative;
+  overflow: hidden;
+}
+
+.store01 {
+  background: url("./img/img01.jpg") center/cover no-repeat;
+}
+.store02 {
+  background: url("./img/img02.jpg") center/cover no-repeat;
+}
+.store03 {
+  background: url("./img/img03.jpg") center/cover no-repeat;
+}
+.store04 {
+  background: url("./img/img04.jpg") center/cover no-repeat;
+}
+.store05 {
+  background: url("./img/img05.jpg") center/cover no-repeat;
+}
+.store06 {
+  background: url("./img/img06.jpg") center/cover no-repeat;
+}
+.store07 {
+  background: url("./img/img07.jpg") center/cover no-repeat;
+}
+
+.store01:hover {
+  scale: 3;
+  background: url("./img/img01.jpg") center/cover no-repeat;
+  z-index: 99;
+  position: absolute;
+}
+.store02:hover {
+  scale: 3;
+  background: url("./img/img02.jpg") center/cover no-repeat;
+}
+.store03:hover {
+  scale: 3;
+  background: url("./img/img03.jpg") center/cover no-repeat;
+}
+.store04:hover {
+  scale: 3;
+  background: url("./img/img04.jpg") center/cover no-repeat;
+}
+.store05:hover {
+  scale: 3;
+  background: url("./img/img05.jpg") center/cover no-repeat;
+}
+.store06:hover {
+  scale: 3;
+  background: url("./img/img06.jpg") center/cover no-repeat;
+}
+.store07:hover {
+  scale: 3;
+  background: url("./img/img07.jpg") center/cover no-repeat;
+}
+
+.store01:hover::after,
+.store02:hover::after,
+.store03:hover::after,
+.store04:hover::after,
+.store05:hover::after,
+.store06:hover::after,
+.store07:hover::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 0.3rem;
+}
+
+.store01:hover::after {
+  content: "함스브로제과점";
+}
+.store02:hover::after {
+  content: "옛가 칼국수";
+}
+.store03:hover::after {
+  content: "마쓰무라 돈까스";
+}
+.store04:hover::after {
+  content: "장충 왕족발";
+}
+.store05:hover::after {
+  content: "최고성";
+}
+.store06:hover::after {
+  content: "뼈다귀 해장국";
+}
+.store07:hover::after {
+  content: "소문난 보배곱창";
+}
