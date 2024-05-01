@@ -11,12 +11,10 @@ new fullpage("#fullpage", {
 const titleArrow = document.querySelector("#nav-icon");
 const arrows = document.querySelectorAll(".arrow");
 const imgs = ["img01.jpg", "img02.jpg", "img03.jpg"];
-const slider = document.querySelector(".event-slider");
+const sliders = document.querySelectorAll(".event-slider");
 const img = document.querySelector(".content-img");
 const sc0 = document.querySelector("#sc0");
-console.log(sc0);
-
-console.log(slider);
+const sc1 = document.querySelector("#sc1");
 
 titleArrow.addEventListener("click", () => {
   if (!titleArrow.classList.contains("arrowActive")) {
@@ -27,10 +25,20 @@ titleArrow.addEventListener("click", () => {
 });
 
 let imgSrc = `./img/sc01/${imgs[0]}`;
+let imgSrc2 = `./img/sc02/${imgs[0]}`;
+
 img.src = imgSrc;
 sc0.style.backgroundImage = `url(./img/sc01/${imgs[0]}`;
+sc1.style.backgroundImage = `url(./img/sc02/${imgs[0]}`;
 
 let i = 0;
+
+sliders.forEach((slider, idx) => {
+  if (idx == 1) {
+    const img = slider.querySelector("img");
+    img.src = `./img/sc02/${imgs[0]}`;
+  }
+});
 
 arrows.forEach((arrow) => {
   arrow.addEventListener("click", (e) => {
@@ -54,4 +62,5 @@ changeImg = (direction) => {
   }
   img.src = `./img/sc01/${imgs[i]}`;
   sc0.style.backgroundImage = `url(./img/sc01/${imgs[i]})`;
+  sc1.style.backgroundImage = `url(./img/sc02/${imgs[i]})`;
 };
