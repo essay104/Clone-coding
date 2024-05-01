@@ -6,7 +6,7 @@
     <!-- style&css -->
     <link rel="stylesheet" href="style.css" />
     <script defer src="./script.js"></script>
-    <!-- <script defer src="./mainscript.js"></script> -->
+    <script defer src="./mainscript.js"></script>
     <!-- fontawesome -->
     <script
       src="https://kit.fontawesome.com/aa285c689f.js"
@@ -21,14 +21,18 @@
   <body>
     <div class="container">
       <div id="map">
-        <div class="marker store01"></div>
-        <div class="marker store02"></div>
-        <div class="marker store03"></div>
-        <div class="marker store04"></div>
-        <div class="marker store05"></div>
-        <div class="marker store06"></div>
-        <div class="marker store07"></div>
+        <div data-index="0" class="marker store01"></div>
+        <div data-index="1" class="marker store02"></div>
+        <div data-index="2" class="marker store03"></div>
+        <div data-index="3" class="marker store04"></div>
+        <div data-index="4" class="marker store05"></div>
+        <div data-index="5" class="marker store06"></div>
+        <div data-index="6" class="marker store07"></div>
       </div>
+      <form action="https://localhost:3000">
+        <input class="info-search" placeholder="가게명을 입력해주세요" type="search">
+        <input class="info-submit" type="submit">
+      </form>
       <div class="comment">
         <div class="comment-header">
           <h1>맛집 코멘트</h1>
@@ -83,14 +87,21 @@
       <div class="modal-container">
         <div class="modal-contents">
           <div class="modal-header">
-            <h1>마쓰무라돈까스</h1>
+            <h1>343434</h1>
             <button>X</button>
           </div>
           <div class="modal-main">
             <div class="modal-img"></div>
             <div class="modal-content">
-              <div class="modal-menu"></div>
-              <div class="modal-route"></div>
+              <div class="modal-intro">
+                <h3>소개글</h3>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Recusandae corrupti magni harum quos assumenda qui saepe modi
+                  tempora, minus nisi porro ea molestiae necessitatibus ducimus
+                  ipsam? Veritatis culpa iusto magnam?
+                </p>
+              </div>
             </div>
           </div>
         </div>
