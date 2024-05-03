@@ -43,7 +43,6 @@
   scale: 3;
   background: url("./img/img01.jpg") center/cover no-repeat;
   z-index: 99;
-  position: absolute;
 }
 .store02:hover {
   scale: 3;
