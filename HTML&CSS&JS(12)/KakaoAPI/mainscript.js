@@ -65,24 +65,16 @@ const init = () => {
   storeName.innerText = "";
 };
 
-//accodion Events
+//accordion Events
 
 const oppener = document.querySelector(".select-opener");
-const accodion = document.querySelector(".select-accodion");
+const accordion = document.querySelector(".select-accordion");
 const infos = document.querySelectorAll(".fa-info");
 const locations = document.querySelectorAll(".fa-location-dot");
 
-console.log(infos);
-
-console.log(accodion);
-
 oppener.addEventListener("click", () => {
   oppener.classList.toggle("active");
-  accodion.style.display = "block";
-  // if (accodion.style.display === "block") {
-  //   oppener.classList.toggle("acitve");
-  //   accodion.style.display = "none";
-  // }
+  accordion.classList.toggle("activeAccordion");
 });
 
 infos.forEach((info, idx) => {
@@ -121,6 +113,10 @@ infos.forEach((info, idx) => {
   });
 });
 
-locations.addEventListener("click", () => {
-  
-});
+var container = document.getElementById("map"); //지도를 담을 영역의 DOM 레퍼런스
+var options = {
+  //지도를 생성할 때 필요한 기본 옵션
+  center: new kakao.maps.LatLng(37.6513398, 127.0362835), //지도의 중심좌표.
+  level: 5, //지도의 레벨(확대, 축소 정도)
+};
+

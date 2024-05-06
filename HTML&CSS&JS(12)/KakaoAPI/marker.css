@@ -1,3 +1,4 @@
+
 .store01,
 .store02,
 .store03,
@@ -7,13 +8,15 @@
 .store07 {
   width: 50px;
   height: 50px;
-  position: absolute;
+  position: relative;
   font-size: 0.8rem;
   border-radius: 100%;
   cursor: pointer;
   transition: all 0.5s;
-  border: 3px solid #000;
-  position: relative;
+  border: 3px solid #515bd4;
+  border-left-color: #8134af;
+  border-right-color: #dd2a7b;
+  border-bottom-color: #feda77;
   overflow: hidden;
 }
 
@@ -88,6 +91,7 @@
   align-items: center;
   color: #fff;
   font-size: 0.3rem;
+  z-index: 999;
 }
 
 .store01:hover::after {

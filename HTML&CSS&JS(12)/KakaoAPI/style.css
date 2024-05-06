@@ -175,8 +175,13 @@ form .info-search {
   align-items: center;
 }
 
-.select-accodion {
+.select-accordion {
   display: none;
+  transition: all 0.5s;
+}
+
+.select-accordion.activeAccordion {
+  display: block;
 }
 
 .select-bar ul {
