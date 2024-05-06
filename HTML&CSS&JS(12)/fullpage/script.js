@@ -61,6 +61,7 @@ changeImg = (direction) => {
     }
   }
   img.src = `./img/sc01/${imgs[i]}`;
+
   sc0.style.backgroundImage = `url(./img/sc01/${imgs[i]})`;
   sc1.style.backgroundImage = `url(./img/sc02/${imgs[i]})`;
 };
