@@ -64,15 +64,59 @@ const sliderChangeEvent = () => {
   }
 };
 
-setInterval(sliderChangeEvent, 3000);
+const autoSlider = () => {
+  auto = setInterval(sliderChangeEvent, 5000);
+};
+
+autoSlider();
+
+const stopSlider = () => {
+  clearInterval(auto);
+};
 
 const sliderBtns = document.querySelectorAll(".slider-btn");
+const autoSliderBtn = document.querySelector(".slider01-button");
+const autoSliderBtnIcon = document.querySelector(".slider01-button i");
 
-sliderBtns.forEach((sliderBtn, idx) => {
+sliderBtns.forEach((sliderBtn) => {
   sliderBtn.addEventListener("click", () => {
     sliderBtns.forEach((sliderBtn) => {
       sliderBtn.classList.remove("active");
     });
     sliderBtn.classList.add("active");
   });
+});
+
+autoSliderBtn.addEventListener("click", () => {
+  if (autoSliderBtnIcon.classList.contains("fa-play")) {
+    autoSliderBtnIcon.classList.remove("fa-play");
+    autoSliderBtnIcon.classList.add("fa-pause");
+    stopSlider();
+  } else {
+    autoSliderBtnIcon.classList.remove("fa-pause");
+    autoSliderBtnIcon.classList.add("fa-play");
+    autoSlider();
+  }
+});
+
+const reset = () => {
+  sliderBtns.forEach((sliderBtn, idx) => {
+    sliderBtns[idx].classList.remove("active");
+  });
+};
+
+const pagerChange = (e) => {
+  const target = e.target.dataset.index;
+  console.log("click");
+  reset();
+  for (let i = 0; i < sliderBtns.length; i++) {
+    if (target == i) {
+      sliderBtns[i].classList.add("active");
+      slider01.src = `/img/events/${slider01Imgs[i]}`;
+    }
+  }
+};
+
+sliderBtns.forEach((sliderBtn) => {
+  sliderBtn.addEventListener("click", pagerChange);
 });
