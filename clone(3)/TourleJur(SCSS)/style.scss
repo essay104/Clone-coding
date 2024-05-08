@@ -4,6 +4,7 @@ body {
   width: 100%;
   height: 180vh;
   position: relative;
+  font-family: "NanumBarunGothic";
   header {
     width: 100%;
     height: 147px;
@@ -12,6 +13,7 @@ body {
     top: 0;
     left: 0;
     z-index: 9999;
+    overflow: hidden;
   }
 }
 
@@ -23,7 +25,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  .header-topcontents {
+  .header-top-contents {
     width: 1020px;
     height: inherit;
     display: flex;
@@ -128,7 +130,52 @@ body {
       .section01-slider01 {
         width: 395px;
         height: 403px;
-        background: #fff;
+        position: relative;
+        .slider-img {
+          width: 100%;
+          height: 100%;
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+        .slider01-bottom {
+          width: 100%;
+          height: 20px;
+          background: rgba(0, 0, 0, 0.6);
+          position: absolute;
+          bottom: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          ul {
+            display: flex;
+            gap: 5px;
+            li {
+              display: flex;
+              width: 12px;
+              height: 12px;
+              border-radius: 12px;
+              border: 1px solid #fff;
+              cursor: pointer;
+            }
+            li.active {
+              background: #fff;
+            }
+          }
+          .slider01-button {
+            cursor: pointer;
+            width: 12px;
+            height: 12px;
+            border: 1px solid #fff;
+            margin-left: 5px;
+            color: #fff;
+            font-size: 6px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+        }
       }
       .section01-slider02 {
         width: 595px;
@@ -273,75 +320,68 @@ footer {
     display: flex;
     justify-content: center;
     flex-direction: column;
+    gap: 15px;
     .footer-content-top {
-      width: 1020px;
+      display: flex;
+      gap: 5px;
+      flex-direction: column;
+      color: var(--fontColor4);
+      font-size: 0.8rem;
+      font-weight: 600;
       .footer-content-top-line01 {
         display: flex;
         gap: 25px;
-        width: 100%;
-        .footer-content-top-info:first-child {
-          background: url("./img/footer_menu_01.png");
-          width: 50px;
-          height: 14px;
+        div {
+          position: relative;
+          p {
+            cursor: pointer;
+          }
+          p::after {
+            content: "";
+            width: 3px;
+            height: 3px;
+            background: #666;
+            position: absolute;
+            right: -13px;
+            top: 7px;
+          }
         }
-        .footer-content-top-info:nth-child(2) {
-          background: url("./img/footer_menu_02.png");
-          width: 77px;
-          height: 14px;
+        .other-color {
+          color: var(--fontColor3);
         }
-        .footer-content-top-info:nth-child(3) {
-          background: url("./img/footer_menu_03.png");
-          width: 50px;
-          height: 14px;
-        }
-        .footer-content-top-info:nth-child(4) {
-          background: url("./img/footer_menu_04.png");
-          width: 50px;
-          height: 14px;
-        }
-        .footer-content-top-info:nth-child(5) {
-          background: url("./img/footer_menu_05.png");
-          width: 100px;
-          height: 14px;
-        }
-        .footer-content-top-info:nth-child(6) {
-          background: url("./img/footer_menu_06.png");
-          width: 112px;
-          height: 14px;
-        }
-        .footer-content-top-info:nth-child(7) {
-          background: url("./img/footer_menu_07.png");
-          width: 74px;
-          height: 14px;
-        }
-        .footer-content-top-info:nth-child(8) {
-          background: url("./img/footer_menu_08.png");
-          width: 50px;
-          height: 14px;
+        .last-child {
+          p::after {
+            display: none;
+          }
         }
       }
       .footer-content-top-line02 {
         display: flex;
         gap: 25px;
-        width: 100%;
-        border: 1px solid #000;
-        height: 25px;
-        .footer-content-top-info:nth-child(9) {
-          background: url("./img/footer_menu_09.png");
-          width: 50px;
-          height: 14px;
-        }
-        .footer-content-top-info:nth-child(10) {
-          background: url("./img/footer_menu_10.png");
-          width: 143px;
-          height: 14px;
-        }
-        .footer-content-top-info:nth-child(11) {
-          background: url("./img/footer_menu_11.png");
-          width: 177px;
-          height: 13px;
+        margin-left: 20px;
+        div {
+          position: relative;
+          p::before {
+            content: "";
+            width: 3px;
+            height: 3px;
+            background: #666;
+            position: absolute;
+            left: -13px;
+            top: 7px;
+          }
         }
       }
+    }
+    .footer-content-bottom {
+      .footer-content-bottom-line02 {
+        img {
+          margin-right: 10px;
+        }
+      }
+    }
+    .footer-content-info {
+      color: var(--fontColor4);
     }
   }
 }
