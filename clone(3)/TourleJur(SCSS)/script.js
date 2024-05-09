@@ -4,16 +4,13 @@ const headerBottomA = document.querySelectorAll(".headerBottom a");
 const headerTop = document.querySelector(".headerTop");
 const headerBottom = document.querySelector(".headerBottom");
 const slider01 = document.querySelector(".slider-img img");
+const sliderBtns = document.querySelectorAll(".slider-btn");
+const autoSliderBtn = document.querySelector(".slider01-button");
+const autoSliderBtnIcon = document.querySelector(".slider01-button i");
 
 console.log(slider01);
 
-const slider01Imgs = [
-  "img01.jpg",
-  "img02.jpg",
-  "img03.jpg",
-  "img04.jpg",
-  "img05.jpg",
-];
+const slider01Imgs = ["img01.jpg", "img02.jpg", "img03.jpg", "img04.jpg"];
 
 console.log(slider01Imgs);
 
@@ -56,16 +53,26 @@ slider01.src = `/img/events/${slider01Imgs[0]}`;
 
 i = 0;
 
+const reset = () => {
+  sliderBtns.forEach((sliderBtn, idx) => {
+    sliderBtns[idx].classList.remove("active");
+  });
+};
+
 const sliderChangeEvent = () => {
-  slider01.src = `/img/events/${slider01Imgs[i]}`;
   i++;
   if (i >= slider01Imgs.length) {
     i = 0;
   }
+  reset();
+  sliderBtns[i].classList.add("active");
+  slider01.src = `/img/events/${slider01Imgs[i]}`;
 };
 
 const autoSlider = () => {
-  auto = setInterval(sliderChangeEvent, 5000);
+  auto = setInterval(() => {
+    sliderChangeEvent();
+  }, 5000);
 };
 
 autoSlider();
@@ -73,10 +80,6 @@ autoSlider();
 const stopSlider = () => {
   clearInterval(auto);
 };
-
-const sliderBtns = document.querySelectorAll(".slider-btn");
-const autoSliderBtn = document.querySelector(".slider01-button");
-const autoSliderBtnIcon = document.querySelector(".slider01-button i");
 
 sliderBtns.forEach((sliderBtn) => {
   sliderBtn.addEventListener("click", () => {
@@ -95,20 +98,15 @@ autoSliderBtn.addEventListener("click", () => {
   } else {
     autoSliderBtnIcon.classList.remove("fa-pause");
     autoSliderBtnIcon.classList.add("fa-play");
+    sliderChangeEvent();
     autoSlider();
   }
 });
 
-const reset = () => {
-  sliderBtns.forEach((sliderBtn, idx) => {
-    sliderBtns[idx].classList.remove("active");
-  });
-};
-
 const pagerChange = (e) => {
   const target = e.target.dataset.index;
-  console.log("click");
   reset();
+  console.log("click");
   for (let i = 0; i < sliderBtns.length; i++) {
     if (target == i) {
       sliderBtns[i].classList.add("active");

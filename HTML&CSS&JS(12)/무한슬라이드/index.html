@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Infinite Slider</title>
+<style>
+  .slider {
+    width: 300px;
+    overflow: hidden;
+    position: relative;
+  }
+  .slides {
+    display: flex;
+    transition: transform 0.5s ease;
+  }
+  .slide {
+    flex: 0 0 100%;
+  }
+</style>
+</head>
+<body>
+<div class="slider">
+  <div class="slides">
+    <div class="slide">Slide 1</div>
+    <div class="slide">Slide 2</div>
+    <div class="slide">Slide 3</div>
+    <div class="slide">Slide 1</div> <!-- 복제된 슬라이드 -->
+  </div>
+</div>
+
+<script>
+  const slider = document.querySelector('.slider');
+  const slides = document.querySelector('.slides');
+  const slideWidth = slides.querySelector('.slide').offsetWidth;
+  let currentIndex = 0;
+
+  // 복제된 첫 번째 슬라이드를 끝에 붙입니다.
+  slides.appendChild(slides.querySelector('.slide').cloneNode(true));
+
+  // 이전 슬라이드로 이동하는 함수
+  const prevSlide
