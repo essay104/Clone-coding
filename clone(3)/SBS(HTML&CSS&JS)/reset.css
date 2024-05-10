@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+@import url("http://fonts.googleapis.com/earlyaccess/nanumgothic.css");
+
+/* common */
+
+body {
+  font-family: "nanumgothic";
+}
+
+.container {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+:root {
+  --font-color: #f47499;
+  --font-color2: #1a1a1a;
+  --mouseHover: #e8e8e8;
+}

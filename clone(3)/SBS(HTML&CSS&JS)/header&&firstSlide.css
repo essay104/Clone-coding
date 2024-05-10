@@ -1,0 +1,59 @@
+.nav-bar {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: end;
+  font-size: 12px;
+  gap: 10px;
+  align-items: center;
+  font-weight: 400;
+}
+
+.nav-bar a:hover {
+  color: var(--font-color);
+  text-decoration: underline;
+}
+
+.nav-bar .toggle-nav {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.nav-bar .toggle-nav ul {
+  position: absolute;
+  top: 28px;
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+  padding: 16px 0;
+  width: 110px;
+  border-radius: 16px;
+  color: var(--font-color2);
+  font-weight: 400;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+  transition: all 0.5s;
+}
+
+.nav-bar .toggle-nav ul li {
+  margin-top: 5px;
+  padding: 5px 0px 5px 10px;
+  display: flex;
+  cursor: pointer;
+  color: #8E8E8E;
+}
+
+.nav-bar .toggle-nav ul li:hover {
+  background: #e8e8e8;
+
+  color: #000;
+}
+
+ul.toggleOpen {
+  opacity: 1;
+}
+
+.nav-bar .toggle-nav p:hover {
+  color: var(--font-color);
+  text-decoration: underline;
+}
