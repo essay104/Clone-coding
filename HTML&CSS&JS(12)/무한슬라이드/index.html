@@ -1,42 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Infinite Slider</title>
-<style>
-  .slider {
-    width: 300px;
-    overflow: hidden;
-    position: relative;
-  }
-  .slides {
-    display: flex;
-    transition: transform 0.5s ease;
-  }
-  .slide {
-    flex: 0 0 100%;
-  }
-</style>
-</head>
-<body>
-<div class="slider">
-  <div class="slides">
-    <div class="slide">Slide 1</div>
-    <div class="slide">Slide 2</div>
-    <div class="slide">Slide 3</div>
-    <div class="slide">Slide 1</div> <!-- 복제된 슬라이드 -->
-  </div>
-</div>
-
-<script>
-  const slider = document.querySelector('.slider');
-  const slides = document.querySelector('.slides');
-  const slideWidth = slides.querySelector('.slide').offsetWidth;
-  let currentIndex = 0;
-
-  // 복제된 첫 번째 슬라이드를 끝에 붙입니다.
-  slides.appendChild(slides.querySelector('.slide').cloneNode(true));
-
-  // 이전 슬라이드로 이동하는 함수
-  const prevSlide
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script defer src="./script.js"></script>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="slider-title">
+        <h1>무한 슬라이더</h1>
+      </div>
+      <div class="spinner">
+        <div class="hidden_spinner"></div>
+      </div>
+      <div class="slide_wrapper">
+        <ul class="slides">
+          <li class="slide01">slide 01</li>
+          <li class="slide02">slide 02</li>
+          <li class="slide03">slide 03</li>
+          <li class="slide04">slide 04</li>
+          <li class="slide05">slide 05</li>
+        </ul>
+      </div>
+      <p class="controls">
+        <span class="prev">prev</span>
+        <span class="next">next</span>
+      </p>
+    </div>
+  </body>
+</html>
