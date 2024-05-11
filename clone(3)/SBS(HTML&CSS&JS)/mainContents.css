@@ -1,0 +1,162 @@
+.main-contents {
+  width: 1200px;
+}
+
+.main-slider {
+  position: relative;
+  width: 1160px;
+  margin: 0 auto;
+}
+
+.main-slider-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.main-slider-container.animated {
+  transition: 0.5s ease-out;
+}
+
+.main-slider-container li {
+  width: 1160px;
+  height: 440px;
+  border-radius: 50px;
+}
+
+/* .main-slider-container li:not(:last-child) {
+  margin-right: 30px;
+} */
+
+.prev01,
+.next01 {
+  width: 70px;
+  height: 70px;
+  border-radius: 100%;
+  background: #fff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 35px;
+}
+
+.prev01 {
+  position: absolute;
+  top: 170px;
+  left: -35px;
+}
+
+.next01 {
+  position: absolute;
+  top: 170px;
+  right: -35px;
+}
+
+/* main-slider-contents */
+
+.main-slider-01 {
+  overflow: hidden;
+}
+
+.main-slider-01 img {
+  transition: all 0.3s;
+}
+
+.main-slider-01 img:hover {
+  scale: 1.1;
+}
+
+.main-slider-02 {
+  background: var(--subColor);
+  display: flex;
+  overflow: hidden;
+}
+
+.main-slider-intro {
+  width: 40%;
+  height: 100%;
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.main-slider-intro-top {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.main-slider-intro-top h1:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.main-slider-intro-top p {
+  font-weight: 500;
+}
+
+.main-slider-intro-bottom {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #f00;
+  gap: 20px;
+  float: left;
+}
+
+.main-slider-intro-bottom .btns {
+  width: 135px;
+  height: 50px;
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.main-slider-intro-bottom .programHome {
+  background: #fff;
+  color: #000;
+}
+
+.main-slider-intro-bottom .playTalk {
+  background: linear-gradient(to right, #f47499 75%, #7c79e9);
+  color: #fff;
+  display: flex;
+  gap: 5px;
+  transition: all 0.3s;
+}
+
+.main-slider-intro-bottom .playTalk:hover .fa-comment {
+  transform: translateY(-20%);
+}
+
+.main-slider-img {
+  width: 60%;
+  height: 100%;
+  overflow: hidden;
+  cursor: pointer;
+  object-fit: cover;
+}
+
+.main-slider-img img {
+  transition: all 0.3s;
+  width: 100%;
+  height: 100%;
+}
+
+.main-slider-img img:hover {
+  scale: 1.1;
+}
+
+.main-slider-03 {
+  background: #000;
+  display: flex;
+  overflow: hidden;
+  color: #fff;
+}

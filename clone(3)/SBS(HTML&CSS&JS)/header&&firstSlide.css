@@ -48,6 +48,8 @@
   font-weight: 400;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
   transition: all 0.5s;
+  background: #fff;
+  z-index: 99;
 }
 
 .nav-bar .toggle-nav ul li {
@@ -100,7 +102,6 @@ ul.toggleOpen {
 }
 
 .header-menu {
-  overflow: hidden;
   margin-top: 80px;
 }
 
@@ -110,7 +111,40 @@ ul.toggleOpen {
 
 .left-gnb ul {
   display: flex;
-  gap: 25px;
+  gap: 35px;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.left-gnb-ul li {
+  cursor: pointer;
+  transition: all 0.3s;
+  position: relative;
+}
+
+.left-gnb-ul li:hover {
+  color: var(--font-color);
+}
+
+.left-gnb-ul li::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 5px;
+  bottom: -8px;
+  left: 50%;
+  transition: all 0.3s;
+}
+
+.left-gnb-ul li:hover::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(to right, #f47499 75%, #7c79e9);
+  bottom: -8px;
+  left: 0;
+  border-radius: 5px;
 }
 
 .right-gnb {
@@ -119,5 +153,45 @@ ul.toggleOpen {
 
 .right-gnb ul {
   display: flex;
-  gap: 10px;
+  gap: 30px;
+  margin-top: 8px;
+}
+
+.right-gnb-ul li {
+  cursor: pointer;
+  transform: all 0.3s;
+  position: relative;
+}
+
+.right-gnb-ul li:hover {
+  color: var(--font-color);
+}
+
+.right-gnb-ul li::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 5px;
+  bottom: -8px;
+  left: 50%;
+  transition: all 0.3s;
+}
+
+.right-gnb-ul li:hover::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(to right, #f47499 75%, #7c79e9);
+  bottom: -8px;
+  left: 0;
+  border-radius: 5px;
+}
+
+.header-banner {
+  /* border: 1px solid #000; */
+}
+
+.header-banner img {
+  margin-top: 30px;
 }
