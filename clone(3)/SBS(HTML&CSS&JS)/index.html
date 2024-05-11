@@ -4,19 +4,28 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <!-- style -->
     <link rel="stylesheet" href="./style.css" />
+    <!-- script -->
     <script defer src="./script.js"></script>
+    <!-- fontawesome -->
+    <script
+      src="https://kit.fontawesome.com/aa285c689f.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <div class="container">
       <header>
-        <div class="header-logo"></div>
         <div class="nav-bar">
           <a href="#">로그인</a>
           <a href="#">이용권</a>
           <a href="#">편성표</a>
           <div class="toggle-nav">
-            <a href="#">채널 바로가기</a>
+            <div class="toggle-nav-title">
+              <a href="#">채널 바로가기</a>
+              <i class="fa-solid fa-angle-down"></i>
+            </div>
             <ul>
               <li>SBS Plus</li>
               <li>SBS funE</li>
@@ -29,11 +38,37 @@
               <li>SBS M</li>
             </ul>
           </div>
-          <div>
-            <input type="search" />
+          <div class="nav-form">
+            <input class="nav-searchbar" type="text" />
+            <i class="fa-solid fa-magnifying-glass"></i>
           </div>
         </div>
-        <div class="header-menu"></div>
+        <div class="header-logoSlogan">
+          <img src="./imgs/logo/sbsplayBig_logo.png" alt="01" />
+          <img src="./imgs/logo/sbsplay_slogan.png" alt="02" />
+        </div>
+        <div class="header-menu">
+          <div class="left-gnb">
+            <ul>
+              <li>TV</li>
+              <li>라이브</li>
+              <li>ALLVOD</li>
+              <li>핫이슈</li>
+              <li>뉴스</li>
+              <li>라디오</li>
+              <li>이벤트</li>
+              <li>플레이톡</li>
+              <li>플레이존</li>
+            </ul>
+          </div>
+          <div class="right-gnb">
+            <ul>
+              <li>스타</li>
+              <li>스브스노리터</li>
+              <li>TV맛집</li>
+            </ul>
+          </div>
+        </div>
       </header>
       <div class="nav-bar"></div>
     </div>

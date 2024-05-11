@@ -14,6 +14,21 @@
   text-decoration: underline;
 }
 
+.nav-bar a:nth-child(2) {
+  position: relative;
+}
+
+.nav-bar a:nth-child(2)::after {
+  content: "";
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 4px;
+  background: crimson;
+  right: -5px;
+  top: -2px;
+}
+
 .nav-bar .toggle-nav {
   display: flex;
   flex-direction: column;
@@ -40,12 +55,11 @@
   padding: 5px 0px 5px 10px;
   display: flex;
   cursor: pointer;
-  color: #8E8E8E;
+  color: #8e8e8e;
 }
 
 .nav-bar .toggle-nav ul li:hover {
   background: #e8e8e8;
-
   color: #000;
 }
 
@@ -56,4 +70,54 @@ ul.toggleOpen {
 .nav-bar .toggle-nav p:hover {
   color: var(--font-color);
   text-decoration: underline;
+}
+
+.nav-form {
+  position: relative;
+}
+
+.nav-searchbar {
+  width: 173px;
+  height: 35px;
+  border: 1px solid rgba(112, 112, 112, 0.2);
+  border-radius: 24px;
+  outline: none;
+  padding-left: 20px;
+  padding-right: 30px;
+}
+
+.nav-form .fa-solid {
+  font-size: 1.2rem;
+  position: absolute;
+  right: 10px;
+  top: 8px;
+  cursor: pointer;
+}
+
+.header-logoSlogan {
+  position: absolute;
+  top: 0;
+}
+
+.header-menu {
+  overflow: hidden;
+  margin-top: 80px;
+}
+
+.left-gnb {
+  float: left;
+}
+
+.left-gnb ul {
+  display: flex;
+  gap: 25px;
+}
+
+.right-gnb {
+  float: right;
+}
+
+.right-gnb ul {
+  display: flex;
+  gap: 10px;
 }
