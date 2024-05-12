@@ -19,6 +19,7 @@ a {
 
 body {
   font-family: "nanumgothic";
+  overflow: hidden;
 }
 
 .container {
