@@ -80,11 +80,15 @@ cloneSlides();
 next01.addEventListener("click", () => {
   slideEvent(currentIdx + 1);
   console.log(currentIdx);
+  stopSlideEvent();
+  playBtn01.classList.add("stop");
 });
 
 prev01.addEventListener("click", () => {
   slideEvent(currentIdx - 1);
   console.log(currentIdx);
+  stopSlideEvent();
+  playBtn01.classList.add("stop");
 });
 
 const slideEvent = (num) => {
@@ -136,7 +140,7 @@ const IdxPlus = () => {
 const autoSlideEvent = () => {
   timer = setInterval(() => {
     num++;
-    if (num >= slides.length + 1) {
+    if (num >= slides.length) {
       num = 0;
     }
     console.log(num);
@@ -162,3 +166,6 @@ playBtn01.addEventListener("click", () => {
     }, 5000);
   }
 });
+
+//sliderEvent02
+

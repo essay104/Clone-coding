@@ -19,7 +19,7 @@ a {
 
 body {
   font-family: "nanumgothic";
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .container {
@@ -34,4 +34,3 @@ body {
   --subColor: #c8b4e8;
   --subColor2: #7c79e9;
 }
-
