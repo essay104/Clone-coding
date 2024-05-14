@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script defer src="./script.js"></script>
+    <script
+      src="https://kit.fontawesome.com/aa285c689f.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <header>
+      <h1 class="header-title">다닦아 로봇청소기</h1>
+      <i class="fa-solid fa-bars"></i>
+    </header>
+    <form>
+      <div class="sell-index">
+        <label>구매자</label>
+        <input type="text" value="성함을 입력해주세요" />
+      </div>
+      <div class="sell-index">
+        <label>배송지</label>
+        <input type="text" value="배송받을 주소를 입력해주세요" />
+      </div>
+      <div class="sell-index">
+        <label>구매모델</label>
+        <select>
+          <option value="" selected disabled>
+            구매하실 모델을 선택해주세요
+          </option>
+          <option value="">A모델</option>
+          <option value="">B모델</option>
+          <option value="">C모델</option>
+        </select>
+      </div>
+      <div class="sell-index">
+        <label>결제카드</label>
+        <select class="card-select">
+          <option value="" selected disabled>결제카드</option>
+          <option value="">신한</option>
+          <option value="">국민</option>
+          <option value="">기업</option>
+          <option value="">농협</option>
+          <option value="">비자</option>
+          <option value="">저축</option>
+          <option value="">기타</option>
+          <input type="text installment" />
+        </select>
+      </div>
+    </form>
+  </body>
+</html>
