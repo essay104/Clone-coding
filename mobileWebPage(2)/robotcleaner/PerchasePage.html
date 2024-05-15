@@ -12,44 +12,99 @@
     ></script>
   </head>
   <body>
-    <header>
-      <h1 class="header-title">다닦아 로봇청소기</h1>
-      <i class="fa-solid fa-bars"></i>
-    </header>
-    <form>
-      <div class="sell-index">
-        <label>구매자</label>
-        <input type="text" value="성함을 입력해주세요" />
+    <div class="container">
+      <header>
+        <h1 class="header-title">다닦아 로봇청소기</h1>
+      </header>
+      <form>
+        <div class="sell-index">
+          <label>구매자</label>
+          <input
+            class="text-input"
+            type="text"
+            placeholder="성함을 입력해주세요"
+          />
+        </div>
+        <div class="sell-index">
+          <label>배송지</label>
+          <input
+            class="text-input"
+            type="text"
+            class="sell-index-input"
+            placeholder="배송받을 주소를 입력해주세요"
+          />
+        </div>
+        <div class="sell-index">
+          <label>구매모델</label>
+          <select>
+            <option value="" selected disabled>
+              구매하실 모델을 선택해주세요
+            </option>
+            <option value="">A모델</option>
+            <option value="">B모델</option>
+            <option value="">C모델</option>
+          </select>
+        </div>
+        <div class="sell-index">
+          <label>결제카드</label>
+          <div class="selections">
+            <select class="card-select">
+              <option value="" selected disabled>결제카드</option>
+              <option value="">신한</option>
+              <option value="">국민</option>
+              <option value="">기업</option>
+              <option value="">농협</option>
+              <option value="">비자</option>
+              <option value="">저축</option>
+              <option value="">기타</option>
+            </select>
+            <select class="card-select">
+              <option value="" selected disabled>할부 개월수</option>
+              <option value="">1개월</option>
+              <option value="">2개월</option>
+              <option value="">3개월</option>
+              <option value="">4개월</option>
+              <option value="">5개월</option>
+              <option value="">6개월</option>
+              <option value="">기타</option>
+            </select>
+          </div>
+        </div>
+        <div class="sell-index">
+          <label>휴대전화</label>
+          <div>
+            <input
+              class="number-input"
+              type="text"
+              placeholder="휴대 전화번호 입력"
+            />
+            <button class="sell-index-button">인증번호 받기</button>
+          </div>
+          <div class="number-input-submit">
+            <input
+              class="number-input"
+              type="text"
+              placeholder="인증 번호를 입력해주세요"
+            />
+            <button class="sell-index-button">확인</button>
+            <div class="left-time"></div>
+          </div>
+        </div>
+      </form>
+      <div class="user-agree">
+        <div class="agree1">
+          <i class="fa-solid fa-circle-check"></i>
+          <p>모든 약관에 동의합니다.</p>
+        </div>
+        <div class="agree2">
+          <i class="fa-solid fa-circle-check"></i>
+          <p>(필수) 이용약관과 개인정보 수집 및 이용에 동의합니다.</p>
+        </div>
+        <div class="agree3">
+          <i class="fa-solid fa-circle-check"></i>
+          <p>(선택) 이메일 및 SMS 마케팅 정보 수신에 동의합니다.</p>
+        </div>
       </div>
-      <div class="sell-index">
-        <label>배송지</label>
-        <input type="text" value="배송받을 주소를 입력해주세요" />
-      </div>
-      <div class="sell-index">
-        <label>구매모델</label>
-        <select>
-          <option value="" selected disabled>
-            구매하실 모델을 선택해주세요
-          </option>
-          <option value="">A모델</option>
-          <option value="">B모델</option>
-          <option value="">C모델</option>
-        </select>
-      </div>
-      <div class="sell-index">
-        <label>결제카드</label>
-        <select class="card-select">
-          <option value="" selected disabled>결제카드</option>
-          <option value="">신한</option>
-          <option value="">국민</option>
-          <option value="">기업</option>
-          <option value="">농협</option>
-          <option value="">비자</option>
-          <option value="">저축</option>
-          <option value="">기타</option>
-          <input type="text installment" />
-        </select>
-      </div>
-    </form>
+    </div>
   </body>
 </html>

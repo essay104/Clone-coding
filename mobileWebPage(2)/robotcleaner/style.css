@@ -94,7 +94,7 @@ header .fa-bars {
   cursor: pointer;
 }
 
-/* perchase */
+/* perchase from */
 
 .sell-index {
   display: flex;
@@ -116,7 +116,7 @@ header .fa-bars {
   color: crimson;
 }
 
-.sell-index input[type="text"] {
+.sell-index .text-input {
   border: none;
   border-bottom: 1px solid #eee;
   padding: 10px;
@@ -139,10 +139,81 @@ header .fa-bars {
   gap: 10px;
 }
 
+.sell-index .selections {
+  display: flex;
+  justify-content: space-between;
+}
+
 .card-select {
-  width: 40%;
+  width: 48%;
 }
 
 .installment {
-  width: 40%;
+  width: 48%;
+}
+
+.sell-index div:first-child {
+  display: flex;
+  justify-content: space-between;
+}
+
+.number-input {
+  font-size: 14px;
+  margin-left: 10px;
+  outline: none;
+  border: 1px solid #eee;
+  color: #999;
+  height: 35px;
+  border-radius: 5px;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.sell-index-button {
+  font-size: 14px;
+  border: 1px solid #eee;
+  color: #000;
+  background: #fff;
+  height: 35px;
+  border-radius: 5px;
+  padding: 0 8px;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.sell-index-button:hover {
+  background: #999;
+  color: #eee;
+}
+
+.number-input-submit {
+  display: none;
+}
+
+.number-input-submit .number-input {
+  padding: 0 50px;
+}
+
+/* agree section */
+
+.user-agree {
+  width: 100%;
+  font-size: 0.8rem;
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.user-agree div {
+  display: flex;
+  gap: 10px;
+  color: #4a4f5a;
+  align-items: center;
+}
+
+.user-agree i {
+  color: #000;
+  cursor: pointer;
+  font-size: 1.2rem;
 }
