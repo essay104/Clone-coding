@@ -10,12 +10,13 @@ body {
   width: 375px;
   height: 100vh;
   justify-content: center;
+  position: relative;
 }
 
 .home-wrap {
   width: 100%;
   height: 100%;
-  background: url("./123353929.1.jpg") center/cover no-repeat;
+  background: url("./img/mainImg.jpg") center/cover no-repeat;
   position: relative;
 }
 
@@ -72,10 +73,66 @@ body {
   background: rgba(0, 0, 0, 0.6);
 }
 
+.next-btn {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  z-index: 9;
+  top: 50%;
+  right: 5%;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 0 3px #fff;
+  transition: all 0.3s;
+}
+
+.next-btn:hover {
+  scale: 1.2;
+}
+
+.fa-chevron-right {
+  color: #fff;
+  font-size: 1.2rem;
+  opacity: 0;
+  transition: all 0.3s;
+}
+
+.fa-chevron-right:first-child {
+  animation: arrows infinite 3s;
+  animation-delay: 0s;
+}
+.fa-chevron-right:nth-child(2) {
+  animation: arrows infinite 3s;
+  animation-delay: 0.5s;
+}
+.fa-chevron-right:last-child {
+  animation: arrows infinite 3s;
+  animation-delay: 1s;
+}
+
+@keyframes arrows {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
 /* header */
 
-header {
-  width: 100%;
+.main-header {
+  width: 375px;
   height: 45px;
   background: #4a4f5a;
   color: #eee;
@@ -85,12 +142,12 @@ header {
   border-radius: 0 0 10px 10px;
 }
 
-header .header-title {
+.header-title {
   font-size: 21px;
   cursor: pointer;
 }
 
-header .fa-bars {
+.fa-bars {
   font-size: 21px;
   cursor: pointer;
 }
@@ -254,10 +311,11 @@ header .fa-bars {
 .product {
   display: flex;
   padding: 10px;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
   gap: 10px;
   position: relative;
+  margin-left: 20px;
 }
 
 .product-img {
@@ -269,6 +327,7 @@ header .fa-bars {
   cursor: pointer;
   position: relative;
   transition: all 0.5s;
+  z-index: 0;
 }
 
 .product-img::before {
@@ -310,15 +369,58 @@ header .fa-bars {
   color: crimson;
 }
 
-.sale-mark {
-  width: 50px;
-  height: 50px;
+.production {
+  width: 375px;
+  height: 750px;
   position: absolute;
-  bottom: -10px;
-  left: 30%;
+  top: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: none;
+  z-index: 99;
 }
 
-.sale-mark img {
+.production img {
+  width: 250px;
+  height: 250px;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -45%);
+  border-radius: 20px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+  display: none;
+}
+
+.spinner-warp {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 999;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+
+.spinner {
   width: 100%;
   height: 100%;
+  border: 15px solid rgba(0, 0, 0, 0.4);
+  border-radius: 100px;
+  border-right: 15px solid rgba(0, 0, 0, 0.8);
+  animation: spinner 0.3s infinite linear;
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.active {
+  display: block;
 }
