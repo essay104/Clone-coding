@@ -1,7 +1,8 @@
 /* header */
 
 body {
-  width: 100%;
+  width: 375px;
+  height: 55px;
   overflow: hidden;
 }
 

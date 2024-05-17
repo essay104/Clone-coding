@@ -2,13 +2,13 @@
 
 body {
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
+  flex-direction: column;
 }
 
 .container {
-  width: 100%;
+  width: 375px;
+  height: 100vh;
   justify-content: center;
   position: relative;
   /* transform: translateX(100%); */
@@ -231,7 +231,6 @@ body {
 }
 
 .number-input {
-  width: 70%;
   font-size: 14px;
   margin-left: 10px;
   outline: none;
@@ -241,19 +240,6 @@ body {
   border-radius: 5px;
   text-align: center;
   padding: 0 20px;
-  transition: all 0.3s;
-}
-
-.bgActive {
-  background: #2db400;
-}
-
-.bgActive::placeholder {
-  color: #fff;
-}
-
-.number-input:last-child {
-  width: 20%;
 }
 
 .sell-index-button {
@@ -279,7 +265,6 @@ body {
 
 .number-input-submit .number-input {
   padding: 0 50px;
-  border: 1px solid #f00;
 }
 
 /* agree section */
@@ -301,12 +286,9 @@ body {
 }
 
 .user-agree i {
+  color: #000;
   cursor: pointer;
   font-size: 1.2rem;
-}
-
-.agreeActive {
-  color: royalblue;
 }
 
 /* button */
@@ -405,7 +387,7 @@ body {
 /* toogle */
 
 .production {
-  width: 100%;
+  width: 375px;
   height: 100%;
   position: absolute;
   top: 0;
@@ -442,7 +424,7 @@ body {
   height: 100%;
   border: 15px solid rgba(0, 0, 0, 0.4);
   border-radius: 100px;
-  border-right: 15px solid rgba(255, 255, 255, 0.8);
+  border-right: 15px solid rgba(0, 0, 0, 0.8);
   animation: spinner 0.3s infinite linear;
 }
 
@@ -457,9 +439,5 @@ body {
 }
 
 .active {
-  display: block;
-}
-
-.production img.active {
   display: block;
 }
