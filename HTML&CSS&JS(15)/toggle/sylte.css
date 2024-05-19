@@ -13,4 +13,78 @@ li {
   list-style: none;
 }
 
+.wrap {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #eee;
+}
 
+.recipe-inner {
+  width: 1000px;
+  text-align: center;
+}
+
+.recipe-inner h1 {
+  margin-bottom: 50px;
+}
+
+.contents {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+}
+
+.accordion {
+  display: flex;
+  gap: 50px;
+  padding: 10px;
+  flex-direction: column;
+}
+
+.accordion h3 {
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.accordion:hover {
+  color: #999;
+}
+
+.content-img {
+  width: 300px;
+  height: 250px;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.4);
+}
+
+.content-img img {
+  width: 100%;
+  height: 100%;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.content-img img:hover {
+  scale: 1.05;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align: start;
+  color: #000;
+}
+
+.accordion-item {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 600px;
+}
