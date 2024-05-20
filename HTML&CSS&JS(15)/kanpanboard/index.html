@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- js&style -->
+    <link rel="stylesheet" href="./style.css" />
+    <script defer src="./script.js"></script>
+    <!-- font awesom -->
+    <script
+      src="https://kit.fontawesome.com/aa285c689f.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="container">
+      <form name="kanban-board" method="post">
+        <input type="text" placeholder="할 일을 추가하세요" />
+        <input type="submit" value="할 일 추가" />
+      </form>
+      <div class="board">
+        <h2>🖥To Do</h2>
+        <div id="doing" class="list"></div>
+      </div>
+      <div class="block">
+        <h2>★ Done</h2>
+        <div id="done" class="list"></div>
+      </div>
+    </div>
+  </body>
+</html>
