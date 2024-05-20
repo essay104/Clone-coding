@@ -5,7 +5,6 @@ const navBarTitle = document.querySelector(".toggle-nav-title");
 const navBarAngle = document.querySelector(".fa-angle-down");
 
 navBar.addEventListener("mouseenter", () => {
-  console.log("enter");
   navBarMenu.style.display = "block";
   navBarTitle.style.color = "#f47499";
   navBarTitle.style.textDecoration = "underline";
@@ -14,7 +13,6 @@ navBar.addEventListener("mouseenter", () => {
 });
 
 navBarMenu.addEventListener("mouseleave", () => {
-  console.log("enter");
   navBarMenu.style.display = "none";
   navBarTitle.style.color = "#000";
   navBarTitle.style.textDecoration = "none";
@@ -66,7 +64,6 @@ const sliderWidth = () => {
     (slideWidth + slideMargin) * currentSlides.length - slideMargin + `px`;
 
   slider.style.width = totalWidth;
-  console.log(totalWidth);
 };
 
 const setSliderPosition = () => {
@@ -79,14 +76,12 @@ cloneSlides();
 
 next01.addEventListener("click", () => {
   slideEvent(currentIdx + 1);
-  console.log(currentIdx);
   stopSlideEvent();
   playBtn01.classList.add("stop");
 });
 
 prev01.addEventListener("click", () => {
   slideEvent(currentIdx - 1);
-  console.log(currentIdx);
   stopSlideEvent();
   playBtn01.classList.add("stop");
 });
@@ -143,7 +138,6 @@ const autoSlideEvent = () => {
     if (num >= slides.length) {
       num = 0;
     }
-    console.log(num);
     IdxPlus(num);
     slideEvent(num);
   }, 5000);
@@ -169,3 +163,58 @@ playBtn01.addEventListener("click", () => {
 
 //sliderEvent02
 
+const prev02 = document.querySelector(".left-arrows02");
+const next02 = document.querySelector(".next02");
+const slider02 = document.querySelector(".slider02-page");
+
+let sectionWidth = 280;
+let sectionMargin = 20;
+
+const sectionWidth4 = (sectionWidth + sectionMargin) * 4;
+const sectionWidth3 = (sectionWidth + sectionMargin) * 3;
+const sectionWidth2 = (sectionWidth + sectionMargin) * 2;
+
+i = 0;
+
+next02.addEventListener("click", () => {
+  ++i;
+  slider02Event(currentIdx + 1);
+  prev02.classList.remove("hidden");
+  console.log(i);
+  if (i == 2) {
+    next02.classList.add("hidden");
+  }
+  console.log("next");
+});
+
+prev02.addEventListener("click", () => {
+  --i;
+  slider02Event(currentIdx - 1);
+  console.log(i);
+  if (i !== 2) {
+    next02.classList.remove("hidden");
+  }
+  consolelog("prev");
+});
+
+const slider02Event = (num) => {
+  currentIdx = num;
+  setTimeout(() => {
+    slider02.style.left = -num * sectionWidth4 + `px`;
+  }, 100);
+};
+
+// const slideEvent = (num) => {
+//   currentIdx = num;
+//   slider.style.left = -num * (slideWidth + slideMargin) + `px`;
+//   if (currentIdx == slides.length || currentIdx == -slides.length) {
+//     setTimeout(() => {
+//       slider.classList.remove("animated");
+//       slider.style.left = `0px`;
+//       currentIdx = 0;
+//     }, 500);
+//     setTimeout(() => {
+//       slider.classList.add("animated");
+//     }, 600);
+//   }
+// };

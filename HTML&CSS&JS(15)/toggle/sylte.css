@@ -13,13 +13,101 @@ li {
   list-style: none;
 }
 
-.wrap {
+body {
   width: 100%;
-  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #eee;
+  position: relative;
+}
+
+.login-page {
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  position: absolute;
+  top: 0;
+  display: none;
+}
+
+form {
+  width: 350px;
+  height: 500px;
+  background: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+  border-radius: 10px;
+}
+
+.loginPage-position {
+  margin-top: 70px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.login {
+  font-size: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 50px;
+}
+
+.loginID {
+  display: flex;
+  gap: 10px;
+  justify-content: end;
+}
+
+.login-input {
+  outline: none;
+  border: none;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.8);
+  width: 200px;
+  padding: 5px;
+}
+
+.login input[type="submit"] {
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #fff;
+  background: crimson;
+  transition: all 0.3s;
+  width: 200px;
+  margin-top: 5px;
+}
+
+.login input[type="submit"]:hover {
+  background: rgba(220, 20, 60, 0.6);
+}
+
+.sign {
+  position: absolute;
+  bottom: 20px;
+  right: 30px;
+  color: crimson;
+  font-size: 0.8rem;
+}
+.wrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 200px;
+  margin-bottom: 200px;
+  /* background-image: linear-gradient(to right bottom, #051937, #004d7a, #008793, #00bf72, #a8eb12); */
 }
 
 .recipe-inner {
@@ -29,6 +117,12 @@ li {
 
 .recipe-inner h1 {
   margin-bottom: 50px;
+  /* border-bottom: 3px dotted rgba(0, 0, 0, 0.6); */
+  padding-bottom: 20px;
+}
+
+.contnet-toggle {
+  display: none;
 }
 
 .contents {

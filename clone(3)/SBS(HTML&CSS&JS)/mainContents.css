@@ -361,6 +361,7 @@
 
 .slider02 {
   position: relative;
+  margin-bottom: 100px;
 }
 
 .slider02-header {
@@ -375,7 +376,7 @@
   cursor: pointer;
 }
 
-.slider02-header span:first-child::after {
+.v1 span:first-child::after {
   content: "";
   position: absolute;
   right: -17.5px;
@@ -443,6 +444,10 @@
   top: 0;
   left: 0;
   display: flex;
+}
+
+.slider02-page.animated {
+  transition: all 0.3s ease-out;
 }
 
 .slider02-content {
@@ -541,10 +546,11 @@
   left: 0;
   cursor: pointer;
   display: block;
+  font-size: 1.2rem;
 }
 
 .sldier02-playTalk .playTalk:hover {
-  width: 110px;
+  width: 130px;
   background: linear-gradient(to right, #f47499 75%, #7c79e9);
 }
 
@@ -569,14 +575,14 @@
   position: absolute;
   top: 50%;
   transform: translate(-100%, -100%);
-  left: 0;
+  left: -2%;
 }
 
 .right-arrows02 {
   position: absolute;
   top: 50%;
   transform: translate(50%, -100%);
-  right: 0;
+  right: -2%;
 }
 
 .prev02,
@@ -601,6 +607,11 @@
 }
 
 .next02 {
+}
+
+.right-arrows02 span,
+.left-arrows02 span {
+  visibility: hidden;
 }
 
 .next02::after,
@@ -640,4 +651,13 @@
 .prev02 .fa-solid,
 .next02 .fa-solid {
   font-size: 1.5rem;
+}
+
+.hidden {
+  display: none;
+}
+
+/* slider02 version2 */
+
+.version2 {
 }
