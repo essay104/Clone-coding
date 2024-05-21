@@ -1,0 +1,147 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.main-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 368px;
+  background-size: contain;
+  background-image: url("./bing/sec01_logo_5.png");
+  background-repeat: no-repeat;
+  background-position: top;
+}
+
+.main-logo img {
+  background-size: contain;
+}
+
+form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.main-search {
+  display: flex;
+  width: 1024px;
+  height: 80px;
+  background: #fff;
+  border-radius: 80px;
+  padding: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
+  justify-content: space-between;
+}
+
+.main-serachDIV {
+  margin-left: 70px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.main-serachDIV i {
+  font-size: 1.2rem;
+}
+
+.main-searchBar {
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  font-size: 1.2rem;
+  position: relative;
+}
+
+.main-searchBar::before {
+  content: "1";
+}
+
+.main-submit {
+  width: 180px;
+  height: 100%;
+  border-radius: 80px;
+  background: #e5352a;
+  border: none;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.main-tags {
+  display: flex;
+  gap: 5px;
+}
+
+.main-tags li {
+  cursor: pointer;
+  padding: 10px 20px;
+  border: 1px solid #f1eff1;
+  border-radius: 30px;
+  font-size: 0.8rem;
+}
+
+.slider-section {
+  width: 100%;
+  margin-top: 200px;
+  display: flex;
+  justify-content: center;
+}
+
+.slider01 {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.slider01-container {
+  width: 88.541%;
+  border: 1px solid #000;
+  display: flex;
+  justify-content: center;
+  overflow-x: hidden;
+}
+
+.slider01 h1 {
+  margin-bottom: 40px;
+}
+
+.slider01 ul {
+  display: flex;
+}
+
+.slider01-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  cursor: pointer;
+  transition: all 0.3s;
+  margin: 0 15px;
+}
+
+.slider01-card:hover {
+  transform: translateY(-5%);
+}
+
+.slider01-card img {
+  width: 100%;
+  height: 100%;
+}
+
+.slider01-card span {
+  width: 240px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 40px;
+  background: #f9f9f9;
+}
