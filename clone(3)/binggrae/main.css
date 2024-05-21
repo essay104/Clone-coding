@@ -136,7 +136,7 @@ form {
   width: 222px;
 }
 
-.slider01-card:hover {
+.version1:hover {
   transform: translateY(-5%);
 }
 
@@ -172,58 +172,85 @@ form {
   opacity: 0;
 }
 
-.slider01-card:hover span::after {
+.version1:hover span::after {
   opacity: 1;
 }
 
 /* slider02 */
 
 .version2 {
-  border: 1px solid #f8f7f8;
   border-radius: 30px;
   position: relative;
+  width: 222px;
+  height: 222px;
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
-  width: 240px;
-  height: 240px;
+  /* overflow: hidden; */
+}
+
+.visible {
+  width: 222px;
+  height: 222px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+  border: 1px solid #f8f7f8;
+  transition: all 1s;
+}
+
+.visible img {
+  width: 100%;
+  height: 100%;
+}
+
+.hidden {
+  width: 222px;
+  height: 222px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 35px;
+  position: absolute;
+  bottom: -100%;
+  transition: all 1s;
+}
+
+.hidden img {
+  margin-top: 35px;
+}
+
+.purchase {
+  display: inline-block;
+  width: 195px;
+  height: 40px;
+  background: #e5352a;
+  border-radius: 35px;
+  text-align: center;
+  color: #fff;
+  padding: 5px;
+  opacity: 0;
 }
 
 .version2:hover {
-  box-shadow: 0 0 15px rgba(125, 125, 125, 0.2);
-}
-
-.version2 .img-visible {
-  width: 240px;
-  height: 240px;
-}
-
-.version2 .hidden {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  opacity: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  text-align: center;
-  gap: 20px;
-  transform: translateY(50%);
-}
-
-.version2:hover .img-visible {
-  opacity: 0;
+  transform: translateY(-5%);
+  box-shadow: 0 0 10px rgba(125, 125, 125, 0.4);
 }
 
 .version2:hover .hidden {
-  opacity: 1;
-  transform: translateY(0%);
+  bottom: 0;
 }
 
-.img-hidden::before {
-  content: "";
-  position: absolute;
-  bottom: -20px;
-  width: 520px;
-  height: 200px;
-  background: #000;
+.version2:hover .visible {
+  border: none;
+}
+
+.version2:hover .visible img {
+  display: none;
+}
+
+.version2:hover .purchase {
+  opacity: 1;
 }
