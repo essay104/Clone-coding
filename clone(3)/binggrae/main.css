@@ -81,6 +81,8 @@ form {
   gap: 5px;
 }
 
+/* slider01 */
+
 .main-tags li {
   cursor: pointer;
   padding: 10px 20px;
@@ -94,6 +96,8 @@ form {
   margin-top: 200px;
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  gap: 50px;
 }
 
 .slider01 {
@@ -103,19 +107,23 @@ form {
 }
 
 .slider01-container {
-  width: 88.541%;
-  border: 1px solid #000;
+  width: 1452px;
+  height: 300px;
   display: flex;
   justify-content: center;
-  overflow-x: hidden;
+  overflow-x: clip;
+  position: relative;
 }
 
 .slider01 h1 {
   margin-bottom: 40px;
 }
 
-.slider01 ul {
+.slider01-container ul {
   display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .slider01-card {
@@ -123,8 +131,9 @@ form {
   flex-direction: column;
   gap: 10px;
   cursor: pointer;
-  transition: all 0.3s;
-  margin: 0 15px;
+  transition: all 0.5s;
+  margin: 0 10px;
+  width: 222px;
 }
 
 .slider01-card:hover {
@@ -132,16 +141,89 @@ form {
 }
 
 .slider01-card img {
-  width: 100%;
-  height: 100%;
+  width: 222px;
+  height: 222px;
 }
 
 .slider01-card span {
-  width: 240px;
+  width: 222px;
   height: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 40px;
   background: #f9f9f9;
+  position: relative;
+  overflow: hidden;
+}
+
+.slider01-card span::after {
+  content: "View more";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: #e5352a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  opacity: 0;
+}
+
+.slider01-card:hover span::after {
+  opacity: 1;
+}
+
+/* slider02 */
+
+.version2 {
+  border: 1px solid #f8f7f8;
+  border-radius: 30px;
+  position: relative;
+  overflow: hidden;
+  width: 240px;
+  height: 240px;
+}
+
+.version2:hover {
+  box-shadow: 0 0 15px rgba(125, 125, 125, 0.2);
+}
+
+.version2 .img-visible {
+  width: 240px;
+  height: 240px;
+}
+
+.version2 .hidden {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  gap: 20px;
+  transform: translateY(50%);
+}
+
+.version2:hover .img-visible {
+  opacity: 0;
+}
+
+.version2:hover .hidden {
+  opacity: 1;
+  transform: translateY(0%);
+}
+
+.img-hidden::before {
+  content: "";
+  position: absolute;
+  bottom: -20px;
+  width: 520px;
+  height: 200px;
+  background: #000;
 }
