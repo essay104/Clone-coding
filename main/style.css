@@ -1,0 +1,177 @@
+@import url("./reset.css");
+
+.container {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+/* header */
+
+header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url("./imgs/pngwing.com\ \(2\).png") bottom/contain no-repeat;
+  background-position: 140%;
+  filter: saturate(0.2);
+}
+
+.main-header {
+  width: calc(100% - 48px);
+  height: 80px;
+  background: #000;
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translate(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-header .main-header-menu {
+  display: flex;
+  gap: 50px;
+  padding: 10px;
+  color: #fff;
+  font-family: "Noto Sans KR", sans-serif;
+  color: var(--header-color);
+  font-weight: 600;
+}
+
+.main-header .main-header-menu li {
+  transition: all 0.3s;
+  position: relative;
+  text-transform: uppercase;
+}
+
+.main-header .main-header-menu li::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background: #fff;
+  bottom: -30%;
+  left: 0;
+  transition: all 0.3s;
+}
+
+.main-header .main-header-menu li:hover {
+  color: #fff;
+}
+
+.main-header .main-header-menu li:hover::after {
+  width: 100%;
+}
+
+/* IntroSection */
+
+.intro-section {
+  width: calc(100% - 48px);
+  height: 850px;
+  margin-top: 120px;
+  position: relative;
+  overflow: hidden;
+}
+
+.intro-section .title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.intro-section .logo {
+  color: #fff;
+  font-size: 6rem;
+  font-family: "Gochi Hand", cursive;
+  /* box-shadow: 0 0 10px rgba(255, 255, 255, 0.4); */
+  padding: 30px;
+  border-radius: 10px;
+  transition: all 2s;
+  letter-spacing: -15px;
+}
+
+.logo span {
+  opacity: 0;
+}
+
+.logo span.active {
+  opacity: 1;
+}
+
+.title .introduce {
+  color: #fff;
+  text-align: center;
+  font-weight: bold;
+}
+
+.intro-section .logo-bg {
+  width: 1000px;
+  height: 450px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -9;
+}
+
+.intro-section .logo-bg img {
+  width: 100%;
+  height: 100%;
+}
+
+.down-page {
+  color: #fff;
+  cursor: pointer;
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  font-size: 25px;
+  align-items: center;
+}
+
+.down-page .click {
+  text-transform: uppercase;
+  transition: all 0.3s;
+}
+
+.down-page .click:hover {
+  scale: 1.05;
+  transform: translateY(-20%);
+}
+
+.down-page .fa-computer-mouse {
+  animation: mouse-anime 3s infinite linear;
+}
+
+@keyframes mouse-anime {
+  0% {
+    transform: translateY(10%);
+  }
+  50% {
+    transform: translateY(-30%);
+  }
+  100% {
+    transform: translateY(10%);
+  }
+}
+
+/* main */
+
+main {
+  width: 100%;
+  height: 100vh;
+  background: #eee;
+}
+
+.main-container {
+  width: calc(100% - 88px);
+  height: 100%;
+  margin: 0 auto;
+}
