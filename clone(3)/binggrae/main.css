@@ -1,4 +1,5 @@
-.main {
+main {
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -16,10 +17,7 @@
   background-image: url("./bing/sec01_logo_5.png");
   background-repeat: no-repeat;
   background-position: top;
-}
-
-.main-logo img {
-  background-size: contain;
+  border: 1px solid #000;
 }
 
 form {
@@ -30,7 +28,8 @@ form {
 
 .main-search {
   display: flex;
-  width: 1024px;
+  width: 80%;
+  max-width: 1024px;
   height: 80px;
   background: #fff;
   border-radius: 80px;
@@ -185,7 +184,6 @@ form {
   height: 222px;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
   /* overflow: hidden; */
 }
 
@@ -217,7 +215,6 @@ form {
   bottom: -100%;
   transition: all 1s;
 }
-
 .hidden img {
   margin-top: 35px;
 }
@@ -239,18 +236,138 @@ form {
   box-shadow: 0 0 10px rgba(125, 125, 125, 0.4);
 }
 
-.version2:hover .hidden {
-  bottom: 0;
+/* QA Section */
+
+.QA-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.version2:hover .visible {
-  border: none;
+.QA-section > h1 {
+  margin-bottom: 150px;
 }
 
-.version2:hover .visible img {
-  display: none;
+.QA-container {
+  width: 68.22%;
+  min-width: 1310px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 20px rgba(125, 125, 125, 0.6);
+  padding: 50px;
+  border-radius: 50px;
+  flex-direction: column;
 }
 
-.version2:hover .purchase {
-  opacity: 1;
+.QA-method {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.QA-mathod-first {
+  /* width: calc((100% / 2) - 35px); */
+  width: 590px;
+  background: url("/bing/sec04_backimg01.png") center/cover no-repeat;
+  padding: 55px 45px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  justify-content: start;
+  border-radius: 30px;
+}
+
+.QA-method-first-content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.QA-method-first-content > h1 {
+  font-size: 2rem;
+}
+
+.QA-method-first-content:nth-child(2) {
+  font-size: 12px;
+}
+
+.QA-consultant {
+  margin-top: 40px;
+  color: #fff;
+  background: #e5352a;
+  display: inline-block;
+  padding: 10px;
+  width: 160px;
+  text-align: center;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.QA-method-second {
+  width: 590px;
+  background: url("/bing/sec04_backimg02.png") center/cover no-repeat;
+  padding: 55px 45px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: start;
+  border-radius: 30px;
+}
+
+.QA-method-second > h1 {
+  font-size: 2rem;
+}
+
+.QA-number > p {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.QA-time {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.QA-time p:first-child {
+  font-size: 1rem;
+}
+
+.QA-time p:nth-child(2) {
+  font-size: 0.9rem;
+  color: #e5352a;
+  font-weight: bold;
+}
+
+.QA-toggle {
+  margin-top: 50px;
+}
+
+/* report section */
+
+.report {
+  width: 100%;
+  margin-top: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 45px;
+}
+
+.report-content {
+  width: 68.22%;
+  min-width: 1310px;
+  display: flex;
+  gap: 10px;
+}
+
+.reports {
+  width: calc(100% / 2);
+  padding: 60px;
+  border-radius: 20px;
+  background: #F9F9F9;
 }
