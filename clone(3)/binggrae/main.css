@@ -4,99 +4,22 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 30px;
-}
-
-.main-logo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 368px;
-  background-size: contain;
-  background-image: url("./bing/sec01_logo_5.png");
-  background-repeat: no-repeat;
-  background-position: top;
-  border: 1px solid #000;
-}
-
-form {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-
-.main-search {
-  display: flex;
-  width: 80%;
-  max-width: 1024px;
-  height: 80px;
-  background: #fff;
-  border-radius: 80px;
-  padding: 10px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
-  justify-content: space-between;
-}
-
-.main-serachDIV {
-  margin-left: 70px;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.main-serachDIV i {
-  font-size: 1.2rem;
-}
-
-.main-searchBar {
-  width: 100%;
-  height: 100%;
-  border: none;
-  outline: none;
-  font-size: 1.2rem;
-  position: relative;
-}
-
-.main-searchBar::before {
-  content: "1";
-}
-
-.main-submit {
-  width: 180px;
-  height: 100%;
-  border-radius: 80px;
-  background: #e5352a;
-  border: none;
-  color: #fff;
-  font-weight: bold;
-  font-size: 1.1rem;
-  cursor: pointer;
-}
-
-.main-tags {
-  display: flex;
-  gap: 5px;
 }
 
 /* slider01 */
 
-.main-tags li {
-  cursor: pointer;
-  padding: 10px 20px;
-  border: 1px solid #f1eff1;
-  border-radius: 30px;
-  font-size: 0.8rem;
+.sec-title {
+  font-size: 2.375rem;
 }
 
 .slider-section {
   width: 100%;
-  margin-top: 200px;
+  margin: 0 auto 140px;
   display: flex;
   justify-content: center;
   flex-direction: column;
-  gap: 50px;
+  gap: 100px;
+  border: 1px solid #000;
 }
 
 .slider01 {
@@ -106,7 +29,8 @@ form {
 }
 
 .slider01-container {
-  width: 1452px;
+  width: 100%;
+  max-width: 1650px;
   height: 300px;
   display: flex;
   justify-content: center;
@@ -131,8 +55,8 @@ form {
   gap: 10px;
   cursor: pointer;
   transition: all 0.5s;
-  margin: 0 10px;
-  width: 222px;
+  margin: 0 7px;
+  width: 260px;
 }
 
 .version1:hover {
@@ -140,12 +64,11 @@ form {
 }
 
 .slider01-card img {
-  width: 222px;
-  height: 222px;
+  width: 100%;
 }
 
 .slider01-card span {
-  width: 222px;
+  width: 260px;
   height: 40px;
   display: flex;
   justify-content: center;
@@ -180,10 +103,10 @@ form {
 .version2 {
   border-radius: 30px;
   position: relative;
-  width: 222px;
-  height: 222px;
+  width: 260px;
   display: flex;
   flex-direction: column;
+  border: 1px solid #eee;
   /* overflow: hidden; */
 }
 
@@ -204,7 +127,7 @@ form {
   height: 100%;
 }
 
-.hidden {
+/* .hidden {
   width: 222px;
   height: 222px;
   display: flex;
@@ -217,7 +140,7 @@ form {
 }
 .hidden img {
   margin-top: 35px;
-}
+} */
 
 .purchase {
   display: inline-block;
@@ -244,6 +167,7 @@ form {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  border: 1px solid #000;
 }
 
 .QA-section > h1 {
@@ -304,6 +228,7 @@ form {
   text-align: center;
   border-radius: 20px;
   cursor: pointer;
+  font-size: 0.8rem;
 }
 
 .QA-method-second {
@@ -427,22 +352,47 @@ form {
   width: 100%;
   margin-top: 150px;
   display: flex;
-  justify-content: center;
   align-items: center;
   flex-direction: column;
   gap: 45px;
+  border: 1px solid #000;
 }
 
 .report-content {
   width: 68.22%;
   min-width: 1310px;
   display: flex;
-  gap: 10px;
+  gap: 20px;
+  justify-content: space-between;
 }
 
 .reports {
-  width: calc(100% / 2);
+  width: 48%;
   padding: 60px;
   border-radius: 20px;
   background: #f9f9f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
 }
+
+.reports p {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.report-btn {
+  margin-top: 40px;
+  color: #fff;
+  background: #e5352a;
+  display: inline-block;
+  padding: 10px;
+  width: 160px;
+  text-align: center;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
