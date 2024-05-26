@@ -29,6 +29,7 @@ body {
   height: 120px;
   border-bottom: 1px solid #ddd;
   z-index: -1;
+  background: #1f1f1f;
 }
 
 .container {
@@ -36,13 +37,18 @@ body {
   display: flex;
   flex-direction: column;
   gap: 80px;
-  padding: 50px 75px
+  padding: 50px 75px;
 }
 
 .container form {
   display: flex;
   gap: 20px;
   height: 20px;
+}
+
+.container h1 {
+  color: #fff;
+  margin-left: 40rem;
 }
 
 .container input[type="text"] {
@@ -87,4 +93,42 @@ body {
   display: flex;
   flex-direction: column;
   gap: 10px;
+}
+
+.item {
+  padding: 10px;
+  background: #fff;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.08);
+  border-radius: 5px;
+  text-align: center;
+  transition: all 0.3s;
+  cursor: pointer;
+  color: #1a1a1a;
+}
+
+.item:hover {
+  background: #eee;
+}
+
+#done div {
+  color: #eee;
+  background: #2db400;
+}
+
+#fail div {
+  color: #eee;
+  background: crimson;
+}
+
+.info {
+  position: absolute;
+  bottom: 20px;
+  color: #fff;
+  right: 14%;
+}
+
+@media screen and (max-width: 1100px) {
+  .info {
+    display: none;
+  }
 }
