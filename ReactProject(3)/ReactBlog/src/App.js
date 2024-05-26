@@ -1,14 +1,22 @@
-import "./App.css";
-import { Route, Routes } from "react-router-dom";
-import Profile from "./Profile";
-import MainContents from "./MainContents";
+
+import { Routes, Route, BrowserRouter } from "react-router-dom";
+import Edit from "./pages/Edit";
+import Home from "./pages/Home";
+import New from "./pages/New";
+import Diary from "./pages/Diary";
+import { ThemeProvider } from "styled-components";
+import { theme } from "./theme";
 
 function App() {
   return (
-    <div className="App">
-      <Profile />
-      <MainContents />
-    </div>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/new" element={<New />} />
+          <Route path="/diary/:id" element={<Diary />} />
+          <Route path="/edit/:id" element={<Edit />} />
+        </Routes>
+      </BrowserRouter>
   );
 }
 
