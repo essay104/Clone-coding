@@ -1,13 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { click } from "@testing-library/user-event/dist/click";
 
 const HeaderBox = styled.div`
   width: calc(100% - 48px);
   height: 80px;
-  background: #000;
+  background: ${({ theme }) => theme.mainHeaderColor};
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.8);
   position: fixed;
   top: 20px;
@@ -35,7 +34,7 @@ const HeaderList = styled.ul`
       position: absolute;
       width: 0%;
       height: 2px;
-      background: #fff;
+      background: ${({ theme }) => theme.fontColor};
       bottom: -30%;
       left: 0;
       transition: all 0.3s;
@@ -44,40 +43,46 @@ const HeaderList = styled.ul`
       width: 100%;
     }
     &:hover {
-      color: #fff;
+      color: ${({ theme }) => theme.fontColor};
     }
   }
 `;
 
 const ModeChange = styled(motion.div)`
   position: absolute;
-  right: 5%;
+  right: 20px;
   bottom: 50%;
   transform: translateY(50%);
-  width: 60px;
-  height: 20px;
-  border-radius: 10px;
+  width: 50px;
+  height: 25px;
+  border-radius: 12.5px;
   background-color: #ddd;
   display: flex;
   align-items: center;
+  justify-content: ${(props) => props.justifyContent};
   overflow: hidden;
   cursor: pointer;
   border: none;
   padding: 2px;
   & span {
-    width: 18px;
-    height: 18px;
-    border-radius: 100%;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
     background-color: #1b1b1b;
     border: none;
   }
 `;
 
-const onClickVariant = {
-  click: { right: "20px" },
-};
+const Header = ({ toggleTheme }) => {
+  const [justifyContent, setJustifyContent] = useState("flex-start");
 
-const Header = () => {
+  const modeHandler = () => {
+    setJustifyContent(
+      justifyContent === "flex-start" ? "flex-end" : "flex-start"
+    );
+    toggleTheme();
+  };
+
   return (
     <div>
       <HeaderBox>
@@ -98,8 +103,14 @@ const Header = () => {
             <Link to="/epilogue">Epilogue</Link>
           </li>
         </HeaderList>
-        <ModeChange whileDrag={{ right: "20px" }} initial="start" animate="end">
-          <span />
+        <ModeChange
+          onClick={() => modeHandler()}
+          justifyContent={justifyContent}
+        >
+          <span
+            layout
+            transition={{ type: "spring", stiffness: 300, damping: 20 }}
+          />
         </ModeChange>
       </HeaderBox>
     </div>

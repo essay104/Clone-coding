@@ -6,7 +6,6 @@ import mainBg from "../imgs/mainbg.png";
 const HomeContainer = styled.div`
   width: 100%;
   height: 100vh;
-  background: #1b1b1b;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -18,26 +17,24 @@ const HomeContainer = styled.div`
   flex-direction: column;
   gap: 20px;
   p {
-    color: #fff;
+    color: ${({ theme }) => theme.fontColor};
     text-align: center;
     font-weight: bold;
+    text-transform: uppercase;
   }
 `;
 
 const HomeLogo = styled.span`
-  color: #fff;
+  color: ${({ theme }) => theme.fontColor};
   font-size: 6rem;
-  font-family: "Gochi Hand", cursive;
+  font-family: "Playfair Display";
 `;
-
-const HomeIntroduce = styled.p``;
 
 const Home = () => {
   return (
     <HomeContainer>
-      <Header />
       <HomeLogo>PORTFOLIO</HomeLogo>
-      <p>안녕하세요 신입 퍼블리셔를 꿈꾸는 김사도입니다!</p>
+      <p>no pain no gain</p>
     </HomeContainer>
   );
 };

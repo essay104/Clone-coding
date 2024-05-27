@@ -1,0 +1,84 @@
+@import url("./reset.css");
+
+.container {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.picture-container {
+  width: 100%;
+  height: 510px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.picture-container img {
+  margin-left: 5%;
+}
+
+.main-container p {
+  font-size: 2.5rem;
+  color: #fff;
+  white-space: nowrap;
+  position: absolute;
+  z-index: 99;
+  top: 60%;
+}
+
+.contents {
+  width: 942px;
+  height: 215px;
+  background: #fff;
+  transform: translateY(-100%);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 50px;
+  font-size: 26px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+  border-radius: 5px;
+}
+
+.my-info {
+  display: flex;
+  flex-direction: column;
+  gap: 58px;
+  justify-content: center;
+  align-items: center;
+}
+
+.edu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+}
+
+.edu-title,
+.info-title {
+  font-size: 18px;
+  color: #777;
+}
+
+.edu-detail {
+  display: flex;
+  gap: 30px;
+}
+
+.edu-year {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.edu-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
