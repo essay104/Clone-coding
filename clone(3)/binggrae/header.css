@@ -24,6 +24,7 @@ header {
   width: 0.8rem;
   height: 0.8rem;
 }
+
 .header-section {
   width: 92.7%;
   margin: 0 auto;
@@ -43,6 +44,10 @@ header {
 
 .header-logo {
   cursor: pointer;
+}
+
+.m-header-logo {
+  display: none;
 }
 
 .header-gnb {
@@ -79,7 +84,6 @@ header {
   cursor: pointer;
 }
 
-
 .main-logo {
   display: flex;
   justify-content: center;
@@ -91,10 +95,6 @@ header {
 .main-logo img {
   max-width: 100%;
   vertical-align: top;
-}
-
-.m-logo {
-  display: none;
 }
 
 form {

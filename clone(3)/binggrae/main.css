@@ -18,8 +18,7 @@ main {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  gap: 100px;
-  border: 1px solid #000;
+  gap: 200px;
 }
 
 .slider01 {
@@ -167,11 +166,10 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 1px solid #000;
 }
 
 .QA-section > h1 {
-  margin-bottom: 150px;
+  margin-bottom: 40px;
 }
 
 .QA-container {
@@ -195,7 +193,10 @@ main {
 .QA-mathod-first {
   /* width: calc((100% / 2) - 35px); */
   width: 590px;
-  background: url("/bing/sec04_backimg01.png") center/cover no-repeat;
+  background-image: url("./bing/sec04_backimg01.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right;
   padding: 55px 45px;
   display: flex;
   flex-direction: column;
@@ -207,7 +208,7 @@ main {
 .QA-method-first-content {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 15px;
 }
 
 .QA-method-first-content > h1 {
@@ -233,7 +234,10 @@ main {
 
 .QA-method-second {
   width: 590px;
-  background: url("/bing/sec04_backimg02.png") center/cover no-repeat;
+  background-image: url("./bing/sec04_backimg02.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right;
   padding: 55px 45px;
   display: flex;
   flex-direction: column;
@@ -355,7 +359,6 @@ main {
   align-items: center;
   flex-direction: column;
   gap: 45px;
-  border: 1px solid #000;
 }
 
 .report-content {
@@ -395,4 +398,3 @@ main {
   cursor: pointer;
   font-size: 0.8rem;
 }
-

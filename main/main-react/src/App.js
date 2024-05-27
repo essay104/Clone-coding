@@ -7,6 +7,7 @@ import Skill from "./pages/Skill";
 import Production from "./pages/Production";
 import Epilogue from "./pages/Epilogue";
 import Reset from "./Reset";
+import Aside from "./component/Aside";
 import { theme } from "./theme";
 import { ThemeProvider } from "styled-components";
 

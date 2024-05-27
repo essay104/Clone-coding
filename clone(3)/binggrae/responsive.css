@@ -1,0 +1,190 @@
+@media screen and (max-width: 1340px) {
+  .header-gnb ul {
+    display: flex;
+    gap: 40px;
+    font-size: 0.8rem;
+    font-weight: 500;
+  }
+
+  .slider01-card {
+    width: 195px;
+  }
+
+  .slider-section {
+    gap: 50px;
+    margin: 0 auto 0px;
+  }
+
+  .slider01-card span {
+    width: 195px;
+    height: 40px;
+  }
+
+  .QA-container {
+    width: 68.22%;
+    min-width: 1024px;
+  }
+
+  .QA-mathod-first {
+    /* width: calc((100% / 2) - 35px); */
+    width: 48%;
+    font-size: 0.8rem;
+    padding: 30px;
+  }
+
+  .QA-method-second {
+    width: 48%;
+    padding: 30px;
+  }
+
+  .QA-method-first-content > h1 {
+    font-size: 1.5rem;
+  }
+
+  .QA-method-second > h1 {
+    font-size: 1.5rem;
+  }
+
+  .report-content {
+    min-width: 1024px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .header-gnb ul {
+    gap: 14px;
+    font-size: 0.8rem;
+  }
+
+  .main-search {
+    height: 60px;
+  }
+  .slider-section {
+    gap: 0px;
+  }
+
+  .slider01-card {
+    width: 139px;
+  }
+
+  .slider01-card span {
+    width: 139px;
+  }
+
+  .QA-container {
+    min-width: 768px;
+  }
+
+  .QA-mathod-first {
+    /* width: calc((100% / 2) - 35px); */
+    width: 50%px;
+  }
+
+  .QA-method-second {
+    width: 50%;
+  }
+
+  .QA-number > p {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+
+  .QA-toggle-header > h2 {
+    font-size: 1rem;
+    font-weight: bold;
+  }
+
+  .QA-toggles {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .QA-left {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .QA-right {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .QA-menu {
+    height: 60px;
+  }
+
+  .report-content {
+    min-width: 768px;
+  }
+
+  .reports p {
+    font-size: 0.7rem;
+    font-weight: 600;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header-section {
+    gap: 0px;
+  }
+  .header-gnb ul {
+    display: none;
+  }
+
+  .pc-header-logo {
+    display: none;
+  }
+
+  .m-header-logo {
+    display: block;
+  }
+
+  form {
+    gap: 30px;
+  }
+
+  .main-tags li {
+    font-size: 0.6rem;
+    padding: 5px;
+    width: 80px;
+  }
+
+  .slider01 h1 {
+    font-size: 1.5rem;
+  }
+
+  .QA-section h1 {
+    font-size: 1.5rem;
+  }
+
+  .reports h1 {
+    font-size: 1.5rem;
+  }
+
+  .QA-container {
+    min-width: 390px;
+    display: flex;
+  }
+
+  .QA-method {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .QA-mathod-first {
+    /* width: calc((100% / 2) - 35px); */
+    width: 100%;
+    height: 200px;
+  }
+  .QA-method-second {
+    /* width: calc((100% / 2) - 35px); */
+    width: 100%;
+    height: 200px;
+  }
+}

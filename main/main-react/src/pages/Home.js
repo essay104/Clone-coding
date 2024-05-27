@@ -17,27 +17,27 @@ const HomeContainer = styled.div`
   background-size: contain;
   flex-direction: column;
   gap: 20px;
+  p {
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+  }
 `;
 
 const HomeLogo = styled.span`
   color: #fff;
   font-size: 6rem;
+  font-family: "Gochi Hand", cursive;
 `;
 
-const HomeIntroduce = styled.p`
-  color: #fff;
-  text-align: center;
-  font-weight: bold;
-`;
+const HomeIntroduce = styled.p``;
 
 const Home = () => {
   return (
     <HomeContainer>
       <Header />
       <HomeLogo>PORTFOLIO</HomeLogo>
-      <HomeIntroduce>
-        안녕하세요 신입 퍼블리셔를 꿈꾸는 김사도입니다!
-      </HomeIntroduce>
+      <p>안녕하세요 신입 퍼블리셔를 꿈꾸는 김사도입니다!</p>
     </HomeContainer>
   );
 };
