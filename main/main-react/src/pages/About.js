@@ -15,11 +15,11 @@ const Profile = styled.div`
   width: 100%;
   height: 510px;
   display: flex;
-  justify-content: start;
+  justify-content: center;
   position: relative;
   transform: translateY(25%);
   img {
-    margin-left: 5%;
+    margin-left: 0%;
   }
   p {
     font-size: 2.5rem;
