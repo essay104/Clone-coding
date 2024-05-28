@@ -94,9 +94,6 @@ const Header = ({ toggleTheme }) => {
             <Link to="/about">About</Link>
           </li>
           <li>
-            <Link to="/skill">Skill</Link>
-          </li>
-          <li>
             <Link to="/production">Production</Link>
           </li>
           <li>

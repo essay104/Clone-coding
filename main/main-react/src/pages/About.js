@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import person from "../imgs/person.png";
+import Skill from "../component/Skill";
 
 const Container = styled.div`
   width: 100%;
@@ -9,6 +10,8 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  padding-top: 350px;
 `;
 
 const Profile = styled.div`
@@ -33,7 +36,7 @@ const Profile = styled.div`
 
 const MainProfile = styled.div`
   width: 942px;
-  height: 215px;
+  height: 185px;
   background: #fff;
   transform: translateY(5%);
   display: flex;
@@ -79,6 +82,15 @@ const EduInfo = styled.div`
   gap: 10px;
 `;
 
+const SkillBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  margin-top: 100px;
+  padding-bottom: 50px;
+`;
+
 const About = () => {
   return (
     <Container>
@@ -109,6 +121,9 @@ const About = () => {
           </Edu>
         </MainProfile>
       </div>
+      <SkillBox>
+        <Skill></Skill>
+      </SkillBox>
     </Container>
   );
 };

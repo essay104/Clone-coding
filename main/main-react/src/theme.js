@@ -1,8 +1,8 @@
 export const theme = {};
 
 export const lightTheme = {
-  mainHeaderColor: "#eee",
-  body: "#fff",
+  mainHeaderColor: "#fff",
+  body: "#eee",
   fontColor: "#333",
   fontColor2: "#72869f",
 };
