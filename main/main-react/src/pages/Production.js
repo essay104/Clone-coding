@@ -1,297 +1,259 @@
 import React, { useState, useEffect } from "react";
 import { Desktop, Tablet } from "../MediaQueries";
-
 import styled from "styled-components";
 import SkillsMini from "../component/SkillsMini";
-import fakeimg from "../imgs/img.jpg";
-import smartPhone from "../imgs/smartMockup.png";
-import exampleImg from "../imgs/exampleHTML.png";
+import ImageManager from "../component/imgs";
+import {
+  motion,
+  AnimatePresence,
+  useMotionValue,
+  useTransform,
+  useScroll,
+} from "framer-motion";
 
 const Production = () => {
-  const [project, setProjects] = useState([]);
-
+  const [project, setProjects] = useState();
   const getProjects = async () => {
-    const url = "http://localhost:3001/projects";
+    const url = `https://my-json-server.typicode.com/essay104/json/db`;
     const response = await fetch(url);
     const data = await response.json();
     setProjects(data);
+    console.log(data);
   };
 
   useEffect(() => {
     getProjects();
   }, []);
 
+  const [visible, setVisible] = useState(1);
+  const [back, setBack] = useState(false);
+  const prevPlease = () => {
+    setBack(true);
+    setVisible((prev) => (prev === 1 ? 10 : prev - 1));
+  };
+  const nextPlease = () => {
+    setBack(false);
+    setVisible((prev) => (prev === 10 ? 1 : prev + 1));
+  };
+
   return (
     <>
-      <Desktop>
-        <Container>
-          <HTMLContainer>
-            <h1>HTML & CSS Projects</h1>
-            <HTMLContents>
-              <div>
-                <HTMLObject>
-                  <HTMLImg>
-                    <img src={project.src} alt={project.name} />
-                  </HTMLImg>
-                  <HTMLTitle>
-                    <span>HTML Title</span>
-                    <div>
-                      <SkillsMini skillName="HTML" />
-                      <SkillsMini skillName="CSS" />
-                      <SkillsMini skillName="JS" />
-                    </div>
-                  </HTMLTitle>
-                </HTMLObject>
-                <HTMLObject>
-                  <HTMLImg>
-                    <img src={fakeimg} alt="HTML01" />
-                  </HTMLImg>
-                  <HTMLTitle>
-                    <span>HTML Title</span>
-                    <div>
-                      <SkillsMini skillName="HTML" />
-                      <SkillsMini skillName="CSS" />
-                      <SkillsMini skillName="JS" />
-                    </div>
-                  </HTMLTitle>
-                </HTMLObject>
-                <HTMLObject>
-                  <HTMLImg>
-                    <img src={fakeimg} alt="HTML01" />
-                  </HTMLImg>
-                  <HTMLTitle>
-                    <span>HTML Title</span>
-                    <div>
-                      <SkillsMini skillName="HTML" />
-                      <SkillsMini skillName="CSS" />
-                      <SkillsMini skillName="JS" />
-                    </div>
-                  </HTMLTitle>
-                </HTMLObject>
-              </div>
-              <div>
-                <HTMLObject>
-                  <HTMLImg>
-                    <img src={fakeimg} alt="HTML01" />
-                  </HTMLImg>
-                  <HTMLTitle>
-                    <span>HTML Title</span>
-                    <div>
-                      <SkillsMini skillName="HTML" />
-                      <SkillsMini skillName="CSS" />
-                      <SkillsMini skillName="JS" />
-                    </div>
-                  </HTMLTitle>
-                </HTMLObject>
-                <HTMLObject>
-                  <HTMLImg>
-                    <img src={fakeimg} alt="HTML01" />
-                  </HTMLImg>
-                  <HTMLTitle>
-                    <span>HTML Title</span>
-                    <div>
-                      <SkillsMini skillName="HTML" />
-                      <SkillsMini skillName="CSS" />
-                      <SkillsMini skillName="JS" />
-                    </div>
-                  </HTMLTitle>
-                </HTMLObject>
-                <HTMLObject>
-                  <HTMLImg>
-                    <img src={fakeimg} alt="HTML01" />
-                  </HTMLImg>
-                  <HTMLTitle>
-                    <span>HTML Title</span>
-                    <div>
-                      <SkillsMini skillName="HTML" />
-                      <SkillsMini skillName="CSS" />
-                      <SkillsMini skillName="JS" />
-                    </div>
-                  </HTMLTitle>
-                </HTMLObject>
-              </div>
-              <div>
-                <HTMLObject>
-                  <HTMLImg>
-                    <img src={fakeimg} alt="HTML01" />
-                  </HTMLImg>
-                  <HTMLTitle>
-                    <span>HTML Title</span>
-                    <div>
-                      <SkillsMini skillName="HTML" />
-                      <SkillsMini skillName="CSS" />
-                      <SkillsMini skillName="JS" />
-                    </div>
-                  </HTMLTitle>
-                </HTMLObject>
-                <HTMLObject>
-                  <HTMLImg>
-                    <img src={fakeimg} alt="HTML01" />
-                  </HTMLImg>
-                  <HTMLTitle>
-                    <span>HTML Title</span>
-                    <div>
-                      <SkillsMini skillName="HTML" />
-                      <SkillsMini skillName="CSS" />
-                      <SkillsMini skillName="JS" />
-                    </div>
-                  </HTMLTitle>
-                </HTMLObject>
-                <HTMLObject>
-                  <HTMLImg>
-                    <img src={fakeimg} alt="HTML01" />
-                  </HTMLImg>
-                  <HTMLTitle>
-                    <span>HTML Title</span>
-                    <div>
-                      <SkillsMini skillName="HTML" />
-                      <SkillsMini skillName="CSS" />
-                      <SkillsMini skillName="JS" />
-                    </div>
-                  </HTMLTitle>
-                </HTMLObject>
-              </div>
-            </HTMLContents>
-          </HTMLContainer>
-          <MobileContainer>
-            <h1>Mobile Projects</h1>
-            <MobileContents>
-              <MobileImg>
-                <img src={smartPhone} alt="smart" />
-              </MobileImg>
-              <Mobileinfo>
-                <h2>Mobile Title</h2>
-                <p>
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Aspernatur esse consequatur, delectus asperiores mollitia
-                  nihil excepturi facilis explicabo maiores praesentium,
-                  suscipit neque dolores blanditiis recusandae dolorem, repellat
-                  consectetur nobis earum.
-                </p>
-              </Mobileinfo>
-              <MobileStyle />
-            </MobileContents>
-            <MobileContents>
-              <MobileImg>
-                <img src={smartPhone} alt="smart" />
-              </MobileImg>
-              <Mobileinfo>
-                <h2>Mobile Title</h2>
-                <p>
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Aspernatur esse consequatur, delectus asperiores mollitia
-                  nihil excepturi facilis explicabo maiores praesentium,
-                  suscipit neque dolores blanditiis recusandae dolorem, repellat
-                  consectetur nobis earum.
-                </p>
-              </Mobileinfo>
-              <MobileStyle />
-            </MobileContents>
-          </MobileContainer>
-          <CloneContainer>
-            <h1>Clone Projects</h1>
-            <CloneContents>
-              <CloneContent>
-                <CloneImg>
-                  <img src={exampleImg} alt="img" />
-                </CloneImg>
-                <CloneSize>
-                  <li>1920px</li>
-                  <li>768px</li>
-                  <li>390px</li>
-                </CloneSize>
-                <CloneDetail>
-                  <h3>Project name</h3>
-                  <p>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                    Aspernatur esse consequatur, delectus asperiores mollitia
-                    nihil excepturi facilis explicabo maiores praesentium,
-                    suscipit neque dolores blanditiis recusandae dolorem,
-                    repellat consectetur nobis earum.
-                  </p>
-                </CloneDetail>
-              </CloneContent>
-              <CloneContent>
-                <CloneImg>
-                  <img src={exampleImg} alt="img" />
-                </CloneImg>
-                <CloneSize>
-                  <li>1920px</li>
-                  <li>768px</li>
-                  <li>390px</li>
-                </CloneSize>
-                <CloneDetail>
-                  <h3>Project name</h3>
-                  <p>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                    Aspernatur esse consequatur, delectus asperiores mollitia
-                    nihil excepturi facilis explicabo maiores praesentium,
-                    suscipit neque dolores blanditiis recusandae dolorem,
-                    repellat consectetur nobis earum.
-                  </p>
-                </CloneDetail>
-              </CloneContent>
-              <CloneContent>
-                <CloneImg>
-                  <img src={exampleImg} alt="img" />
-                </CloneImg>
-                <CloneSize>
-                  <li>1920px</li>
-                  <li>768px</li>
-                  <li>390px</li>
-                </CloneSize>
-                <CloneDetail>
-                  <h3>Project name</h3>
-                  <p>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                    Aspernatur esse consequatur, delectus asperiores mollitia
-                    nihil excepturi facilis explicabo maiores praesentium,
-                    suscipit neque dolores blanditiis recusandae dolorem,
-                    repellat consectetur nobis earum.
-                  </p>
-                </CloneDetail>
-              </CloneContent>
-            </CloneContents>
-          </CloneContainer>
-        </Container>
-      </Desktop>
-      <Tablet>
+      <Container>
+        <HTMLContainer>
+          <h1>HTML & CSS Projects</h1>
+          <HTMLContents>
+            <div>
+              <HTMLObject>
+                <HTMLImg>
+                  <ImageManager imageKey="html01" />
+                </HTMLImg>
+                <HTMLTitle>
+                  <span>회전 애니메이션</span>
+                  <div>
+                    <SkillsMini skillName="HTML" />
+                    <SkillsMini skillName="CSS" />
+                  </div>
+                </HTMLTitle>
+              </HTMLObject>
+              <HTMLObject>
+                <HTMLImg>
+                  <ImageManager imageKey="html02" />
+                </HTMLImg>
+                <HTMLTitle>
+                  <span>무한 슬라이더</span>
+                  <div>
+                    <SkillsMini skillName="HTML" />
+                    <SkillsMini skillName="CSS" />
+                    <SkillsMini skillName="JS" />
+                  </div>
+                </HTMLTitle>
+              </HTMLObject>
+              <HTMLObject>
+                <HTMLImg>
+                  <ImageManager imageKey="html03" />
+                </HTMLImg>
+                <HTMLTitle>
+                  <span>리그 테이블 JSON</span>
+                  <div>
+                    <SkillsMini skillName="JS" />
+                    <SkillsMini skillName="JSON" />
+                  </div>
+                </HTMLTitle>
+              </HTMLObject>
+            </div>
+            <div>
+              <HTMLObject>
+                <HTMLImg>
+                  <ImageManager imageKey="html04" />
+                </HTMLImg>
+                <HTMLTitle>
+                  <span>카카오 맛집 API</span>
+                  <div>
+                    <SkillsMini skillName="CSS" />
+                    <SkillsMini skillName="JS" />
+                    <SkillsMini skillName="API" />
+                  </div>
+                </HTMLTitle>
+              </HTMLObject>
+              <HTMLObject>
+                <HTMLImg>
+                  <ImageManager imageKey="html05" />
+                </HTMLImg>
+                <HTMLTitle>
+                  <span>Fixed News</span>
+                  <div>
+                    <SkillsMini skillName="HTML" />
+                    <SkillsMini skillName="CSS" />
+                  </div>
+                </HTMLTitle>
+              </HTMLObject>
+              <HTMLObject>
+                <HTMLImg>
+                  <ImageManager imageKey="html06" />
+                </HTMLImg>
+                <HTMLTitle>
+                  <span>Kanban board</span>
+                  <div>
+                    <SkillsMini skillName="HTML" />
+                    <SkillsMini skillName="CSS" />
+                    <SkillsMini skillName="JS" />
+                  </div>
+                </HTMLTitle>
+              </HTMLObject>
+            </div>
+            <div>
+              <HTMLObject>
+                <HTMLImg>
+                  <ImageManager imageKey="html07" />
+                </HTMLImg>
+                <HTMLTitle>
+                  <span>오토 슬라이더</span>
+                  <div>
+                    <SkillsMini skillName="HTML" />
+                    <SkillsMini skillName="CSS" />
+                    <SkillsMini skillName="JS" />
+                  </div>
+                </HTMLTitle>
+              </HTMLObject>
+              <HTMLObject>
+                <HTMLImg>
+                  <ImageManager imageKey="html08" />
+                </HTMLImg>
+                <HTMLTitle>
+                  <span>토글 메뉴</span>
+                  <div>
+                    <SkillsMini skillName="HTML" />
+                    <SkillsMini skillName="CSS" />
+                    <SkillsMini skillName="JS" />
+                  </div>
+                </HTMLTitle>
+              </HTMLObject>
+              <HTMLObject>
+                <HTMLImg>
+                  <ImageManager imageKey="html09" />
+                </HTMLImg>
+                <HTMLTitle>
+                  <span>City introduce</span>
+                  <div>
+                    <SkillsMini skillName="HTML" />
+                    <SkillsMini skillName="CSS" />
+                    <SkillsMini skillName="API" />
+                  </div>
+                </HTMLTitle>
+              </HTMLObject>
+            </div>
+          </HTMLContents>
+        </HTMLContainer>
         <MobileContainer>
           <h1>Mobile Projects</h1>
           <MobileContents>
             <MobileImg>
-              <img src={smartPhone} alt="smart" />
+              <ImageManager imageKey="mobile01" />
             </MobileImg>
             <Mobileinfo>
-              <h2>Mobile Title</h2>
+              <h2>로봇청소기 쇼핑</h2>
               <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                Aspernatur esse consequatur, delectus asperiores mollitia nihil
-                excepturi facilis explicabo maiores praesentium, suscipit neque
-                dolores blanditiis recusandae dolorem, repellat consectetur
-                nobis earum.
+                로봇 청소기를 쇼핑하는 웹페이지를 작성하였습니다. 여러 페이지를
+                인터렉티브하게 움직일 수 있도록 구현하였고 모달 화면,
+                피젯스피너, 구매 폼 등을 구현했습니다.
               </p>
             </Mobileinfo>
             <MobileStyle />
           </MobileContents>
           <MobileContents>
             <MobileImg>
-              <img src={smartPhone} alt="smart" />
+              <ImageManager imageKey="mobile02" />
             </MobileImg>
             <Mobileinfo>
-              <h2>Mobile Title</h2>
+              <h2>모바일 Todo리스트</h2>
               <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                Aspernatur esse consequatur, delectus asperiores mollitia nihil
-                excepturi facilis explicabo maiores praesentium, suscipit neque
-                dolores blanditiis recusandae dolorem, repellat consectetur
-                nobis earum.
+                피젯스피너로 로딩화면을 구현했고 Todo리스트를 넣고 수정할 수
+                있는 기능을 커스터마이징 하였습니다. 또한 남은 체크박스를 누르면
+                완료 횟수가 올라가고 남은 시간이 표시됩니다.
               </p>
             </Mobileinfo>
             <MobileStyle />
           </MobileContents>
         </MobileContainer>
-      </Tablet>
+        <CloneContainer>
+          <h1>Clone Projects</h1>
+          <CloneContents>
+            <CloneContent>
+              <CloneImg>
+                <ImageManager imageKey="clone1" />
+              </CloneImg>
+              <CloneSize>
+                <li>1920px</li>
+                <li>768px</li>
+                <li>390px</li>
+              </CloneSize>
+              <CloneDetail>
+                <h3>뚜레쥬르</h3>
+                <p>
+                  메인 이미지화 헤더를 고정시킨 채 메인 메뉴가 위아래로 움직이는
+                  것을 pixed로 구현했습니다. 또한 오토슬라이드도 자바스크립트
+                  반복문으로 작성했습니다.
+                </p>
+              </CloneDetail>
+            </CloneContent>
+            <CloneContent>
+              <CloneImg>
+                <ImageManager imageKey="clone2" />
+              </CloneImg>
+              <CloneSize>
+                <li>1920px</li>
+                <li>768px</li>
+                <li>390px</li>
+              </CloneSize>
+              <CloneDetail>
+                <h3>에뛰드</h3>
+                <p>
+                  팀프로젝트로 작성했습니다. 이미지의 적절한 배치를 위해
+                  HTML구조를 이해하고자 노력했고 스크롤에 따라 이미지가
+                  역동적으로 출현할 수 있게 자바스크립트로 작성하였습니다.
+                </p>
+              </CloneDetail>
+            </CloneContent>
+            <CloneContent>
+              <CloneImg>
+                <ImageManager imageKey="clone3" />
+              </CloneImg>
+              <CloneSize>
+                <li>1920px</li>
+                <li>768px</li>
+                <li>390px</li>
+              </CloneSize>
+              <CloneDetail>
+                <h3>빙그레</h3>
+                <p>
+                  각종 슬라이더가 담겨져 있는 페이지 입니다. 미디어 쿼리에 따라
+                  유연하게 페이지 화면이 변경할 수 있도록 노력했습니다.
+                </p>
+              </CloneDetail>
+            </CloneContent>
+          </CloneContents>
+        </CloneContainer>
+      </Container>
     </>
   );
 };
@@ -314,7 +276,7 @@ const Container = styled.div`
 //   color: ${({ theme }) => theme.fontColor};
 // `;
 
-const HTMLContainer = styled.section`
+const HTMLContainer = styled(motion.section)`
   // border: 1px solid #fff;
   // width: 51.56%;
   max-width: 768px;
@@ -339,7 +301,7 @@ const HTMLContents = styled.div`
   }
 `;
 
-const HTMLObject = styled.div`
+const HTMLObject = styled(motion.div)`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -416,8 +378,8 @@ const MobileStyle = styled.span`
 `;
 
 const MobileImg = styled.div`
-  width: 150px;
-  height: 400px;
+  width: 250px;
+  height: auto;
   zindex: 99;
   cursor: pointer;
   transition: all 0.5s;
@@ -497,4 +459,22 @@ const CloneDetail = styled.div`
   display: flex;
   flex-direction: column;
   gap: 10px;
+`;
+
+const Buttons = styled.div`
+  display: flex;
+  gap: 20px;
+`;
+
+const Button = styled.button`
+  border: 1px solid transparent;
+  background: transparent;
+  font-size: 24px;
+  color: #fff;
+  padding: 10px 20px;
+  cursor: pointer;
+  &:hover {
+    border: 1px solid #fff;
+    transition: all 0.3s;
+  }
 `;

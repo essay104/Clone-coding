@@ -49,6 +49,11 @@ const HeaderList = styled.ul`
       color: ${({ theme }) => theme.fontColor};
     }
   }
+
+  @media (max-width: 768px) {
+    gap: 20px;
+    font-size: 0.8rem;
+  }
 `;
 
 const ModeChange = styled(motion.div)`
@@ -122,33 +127,33 @@ const Header = ({ toggleTheme }) => {
     toggleTheme();
   };
 
+  const menuHandler = () => {};
+
   return (
     <div>
-      <Desktop>
-        <HeaderBox variants={navVariants} animate={navAnimation} initial="top">
-          <ModeChange
-            onClick={() => modeHandler()}
-            justifyContent={justifyContent}
-          >
-            <span
-              layout
-              transition={{ type: "spring", stiffness: 300, damping: 20 }}
-            />
-          </ModeChange>
-          <HeaderList>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/about">About</Link>
-            </li>
-            <li>
-              <Link to="/production">Production</Link>
-            </li>
-          </HeaderList>
-        </HeaderBox>
-      </Desktop>
-      <Tablet>
+      <HeaderBox variants={navVariants} animate={navAnimation} initial="top">
+        <ModeChange
+          onClick={() => modeHandler()}
+          justifyContent={justifyContent}
+        >
+          <span
+            layout
+            transition={{ type: "spring", stiffness: 300, damping: 20 }}
+          />
+        </ModeChange>
+        <HeaderList>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/about">About</Link>
+          </li>
+          <li>
+            <Link to="/production">Production</Link>
+          </li>
+        </HeaderList>
+      </HeaderBox>
+      {/* <Tablet>
         <HeaderBox variants={navVariants} animate={navAnimation} initial="top">
           <ModeChange
             onClick={() => modeHandler()}
@@ -160,9 +165,11 @@ const Header = ({ toggleTheme }) => {
             />
           </ModeChange>
           <TabletHeader>fortpolio</TabletHeader>
-          <StyledIcon icon={faBars} />
+          <Link to="./ModeChange.js">
+            <StyledIcon icon={faBars} />
+          </Link>
         </HeaderBox>
-      </Tablet>
+      </Tablet> */}
     </div>
   );
 };
