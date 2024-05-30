@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import person from "../imgs/person.png";
 import Skill from "../component/Skill";
+import { Tablet, Desktop } from "../MediaQueries";
 
 const Container = styled.div`
   width: 100%;
@@ -11,7 +12,11 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding-top: 500px;
+  height: auto;
+
+  @media (max-width: 768px) {
+    height: auto;
+    padding-top: 0;
 `;
 
 const Profile = styled.div`
@@ -25,7 +30,7 @@ const Profile = styled.div`
     margin-left: 0%;
   }
   p {
-    font-size: 2.5rem;
+    font-size: 2rem;
     color: ${({ theme }) => theme.fontColor2};
     white-space: nowrap;
     position: absolute;
@@ -36,7 +41,7 @@ const Profile = styled.div`
 
 const MainProfile = styled.div`
   width: 100%;
-  max-width: 942px;
+  max-width: 768px;
   height: 185px;
   background: #fff;
   transform: translateY(5%);
@@ -48,6 +53,13 @@ const MainProfile = styled.div`
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
   border-radius: 5px;
   margin: 0 auto;
+
+  @media (max-width: 768px) {
+    width: 80%;
+    flex-direction: column;
+    height: auto;
+    padding: 50px;
+  }
 `;
 
 const MyInfo = styled.div`
@@ -59,6 +71,10 @@ const MyInfo = styled.div`
   & span:first-child {
     font-size: 18px;
     color: #777;
+  }
+
+  @media (max-width: 768px) {
+    gap: 8px;
   }
 `;
 
@@ -96,38 +112,80 @@ const SkillBox = styled.div`
 
 const About = () => {
   return (
-    <Container>
-      <div style={{ width: "100%" }}>
-        <Profile>
-          <img src={person} alt="img" />
-          <p>안녕하세요 신입 퍼블리셔를 꿈꾸는 김사도입니다!</p>
-        </Profile>
-        <MainProfile>
-          <MyInfo>
-            <span>생년월일</span>
-            <span>1995.05.15</span>
-          </MyInfo>
-          <Edu>
-            <span style={{ color: "#777" }}>학업</span>
-            <div>
-              <EduInfo>
-                <span>2014.3</span>
-                <span>2021.3</span>
-                <span>2021.6</span>
-              </EduInfo>
-              <EduInfo>
-                <span>선덕고 졸업</span>
-                <span>신한대 졸업</span>
-                <span>이젠아카데미 퍼블리셔반 수료</span>
-              </EduInfo>
-            </div>
-          </Edu>
-        </MainProfile>
-      </div>
-      <SkillBox>
-        <Skill></Skill>
-      </SkillBox>
-    </Container>
+    <>
+      <Desktop>
+        <Container>
+          <div style={{ width: "100%" }}>
+            <Profile>
+              <img src={person} alt="img" />
+              <p>안녕하세요 신입 퍼블리셔를 꿈꾸는 김사도입니다!</p>
+            </Profile>
+            <MainProfile>
+              <MyInfo>
+                <span>생년월일</span>
+                <span>1995.05.15</span>
+              </MyInfo>
+              <Edu>
+                <span style={{ color: "#777" }}>학업</span>
+                <div>
+                  <EduInfo>
+                    <span>2014.3</span>
+                    <span>2021.3</span>
+                    <span>2021.6</span>
+                  </EduInfo>
+                  <EduInfo>
+                    <span>선덕고 졸업</span>
+                    <span>신한대 졸업</span>
+                    <span>이젠아카데미 퍼블리셔반 수료</span>
+                  </EduInfo>
+                </div>
+              </Edu>
+            </MainProfile>
+          </div>
+          <SkillBox>
+            <Skill></Skill>
+          </SkillBox>
+        </Container>
+      </Desktop>
+      <Tablet>
+        <Container>
+          <div style={{ width: "100%" }}>
+            <Profile>
+              <img src={person} alt="img" />
+              <p style={{ transform: "translateY(-50%)", textAlign: "center" }}>
+                안녕하세요 <br />
+                신입 퍼블리셔를 <br />
+                꿈꾸는 김사도입니다!
+              </p>
+            </Profile>
+            <MainProfile>
+              <MyInfo>
+                <span>생년월일</span>
+                <span>1995.05.15</span>
+              </MyInfo>
+              <Edu>
+                <span style={{ color: "#777" }}>학업</span>
+                <div>
+                  <EduInfo>
+                    <span>2014.3</span>
+                    <span>2021.3</span>
+                    <span>2021.6</span>
+                  </EduInfo>
+                  <EduInfo>
+                    <span>선덕고 졸업</span>
+                    <span>신한대 졸업</span>
+                    <span>이젠아카데미 퍼블리셔반 수료</span>
+                  </EduInfo>
+                </div>
+              </Edu>
+            </MainProfile>
+          </div>
+          <SkillBox>
+            <Skill></Skill>
+          </SkillBox>
+        </Container>
+      </Tablet>
+    </>
   );
 };
 

@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
+import { Desktop, Tablet } from "../MediaQueries";
 
 const MySkill = styled.div`
   padding: 10px;
-  width: 53.125%;
-  min-width: 1020px;
+  width: 768px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -14,6 +14,14 @@ const MySkill = styled.div`
   & p {
     flex: 2;
     color: ${({ theme }) => theme.fontColor};
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 30px;
+    width: 80%;
+    min-width: 390px;
+    text-align: center;
   }
 `;
 
@@ -34,6 +42,7 @@ const Skills = styled.span`
 const Skill = () => {
   return (
     <>
+      <Desktop></Desktop>
       <MySkill>
         <Skills>HTML</Skills>
         <p>

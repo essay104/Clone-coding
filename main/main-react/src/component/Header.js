@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { motion, useAnimation, useScroll } from "framer-motion";
+import { Desktop, Tablet } from "../MediaQueries";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
 
 const HeaderBox = styled(motion.div)`
   width: calc(100% - 48px);
@@ -50,7 +53,7 @@ const HeaderList = styled.ul`
 
 const ModeChange = styled(motion.div)`
   position: absolute;
-  right: 20px;
+  left: 20px;
   bottom: 50%;
   transform: translateY(50%);
   width: 50px;
@@ -73,6 +76,23 @@ const ModeChange = styled(motion.div)`
   }
 `;
 
+const TabletHeader = styled.h3`
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 600;
+  color: #72869f;
+  text-transform: uppercase;
+`;
+
+const StyledIcon = styled(FontAwesomeIcon)`
+  color: ${({ theme }) => theme.fontColor};
+  font-size: 2rem;
+  position: absolute;
+  cursor: pointer;
+  right: 20px;
+  bottom: 50%;
+  transform: translateY(50%);
+`;
+
 const currentTheme = ModeChange.backgroundColor;
 
 const navVariants = {
@@ -93,10 +113,6 @@ const Header = ({ toggleTheme }) => {
     });
   }, [scrollY]);
 
-  useEffect(() => {
-    
-  }, []);
-
   const [justifyContent, setJustifyContent] = useState("flex-start");
 
   const modeHandler = () => {
@@ -108,33 +124,45 @@ const Header = ({ toggleTheme }) => {
 
   return (
     <div>
-      <HeaderBox
-        variants={navVariants}
-        animate={navAnimation}
-        initial="top"
-        transition="tween"
-      >
-        <HeaderList>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/about">About</Link>
-          </li>
-          <li>
-            <Link to="/production">Production</Link>
-          </li>
-        </HeaderList>
-        <ModeChange
-          onClick={() => modeHandler()}
-          justifyContent={justifyContent}
-        >
-          <span
-            layout
-            transition={{ type: "spring", stiffness: 300, damping: 20 }}
-          />
-        </ModeChange>
-      </HeaderBox>
+      <Desktop>
+        <HeaderBox variants={navVariants} animate={navAnimation} initial="top">
+          <ModeChange
+            onClick={() => modeHandler()}
+            justifyContent={justifyContent}
+          >
+            <span
+              layout
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+            />
+          </ModeChange>
+          <HeaderList>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/about">About</Link>
+            </li>
+            <li>
+              <Link to="/production">Production</Link>
+            </li>
+          </HeaderList>
+        </HeaderBox>
+      </Desktop>
+      <Tablet>
+        <HeaderBox variants={navVariants} animate={navAnimation} initial="top">
+          <ModeChange
+            onClick={() => modeHandler()}
+            justifyContent={justifyContent}
+          >
+            <span
+              layout
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+            />
+          </ModeChange>
+          <TabletHeader>fortpolio</TabletHeader>
+          <StyledIcon icon={faBars} />
+        </HeaderBox>
+      </Tablet>
     </div>
   );
 };

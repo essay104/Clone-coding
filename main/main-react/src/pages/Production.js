@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import Header from "../component/Header";
+import React, { useState, useEffect } from "react";
+import { Desktop, Tablet } from "../MediaQueries";
+
 import styled from "styled-components";
 import SkillsMini from "../component/SkillsMini";
 import fakeimg from "../imgs/img.jpg";
@@ -8,185 +8,262 @@ import smartPhone from "../imgs/smartMockup.png";
 import exampleImg from "../imgs/exampleHTML.png";
 
 const Production = () => {
+  const [project, setProjects] = useState([]);
+
+  const getProjects = async () => {
+    const url = "http://localhost:3001/projects";
+    const response = await fetch(url);
+    const data = await response.json();
+    setProjects(data);
+  };
+
+  useEffect(() => {
+    getProjects();
+  }, []);
+
   return (
-    <Container>
-      <HTMLContainer>
-        <h1>HTML & CSS Projects</h1>
-        <HTMLContents>
-          <div>
-            <HTMLObject>
-              <HTMLImg>
-                <img src={fakeimg} alt="HTML01" />
-              </HTMLImg>
-              <HTMLTitle>
-                <span>HTML Title</span>
-                <div>
-                  <SkillsMini skillName="HTML" />
-                  <SkillsMini skillName="CSS" />
-                  <SkillsMini skillName="JS" />
-                </div>
-              </HTMLTitle>
-            </HTMLObject>
-            <HTMLObject>
-              <HTMLImg>
-                <img src={fakeimg} alt="HTML01" />
-              </HTMLImg>
-              <HTMLTitle>
-                <span>HTML Title</span>
-                <div>
-                  <SkillsMini skillName="HTML" />
-                  <SkillsMini skillName="CSS" />
-                  <SkillsMini skillName="JS" />
-                </div>
-              </HTMLTitle>
-            </HTMLObject>
-            <HTMLObject>
-              <HTMLImg>
-                <img src={fakeimg} alt="HTML01" />
-              </HTMLImg>
-              <HTMLTitle>
-                <span>HTML Title</span>
-                <div>
-                  <SkillsMini skillName="HTML" />
-                  <SkillsMini skillName="CSS" />
-                  <SkillsMini skillName="JS" />
-                </div>
-              </HTMLTitle>
-            </HTMLObject>
-          </div>
-          <div>
-            <HTMLObject>
-              <HTMLImg>
-                <img src={fakeimg} alt="HTML01" />
-              </HTMLImg>
-              <HTMLTitle>
-                <span>HTML Title</span>
-                <div>
-                  <SkillsMini skillName="HTML" />
-                  <SkillsMini skillName="CSS" />
-                  <SkillsMini skillName="JS" />
-                </div>
-              </HTMLTitle>
-            </HTMLObject>
-            <HTMLObject>
-              <HTMLImg>
-                <img src={fakeimg} alt="HTML01" />
-              </HTMLImg>
-              <HTMLTitle>
-                <span>HTML Title</span>
-                <div>
-                  <SkillsMini skillName="HTML" />
-                  <SkillsMini skillName="CSS" />
-                  <SkillsMini skillName="JS" />
-                </div>
-              </HTMLTitle>
-            </HTMLObject>
-            <HTMLObject>
-              <HTMLImg>
-                <img src={fakeimg} alt="HTML01" />
-              </HTMLImg>
-              <HTMLTitle>
-                <span>HTML Title</span>
-                <div>
-                  <SkillsMini skillName="HTML" />
-                  <SkillsMini skillName="CSS" />
-                  <SkillsMini skillName="JS" />
-                </div>
-              </HTMLTitle>
-            </HTMLObject>
-          </div>
-          <div>
-            <HTMLObject>
-              <HTMLImg>
-                <img src={fakeimg} alt="HTML01" />
-              </HTMLImg>
-              <HTMLTitle>
-                <span>HTML Title</span>
-                <div>
-                  <SkillsMini skillName="HTML" />
-                  <SkillsMini skillName="CSS" />
-                  <SkillsMini skillName="JS" />
-                </div>
-              </HTMLTitle>
-            </HTMLObject>
-            <HTMLObject>
-              <HTMLImg>
-                <img src={fakeimg} alt="HTML01" />
-              </HTMLImg>
-              <HTMLTitle>
-                <span>HTML Title</span>
-                <div>
-                  <SkillsMini skillName="HTML" />
-                  <SkillsMini skillName="CSS" />
-                  <SkillsMini skillName="JS" />
-                </div>
-              </HTMLTitle>
-            </HTMLObject>
-            <HTMLObject>
-              <HTMLImg>
-                <img src={fakeimg} alt="HTML01" />
-              </HTMLImg>
-              <HTMLTitle>
-                <span>HTML Title</span>
-                <div>
-                  <SkillsMini skillName="HTML" />
-                  <SkillsMini skillName="CSS" />
-                  <SkillsMini skillName="JS" />
-                </div>
-              </HTMLTitle>
-            </HTMLObject>
-          </div>
-        </HTMLContents>
-      </HTMLContainer>
-      <MobileContainer>
-        <h1>Mobile Projects</h1>
-        <MobileContents>
-          <MobileImg>
-            <img src={smartPhone} alt="smart" />
-          </MobileImg>
-          <Mobileinfo>
-            <h2>Mobile Title</h2>
-            <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-              Aspernatur esse consequatur, delectus asperiores mollitia nihil
-              excepturi facilis explicabo maiores praesentium, suscipit neque
-              dolores blanditiis recusandae dolorem, repellat consectetur nobis
-              earum.
-            </p>
-          </Mobileinfo>
-          <MobileStyle />
-        </MobileContents>
-        <MobileContents>
-          <MobileImg>
-            <img src={smartPhone} alt="smart" />
-          </MobileImg>
-          <Mobileinfo>
-            <h2>Mobile Title</h2>
-            <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-              Aspernatur esse consequatur, delectus asperiores mollitia nihil
-              excepturi facilis explicabo maiores praesentium, suscipit neque
-              dolores blanditiis recusandae dolorem, repellat consectetur nobis
-              earum.
-            </p>
-          </Mobileinfo>
-          <MobileStyle />
-        </MobileContents>
-      </MobileContainer>
-      <CloneContainer>
-        <h1>Clone Projects</h1>
-        <CloneContents>
-          <CloneContent>
-            <CloneImg>
-              <img src={exampleImg} alt="img" />
-            </CloneImg>
-            <CloneSize>
-              <li>1920px</li>
-              <li>768px</li>
-              <li>390px</li>
-            </CloneSize>
-            <CloneDetail>
-              <h3>Project name</h3>
+    <>
+      <Desktop>
+        <Container>
+          <HTMLContainer>
+            <h1>HTML & CSS Projects</h1>
+            <HTMLContents>
+              <div>
+                <HTMLObject>
+                  <HTMLImg>
+                    <img src={project.src} alt={project.name} />
+                  </HTMLImg>
+                  <HTMLTitle>
+                    <span>HTML Title</span>
+                    <div>
+                      <SkillsMini skillName="HTML" />
+                      <SkillsMini skillName="CSS" />
+                      <SkillsMini skillName="JS" />
+                    </div>
+                  </HTMLTitle>
+                </HTMLObject>
+                <HTMLObject>
+                  <HTMLImg>
+                    <img src={fakeimg} alt="HTML01" />
+                  </HTMLImg>
+                  <HTMLTitle>
+                    <span>HTML Title</span>
+                    <div>
+                      <SkillsMini skillName="HTML" />
+                      <SkillsMini skillName="CSS" />
+                      <SkillsMini skillName="JS" />
+                    </div>
+                  </HTMLTitle>
+                </HTMLObject>
+                <HTMLObject>
+                  <HTMLImg>
+                    <img src={fakeimg} alt="HTML01" />
+                  </HTMLImg>
+                  <HTMLTitle>
+                    <span>HTML Title</span>
+                    <div>
+                      <SkillsMini skillName="HTML" />
+                      <SkillsMini skillName="CSS" />
+                      <SkillsMini skillName="JS" />
+                    </div>
+                  </HTMLTitle>
+                </HTMLObject>
+              </div>
+              <div>
+                <HTMLObject>
+                  <HTMLImg>
+                    <img src={fakeimg} alt="HTML01" />
+                  </HTMLImg>
+                  <HTMLTitle>
+                    <span>HTML Title</span>
+                    <div>
+                      <SkillsMini skillName="HTML" />
+                      <SkillsMini skillName="CSS" />
+                      <SkillsMini skillName="JS" />
+                    </div>
+                  </HTMLTitle>
+                </HTMLObject>
+                <HTMLObject>
+                  <HTMLImg>
+                    <img src={fakeimg} alt="HTML01" />
+                  </HTMLImg>
+                  <HTMLTitle>
+                    <span>HTML Title</span>
+                    <div>
+                      <SkillsMini skillName="HTML" />
+                      <SkillsMini skillName="CSS" />
+                      <SkillsMini skillName="JS" />
+                    </div>
+                  </HTMLTitle>
+                </HTMLObject>
+                <HTMLObject>
+                  <HTMLImg>
+                    <img src={fakeimg} alt="HTML01" />
+                  </HTMLImg>
+                  <HTMLTitle>
+                    <span>HTML Title</span>
+                    <div>
+                      <SkillsMini skillName="HTML" />
+                      <SkillsMini skillName="CSS" />
+                      <SkillsMini skillName="JS" />
+                    </div>
+                  </HTMLTitle>
+                </HTMLObject>
+              </div>
+              <div>
+                <HTMLObject>
+                  <HTMLImg>
+                    <img src={fakeimg} alt="HTML01" />
+                  </HTMLImg>
+                  <HTMLTitle>
+                    <span>HTML Title</span>
+                    <div>
+                      <SkillsMini skillName="HTML" />
+                      <SkillsMini skillName="CSS" />
+                      <SkillsMini skillName="JS" />
+                    </div>
+                  </HTMLTitle>
+                </HTMLObject>
+                <HTMLObject>
+                  <HTMLImg>
+                    <img src={fakeimg} alt="HTML01" />
+                  </HTMLImg>
+                  <HTMLTitle>
+                    <span>HTML Title</span>
+                    <div>
+                      <SkillsMini skillName="HTML" />
+                      <SkillsMini skillName="CSS" />
+                      <SkillsMini skillName="JS" />
+                    </div>
+                  </HTMLTitle>
+                </HTMLObject>
+                <HTMLObject>
+                  <HTMLImg>
+                    <img src={fakeimg} alt="HTML01" />
+                  </HTMLImg>
+                  <HTMLTitle>
+                    <span>HTML Title</span>
+                    <div>
+                      <SkillsMini skillName="HTML" />
+                      <SkillsMini skillName="CSS" />
+                      <SkillsMini skillName="JS" />
+                    </div>
+                  </HTMLTitle>
+                </HTMLObject>
+              </div>
+            </HTMLContents>
+          </HTMLContainer>
+          <MobileContainer>
+            <h1>Mobile Projects</h1>
+            <MobileContents>
+              <MobileImg>
+                <img src={smartPhone} alt="smart" />
+              </MobileImg>
+              <Mobileinfo>
+                <h2>Mobile Title</h2>
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Aspernatur esse consequatur, delectus asperiores mollitia
+                  nihil excepturi facilis explicabo maiores praesentium,
+                  suscipit neque dolores blanditiis recusandae dolorem, repellat
+                  consectetur nobis earum.
+                </p>
+              </Mobileinfo>
+              <MobileStyle />
+            </MobileContents>
+            <MobileContents>
+              <MobileImg>
+                <img src={smartPhone} alt="smart" />
+              </MobileImg>
+              <Mobileinfo>
+                <h2>Mobile Title</h2>
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Aspernatur esse consequatur, delectus asperiores mollitia
+                  nihil excepturi facilis explicabo maiores praesentium,
+                  suscipit neque dolores blanditiis recusandae dolorem, repellat
+                  consectetur nobis earum.
+                </p>
+              </Mobileinfo>
+              <MobileStyle />
+            </MobileContents>
+          </MobileContainer>
+          <CloneContainer>
+            <h1>Clone Projects</h1>
+            <CloneContents>
+              <CloneContent>
+                <CloneImg>
+                  <img src={exampleImg} alt="img" />
+                </CloneImg>
+                <CloneSize>
+                  <li>1920px</li>
+                  <li>768px</li>
+                  <li>390px</li>
+                </CloneSize>
+                <CloneDetail>
+                  <h3>Project name</h3>
+                  <p>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                    Aspernatur esse consequatur, delectus asperiores mollitia
+                    nihil excepturi facilis explicabo maiores praesentium,
+                    suscipit neque dolores blanditiis recusandae dolorem,
+                    repellat consectetur nobis earum.
+                  </p>
+                </CloneDetail>
+              </CloneContent>
+              <CloneContent>
+                <CloneImg>
+                  <img src={exampleImg} alt="img" />
+                </CloneImg>
+                <CloneSize>
+                  <li>1920px</li>
+                  <li>768px</li>
+                  <li>390px</li>
+                </CloneSize>
+                <CloneDetail>
+                  <h3>Project name</h3>
+                  <p>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                    Aspernatur esse consequatur, delectus asperiores mollitia
+                    nihil excepturi facilis explicabo maiores praesentium,
+                    suscipit neque dolores blanditiis recusandae dolorem,
+                    repellat consectetur nobis earum.
+                  </p>
+                </CloneDetail>
+              </CloneContent>
+              <CloneContent>
+                <CloneImg>
+                  <img src={exampleImg} alt="img" />
+                </CloneImg>
+                <CloneSize>
+                  <li>1920px</li>
+                  <li>768px</li>
+                  <li>390px</li>
+                </CloneSize>
+                <CloneDetail>
+                  <h3>Project name</h3>
+                  <p>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                    Aspernatur esse consequatur, delectus asperiores mollitia
+                    nihil excepturi facilis explicabo maiores praesentium,
+                    suscipit neque dolores blanditiis recusandae dolorem,
+                    repellat consectetur nobis earum.
+                  </p>
+                </CloneDetail>
+              </CloneContent>
+            </CloneContents>
+          </CloneContainer>
+        </Container>
+      </Desktop>
+      <Tablet>
+        <MobileContainer>
+          <h1>Mobile Projects</h1>
+          <MobileContents>
+            <MobileImg>
+              <img src={smartPhone} alt="smart" />
+            </MobileImg>
+            <Mobileinfo>
+              <h2>Mobile Title</h2>
               <p>
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                 Aspernatur esse consequatur, delectus asperiores mollitia nihil
@@ -194,19 +271,15 @@ const Production = () => {
                 dolores blanditiis recusandae dolorem, repellat consectetur
                 nobis earum.
               </p>
-            </CloneDetail>
-          </CloneContent>
-          <CloneContent>
-            <CloneImg>
-              <img src={exampleImg} alt="img" />
-            </CloneImg>
-            <CloneSize>
-              <li>1920px</li>
-              <li>768px</li>
-              <li>390px</li>
-            </CloneSize>
-            <CloneDetail>
-              <h3>Project name</h3>
+            </Mobileinfo>
+            <MobileStyle />
+          </MobileContents>
+          <MobileContents>
+            <MobileImg>
+              <img src={smartPhone} alt="smart" />
+            </MobileImg>
+            <Mobileinfo>
+              <h2>Mobile Title</h2>
               <p>
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                 Aspernatur esse consequatur, delectus asperiores mollitia nihil
@@ -214,31 +287,12 @@ const Production = () => {
                 dolores blanditiis recusandae dolorem, repellat consectetur
                 nobis earum.
               </p>
-            </CloneDetail>
-          </CloneContent>
-          <CloneContent>
-            <CloneImg>
-              <img src={exampleImg} alt="img" />
-            </CloneImg>
-            <CloneSize>
-              <li>1920px</li>
-              <li>768px</li>
-              <li>390px</li>
-            </CloneSize>
-            <CloneDetail>
-              <h3>Project name</h3>
-              <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                Aspernatur esse consequatur, delectus asperiores mollitia nihil
-                excepturi facilis explicabo maiores praesentium, suscipit neque
-                dolores blanditiis recusandae dolorem, repellat consectetur
-                nobis earum.
-              </p>
-            </CloneDetail>
-          </CloneContent>
-        </CloneContents>
-      </CloneContainer>
-    </Container>
+            </Mobileinfo>
+            <MobileStyle />
+          </MobileContents>
+        </MobileContainer>
+      </Tablet>
+    </>
   );
 };
 
@@ -330,11 +384,16 @@ const MobileContainer = styled.section`
   align-items: center;
   width: 100%;
   gap: 100px;
+
+  @media (max-width: 768px) {
+    gap: 10px;
+  }
 `;
 
 const MobileContents = styled.div`
   width: inherit;
-  height: 350px;
+  height: auto;
+
   // border: 1px solid #fff;
   // background-color: ${({ theme }) => theme.fontColor};
   position: relative;
@@ -342,7 +401,7 @@ const MobileContents = styled.div`
   align-items: center;
   justify-content: center;
   margin: 0 auto;
-  gap: 80px;
+  gap: 10px;
   color: ${({ theme }) => theme.fontColor};
 `;
 
