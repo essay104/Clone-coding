@@ -25,7 +25,8 @@ const Skills = styled.span`
   align-items: center;
   font-size: 30px;
   color: ${({ theme }) => theme.mainHeaderColor};
-  width: 212px;
+  width: 100%;
+  max-width: 212px;
   height: 60px;
   border-radius: 5px;
 `;
@@ -51,8 +52,8 @@ const Skill = () => {
       <MySkill>
         <Skills>Java Script</Skills>
         <p>
-          자바스크립트를 통해 정적인 페이지에 토글, 슬라이드 등 다양한 이벤트들을 추가할 수
-          있습니다.
+          자바스크립트를 통해 정적인 페이지에 토글, 슬라이드 등 다양한
+          이벤트들을 추가할 수 있습니다.
         </p>
       </MySkill>
       <MySkill>

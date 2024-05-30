@@ -2,6 +2,7 @@ import React from "react";
 import Header from "../component/Header";
 import styled from "styled-components";
 import mainBg from "../imgs/mainbg.png";
+import { useScroll, useAnimation } from "framer-motion";
 
 const HomeContainer = styled.div`
   width: 100%;
@@ -30,7 +31,9 @@ const HomeLogo = styled.span`
   font-family: "Playfair Display";
 `;
 
+
 const Home = () => {
+  
   return (
     <HomeContainer>
       <HomeLogo>PORTFOLIO</HomeLogo>

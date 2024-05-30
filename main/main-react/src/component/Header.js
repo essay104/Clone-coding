@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
+import { motion, useAnimation, useScroll } from "framer-motion";
 
-const HeaderBox = styled.div`
+const HeaderBox = styled(motion.div)`
   width: calc(100% - 48px);
   height: 80px;
   background: ${({ theme }) => theme.mainHeaderColor};
@@ -73,7 +73,30 @@ const ModeChange = styled(motion.div)`
   }
 `;
 
+const currentTheme = ModeChange.backgroundColor;
+
+const navVariants = {
+  top: { backgroundColor: currentTheme },
+  scroll: { backgroundColor: "transparent" },
+};
+
 const Header = ({ toggleTheme }) => {
+  const navAnimation = useAnimation();
+  const { scrollY } = useScroll();
+  useEffect(() => {
+    scrollY.on("change", () => {
+      if (scrollY.get() > 80) {
+        navAnimation.start("scroll");
+      } else {
+        navAnimation.start("top");
+      }
+    });
+  }, [scrollY]);
+
+  useEffect(() => {
+    
+  }, []);
+
   const [justifyContent, setJustifyContent] = useState("flex-start");
 
   const modeHandler = () => {
@@ -85,7 +108,12 @@ const Header = ({ toggleTheme }) => {
 
   return (
     <div>
-      <HeaderBox>
+      <HeaderBox
+        variants={navVariants}
+        animate={navAnimation}
+        initial="top"
+        transition="tween"
+      >
         <HeaderList>
           <li>
             <Link to="/">Home</Link>
@@ -95,9 +123,6 @@ const Header = ({ toggleTheme }) => {
           </li>
           <li>
             <Link to="/production">Production</Link>
-          </li>
-          <li>
-            <Link to="/epilogue">Epilogue</Link>
           </li>
         </HeaderList>
         <ModeChange

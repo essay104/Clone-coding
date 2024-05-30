@@ -11,7 +11,7 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding-top: 650px;
+  padding-top: 500px;
 `;
 
 const Profile = styled.div`
@@ -35,7 +35,8 @@ const Profile = styled.div`
 `;
 
 const MainProfile = styled.div`
-  width: 942px;
+  width: 100%;
+  max-width: 942px;
   height: 185px;
   background: #fff;
   transform: translateY(5%);
@@ -46,6 +47,7 @@ const MainProfile = styled.div`
   font-size: 26px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
   border-radius: 5px;
+  margin: 0 auto;
 `;
 
 const MyInfo = styled.div`
@@ -83,6 +85,7 @@ const EduInfo = styled.div`
 `;
 
 const SkillBox = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -94,7 +97,7 @@ const SkillBox = styled.div`
 const About = () => {
   return (
     <Container>
-      <div>
+      <div style={{ width: "100%" }}>
         <Profile>
           <img src={person} alt="img" />
           <p>안녕하세요 신입 퍼블리셔를 꿈꾸는 김사도입니다!</p>

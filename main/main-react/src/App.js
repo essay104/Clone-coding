@@ -4,7 +4,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Production from "./pages/Production";
-import Epilogue from "./pages/Epilogue";
 import Reset from "./Reset";
 import Header from "./component/Header";
 import { darkTheme, lightTheme } from "./theme";
@@ -28,7 +27,6 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/production/" element={<Production />} />
-          <Route path="/epilogue" element={<Epilogue />} />
         </Routes>
       </BrowserRouter>
     </ThemeProvider>
