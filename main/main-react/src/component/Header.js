@@ -82,6 +82,7 @@ const ModeChange = styled(motion.div)`
 `;
 
 const TabletHeader = styled.h3`
+  cursor: pointer;
   font-family: "Noto Sans KR", sans-serif;
   font-weight: 600;
   color: #72869f;
@@ -98,14 +99,12 @@ const StyledIcon = styled(FontAwesomeIcon)`
   transform: translateY(50%);
 `;
 
-const currentTheme = ModeChange.backgroundColor;
-
 const navVariants = {
-  top: { backgroundColor: currentTheme },
+  top: { backgroundColor: HeaderBox.backgroundColor },
   scroll: { backgroundColor: "transparent" },
 };
 
-const Header = ({ toggleTheme }) => {
+const Header = ({ toggleTheme, mobileModalHandler }) => {
   const navAnimation = useAnimation();
   const { scrollY } = useScroll();
   useEffect(() => {
@@ -127,33 +126,13 @@ const Header = ({ toggleTheme }) => {
     toggleTheme();
   };
 
-  const menuHandler = () => {};
+  const scrolltoTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   return (
     <div>
-      <HeaderBox variants={navVariants} animate={navAnimation} initial="top">
-        <ModeChange
-          onClick={() => modeHandler()}
-          justifyContent={justifyContent}
-        >
-          <span
-            layout
-            transition={{ type: "spring", stiffness: 300, damping: 20 }}
-          />
-        </ModeChange>
-        <HeaderList>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/about">About</Link>
-          </li>
-          <li>
-            <Link to="/production">Production</Link>
-          </li>
-        </HeaderList>
-      </HeaderBox>
-      {/* <Tablet>
+      <Desktop>
         <HeaderBox variants={navVariants} animate={navAnimation} initial="top">
           <ModeChange
             onClick={() => modeHandler()}
@@ -164,12 +143,34 @@ const Header = ({ toggleTheme }) => {
               transition={{ type: "spring", stiffness: 300, damping: 20 }}
             />
           </ModeChange>
-          <TabletHeader>fortpolio</TabletHeader>
-          <Link to="./ModeChange.js">
-            <StyledIcon icon={faBars} />
-          </Link>
+          <HeaderList>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/about">About</Link>
+            </li>
+            <li>
+              <Link to="/production">Projects</Link>
+            </li>
+          </HeaderList>
         </HeaderBox>
-      </Tablet> */}
+      </Desktop>
+      <Tablet>
+        <HeaderBox variants={navVariants} animate={navAnimation} initial="top">
+          <ModeChange
+            onClick={() => modeHandler()}
+            justifyContent={justifyContent}
+          >
+            <span
+              layout
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+            />
+          </ModeChange>
+          <TabletHeader onClick={() => scrolltoTop()}>fortpolio</TabletHeader>
+          <StyledIcon icon={faBars} onClick={mobileModalHandler} />
+        </HeaderBox>
+      </Tablet>
     </div>
   );
 };

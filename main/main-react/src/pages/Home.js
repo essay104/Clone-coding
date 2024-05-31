@@ -51,6 +51,16 @@ const HomeLogo = styled.span`
   color: ${({ theme }) => theme.fontColor};
   font-size: 4rem;
   font-family: "Playfair Display";
+  text-shadow: 0px 0px 30px rgba(255, 255, 255, 1);
+`;
+
+const LogoDeco = styled.span`
+  width: 100%;
+  height: 80px;
+  background-color: ${({ theme }) => theme.mainHeaderColor};
+  transform: translateY(-20%);
+  position: absolute;
+  z-index: -999;
 `;
 
 const Home = () => {
@@ -66,6 +76,7 @@ const Home = () => {
         <HomeContainerTablet>
           <HomeLogo>PORTFOLIO</HomeLogo>
           <p>no pain no gain</p>
+          <LogoDeco />
         </HomeContainerTablet>
       </Tablet>
     </>

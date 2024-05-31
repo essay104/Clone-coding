@@ -17,6 +17,7 @@ const Container = styled.div`
   @media (max-width: 768px) {
     height: auto;
     padding-top: 0;
+  }
 `;
 
 const Profile = styled.div`
@@ -169,7 +170,7 @@ const About = () => {
                   <EduInfo>
                     <span>2014.3</span>
                     <span>2021.3</span>
-                    <span>2021.6</span>
+                    <span>2024.6</span>
                   </EduInfo>
                   <EduInfo>
                     <span>선덕고 졸업</span>
