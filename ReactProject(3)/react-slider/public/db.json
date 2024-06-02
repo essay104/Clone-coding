@@ -1,0 +1,42 @@
+[
+  {
+    "name": "레이 EV",
+    "imgsrc": "https://www.kia.com/content/dam/kwp/kr/ko/vehicles/represent/krtm138/ray-ev_q_eu3.png",
+    "price": 27750000
+  },
+  {
+    "name": "니로 EV",
+    "imgsrc": "https://www.kia.com/content/dam/kwp/kr/ko/vehicles/represent/krsg078/niro-ev_q_swp.png",
+    "price": 51140000
+  },
+  {
+    "name": "니로 플러스",
+    "imgsrc": "https://www.kia.com/content/dam/kwp/kr/ko/vehicles/represent/krdp079/niro-plus_q_m7g.png",
+    "price": 46000000
+  },
+  {
+    "name": "EV6",
+    "imgsrc": "https://www.kia.com/content/dam/kwp/kr/ko/vehicles/represent/krcv177/ev6_q_glb.png",
+    "price": 55400000
+  },
+  {
+    "name": "EV6 GT",
+    "imgsrc": "https://www.kia.com/content/dam/kwp/kr/ko/vehicles/represent/krcv173/ev6-gt_q_klm.png",
+    "price": 76050000
+  },
+  {
+    "name": "EV9",
+    "imgsrc": "https://www.kia.com/content/dam/kwp/kr/ko/vehicles/represent/krmv107/ev9_q_ism.png",
+    "price": 77280000
+  },
+  {
+    "name": "봉고 3 EV",
+    "imgsrc": "https://www.kia.com/content/dam/kwp/kr/ko/vehicles/represent/krb1167/bongo3-ev_q_ud.png",
+    "price": 43850000
+  },
+  {
+    "name": "봉고 3 EV 파워게이트",
+    "imgsrc": "https://www.kia.com/content/dam/kwp/kr/ko/vehicles/represent/krb1084/bongo3-ev-power_q_ud.png",
+    "price": 48000000
+  }
+]
