@@ -29,7 +29,6 @@ const SliderContents = styled.div`
   align-items: center;
   gap: 20px;
   cursor: pointer;
-  position: relative;
 `;
 
 const Sliders = styled.div`
@@ -71,6 +70,7 @@ const Total = styled.span`
   border: 1px solid #eee;
   text-align: center;
   color: #999;
+  background-color: #fff;
 `;
 
 const Detail = styled.span`
@@ -96,6 +96,21 @@ const Overlay = styled(motion.div)`
   align-items: center;
 `;
 
+const Box = styled.div`
+  width: 450px;
+  height: 600px;
+  position: absolute;
+  border: 1px solid #fff;
+  background-color: #fff;
+  // background-color: rgba(0, 0, 0, 0.1);
+  color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 50px;
+`;
+
 function App() {
   const [data, setData] = useState([]);
   const [sliderHandler, setSliderHandler] = useState(0);
@@ -117,6 +132,8 @@ function App() {
   const imgHandler = () => {
     setimgChange((imgChange) => !imgChange);
   };
+
+  const sliderId = sliderHandler + 1;
 
   console.log(isOpen);
 
@@ -157,8 +174,12 @@ function App() {
           }}
         >
           {data.map((data, idx) => (
-            <SliderContents key={idx} onClick={sliderEvent} layoutId={idx + ""}>
-              <CarImg onMouseEnter={imgHandler} onMouseLeave={imgHandler}>
+            <SliderContents key={idx} layoutId={idx + ""}>
+              <CarImg
+                onClick={sliderEvent}
+                onMouseEnter={imgHandler}
+                onMouseLeave={imgHandler}
+              >
                 <img
                   src={imgChange ? data.imgsrc2 : data.imgsrc}
                   alt="{data.name}"
@@ -173,8 +194,10 @@ function App() {
                   gap: "30px",
                 }}
               >
-                <Name>{data.name}</Name>
-                <span>{data.price.toLocaleString()}원</span>
+                <Name onClick={sliderEvent}>{data.name}</Name>
+                <span onClick={sliderEvent}>
+                  {data.price.toLocaleString()}원
+                </span>
                 <Detail onClick={() => setIsOpen(idx + "")}>자세히보기</Detail>
               </div>
             </SliderContents>
@@ -190,21 +213,26 @@ function App() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
           >
-            {data.map((data, idx) => (
-              <div
-                style={{ width: 1200, height: 650, background: "#fff" }}
-                layoutId={isOpen}
-                key={data.name}
-              >
-                <h1 key={data.name}>{data.name}</h1>
-              </div>
-            ))}
+            {data.map((data, idx) =>
+              sliderId == data.id ? (
+                <Box layoutId={isOpen} key={idx}>
+                  <h1>{sliderId == data.id ? data.name : null}</h1>
+                  <div style={{ width: 300, height: 150 }}>
+                    <img
+                      src={sliderId == data.id ? data.imgsrc : null}
+                      style={{ width: 300 }}
+                    />
+                  </div>
+                  <span>{sliderId == data.id ? data.script : null}</span>
+                </Box>
+              ) : null
+            )}
           </Overlay>
         ) : null}
       </AnimatePresence>
 
       <Total>
-        {sliderHandler + 1}/{data.length}
+        {sliderId}/{data.length}
       </Total>
     </Container>
   );
