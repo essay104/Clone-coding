@@ -4,6 +4,9 @@ import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faRepeat } from "@fortawesome/free-solid-svg-icons";
 
+const API_KEY = process.env.REACT_APP_API_KEY;
+
+
 const Banner = styled.div`
   width: 15%;
   height: 100vh;
@@ -48,7 +51,7 @@ const CurrentTime = styled.div`
   position: absolute;
   bottom: 5%;
   display: flex;
-  gap: 20px;
+  gap: 10px;
   align-items: center;
 `;
 
@@ -57,15 +60,33 @@ const TimeReset = styled(FontAwesomeIcon)`
   transition: all 0.3s;
   font-size: 20px;
   &:hover {
-    color: red;
+    color: royalblue;
   }
 `;
 
 const Header = () => {
-  
-  useEffect(() => {
-    timer();
-  }, []);
+  const [renewal, setRenewal] = useState(false);
+
+  console.log(API_KEY)
+
+  const getCurrentLocation = () => {
+    navigator.geolocation.getCurrentPosition((position) => {
+      const lat = position.coords.latitude;
+      const lon = position.coords.longitude;
+      getCurrentWether(lat, lon);
+    });
+  };
+
+  const getCurrentWether = async (lat, lon) => {
+    const url = `https://api.openweathermap.org/data/2./weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&lang=kr&units=metric
+  `;
+    const response = await fetch(url);
+    const data = await response.json();
+    console.log(data);
+  };
+
+  getCurrentLocation();
+  getCurrentWether();
 
   const timer = () => {
     const theDay = new Date();
@@ -74,15 +95,19 @@ const Header = () => {
     const nowHour = theDay.getHours();
     const nowMin = theDay.getMinutes();
     const nowSec = theDay.getSeconds();
-    console.log(nowDay, nowHour, nowMonth);
-    console.log(theDay);
 
-    {
-      nowHour >= 12 ? `"오후" + ${nowHour} - 12` : `"오전" + ${nowHour}`;
-    }
+    const crrHour = nowHour >= 12 ? `오후 ${nowHour - 12}` : `오전 ${nowHour}`;
 
-    return `${nowMonth + 1}월 ${nowDay}일 ${nowHour}시 ${nowMin}분 ${nowSec}`;
+    return `${nowMonth + 1}월 ${nowDay}일 ${crrHour}시 ${nowMin}분 ${nowSec}`;
   };
+
+  const timerRenewal = () => {
+    setRenewal((renewal) => !renewal);
+  };
+
+  useEffect(() => {
+    timer();
+  }, [setRenewal]);
 
   return (
     <Banner>
@@ -93,7 +118,7 @@ const Header = () => {
       <Nav>menu 4</Nav>
       <CurrentTime>
         {timer()}
-        <TimeReset icon={faRepeat} onClick={timer} />
+        <TimeReset icon={faRepeat} onClick={timerRenewal} />
       </CurrentTime>
     </Banner>
   );
