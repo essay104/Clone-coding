@@ -3,19 +3,19 @@ import styled from "styled-components";
 import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faRepeat } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
-const API_KEY = process.env.REACT_APP_API_KEY;
-
-
-const Banner = styled.div`
-  width: 15%;
+const Banner = styled.header`
+  width: 200px;
   height: 100vh;
   background-color: #2db400;
   color: #eee;
   display: flex;
   align-items: center;
   flex-direction: column;
-  position: relative;
+  position: fixed;
+  right: 0;
+  z-index: 9999;
   & h1 {
     padding: 20px;
     border-bottom: 1px solid #fff;
@@ -53,6 +53,7 @@ const CurrentTime = styled.div`
   display: flex;
   gap: 10px;
   align-items: center;
+  font-size: 0.8rem;
 `;
 
 const TimeReset = styled(FontAwesomeIcon)`
@@ -67,7 +68,9 @@ const TimeReset = styled(FontAwesomeIcon)`
 const Header = () => {
   const [renewal, setRenewal] = useState(false);
 
-  console.log(API_KEY)
+  const API_KEY = process.env.REACT_APP_API_KEY;
+
+  console.log(API_KEY);
 
   const getCurrentLocation = () => {
     navigator.geolocation.getCurrentPosition((position) => {
@@ -78,8 +81,7 @@ const Header = () => {
   };
 
   const getCurrentWether = async (lat, lon) => {
-    const url = `https://api.openweathermap.org/data/2./weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&lang=kr&units=metric
-  `;
+    const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&lang=kr&units=metric`;
     const response = await fetch(url);
     const data = await response.json();
     console.log(data);
@@ -98,7 +100,8 @@ const Header = () => {
 
     const crrHour = nowHour >= 12 ? `오후 ${nowHour - 12}` : `오전 ${nowHour}`;
 
-    return `${nowMonth + 1}월 ${nowDay}일 ${crrHour}시 ${nowMin}분 ${nowSec}`;
+    return `${nowMonth + 1}월 ${nowDay}일
+    ${crrHour}시 ${nowMin}분 ${nowSec}`;
   };
 
   const timerRenewal = () => {
@@ -111,10 +114,16 @@ const Header = () => {
 
   return (
     <Banner>
-      <h1>TITLE</h1>
-      <Nav>menu 1</Nav>
-      <Nav>menu 2</Nav>
-      <Nav>menu 3</Nav>
+      <Link to="/">
+        <h1>TITLE</h1>
+      </Link>
+      <Nav>
+        <Link to="/mySelf/">나의 가치관</Link>
+      </Nav>
+      <Nav>
+        <Link to="/hobby/">취미</Link>
+      </Nav>
+      <Nav>포부</Nav>
       <Nav>menu 4</Nav>
       <CurrentTime>
         {timer()}

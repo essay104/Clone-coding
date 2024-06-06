@@ -4,13 +4,21 @@ import { ThemeProvider } from "styled-components";
 import styled from "styled-components";
 import Reset from "./Reset";
 import Header from "./Component/Header";
+import Home from "./Pages/Home";
+import MyView from "./Pages/MyView";
+import Hobby from "./Pages/Hobby";
 
 function App() {
   return (
     <>
       <Reset />
       <Header />
-      <BrowserRouter></BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/mySelf" element={<MyView />} />
+        <Route path="/hobby" element={<Hobby />} />
+        {/* <Route path="/" element={}/> */}
+      </Routes>
     </>
   );
 }
