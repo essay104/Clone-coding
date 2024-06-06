@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { useState } from "react";
 
 const Container = styled.body`
   display: flex;
@@ -9,14 +10,15 @@ const Container = styled.body`
 `;
 
 const Section = styled.section`
-  flex: 1;
+  flex: ${(props) => (props.sectionOpen ? 5 : 1)};
   border: 1px solid #000;
   transition: flex 0.5s;
   cursor: pointer;
   padding: 40px;
   overflow: hidden;
   position: relative;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: ${(props) =>
+    props.sectionOpen ? `rgba(0, 0, 0, 0.8)` : `rgba(0, 0, 0, 0.2)`};
   color: #fff;
   transition: all 0.5s;
   display: flex;
@@ -24,12 +26,6 @@ const Section = styled.section`
   justify-content: center;
   align-items: center;
   gap: 20px;
-  &:hover {
-    flex: 5;
-    background-color: rgba(0, 0, 0, 0.8);
-    div {
-    }
-  }
 `;
 
 const Background = styled.div`
@@ -46,25 +42,65 @@ const Background = styled.div`
 
 const Script = styled.h5`
   text-align: center;
+  font-size: 1rem;
+  display: ${(props) => (props.sectionOpen ? "block" : "none")};
 `;
 
 const MyView = () => {
+  const [sectionOpen, setSectionOpen] = useState(false);
+
+  const sectionOpenHandler = (id) => {
+    setSectionOpen((prev) => ({
+      ...prev,
+      [id]: !prev[id],
+    }));
+  };
+
+  console.log(sectionOpen);
+
   return (
     <Container>
-      <Section>
+      <Section
+        sectionOpen={sectionOpen[1]}
+        onClick={() => sectionOpenHandler(1)}
+      >
         <h1>인내심과 꾸준함</h1>
-        <Script>
+        <Script sectionOpen={sectionOpen[1]}>
           저는 무언가를 달성하기 위해서는 괴로움을 참아낼 수 있는 인내심과
-          <br /> 목표에 조바심을 갖지 않고 조금씩 천천히 전진할 수 있는 꾸준함을 가져야 한다고 생각합니다.
+          <br /> 목표에 조바심을 갖지 않고 조금씩 천천히 전진할 수 있는 꾸준함을
+          가져야 한다고 생각합니다.
         </Script>
         <Background />
       </Section>
-      <Section>
+      <Section
+        onClick={() => sectionOpenHandler(2)}
+        sectionOpen={sectionOpen[2]}
+      >
         <h1>정직함</h1>
-        <Script></Script>
+        <Script sectionOpen={sectionOpen[2]}>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum.
+        </Script>
       </Section>
-      <Section>
+      <Section
+        onClick={() => sectionOpenHandler(3)}
+        sectionOpen={sectionOpen[3]}
+      >
         <h1>배려</h1>
+        <Script sectionOpen={sectionOpen[3]}>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum.
+        </Script>
       </Section>
     </Container>
   );

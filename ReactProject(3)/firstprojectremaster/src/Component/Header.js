@@ -6,16 +6,13 @@ import { faRepeat } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 
 const Banner = styled.header`
-  width: 200px;
+  width: 15%;
   height: 100vh;
   background-color: #2db400;
   color: #eee;
   display: flex;
   align-items: center;
   flex-direction: column;
-  position: fixed;
-  right: 0;
-  z-index: 9999;
   & h1 {
     padding: 20px;
     border-bottom: 1px solid #fff;
@@ -24,7 +21,7 @@ const Banner = styled.header`
 `;
 
 const Nav = styled.div`
-  width: 95%;
+  width: 100%;
   color: #eee;
   padding: 20px;
   display: flex;
@@ -63,6 +60,11 @@ const TimeReset = styled(FontAwesomeIcon)`
   &:hover {
     color: royalblue;
   }
+`;
+
+const LinkCustom = styled(Link)`
+  width: 100%;
+  border-bottom: 1px solid #fff;
 `;
 
 const Header = () => {
@@ -117,14 +119,12 @@ const Header = () => {
       <Link to="/">
         <h1>TITLE</h1>
       </Link>
-      <Nav>
-        <Link to="/mySelf/">나의 가치관</Link>
-      </Nav>
-      <Nav>
-        <Link to="/hobby/">취미</Link>
-      </Nav>
-      <Nav>포부</Nav>
-      <Nav>menu 4</Nav>
+      <LinkCustom to="/mySelf/">
+        <Nav>나의 가치관</Nav>
+      </LinkCustom>
+      <LinkCustom to="/hobby/">
+        <Nav>취미</Nav>
+      </LinkCustom>
       <CurrentTime>
         {timer()}
         <TimeReset icon={faRepeat} onClick={timerRenewal} />

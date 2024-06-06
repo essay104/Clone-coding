@@ -10,7 +10,7 @@ import Hobby from "./Pages/Hobby";
 
 function App() {
   return (
-    <>
+    <div style={{ display: "flex" }}>
       <Reset />
       <Header />
       <Routes>
@@ -19,7 +19,7 @@ function App() {
         <Route path="/hobby" element={<Hobby />} />
         {/* <Route path="/" element={}/> */}
       </Routes>
-    </>
+    </div>
   );
 }
 
