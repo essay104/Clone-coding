@@ -1,0 +1,21 @@
+{
+  "projects": [
+    {
+      "id": "html01",
+      "name": "회전애니메이션",
+      "src": "/imgs/projects/html01.png",
+      "key01": "HTML",
+      "key02": "CSS",
+      "script": "호텔을 소개하는 페이지를 CSS Keyframe을 활용하여 애니메이션으로 만들었습니다. 각 섹션마다 transform rotate를 적용하여 회전 모양으로 만들었고 translateZ로 시점을 바깥에서 보는것처럼 보이게 만들었습니다."
+    },
+    {
+      "id": "html02",
+      "name": "무한슬라이더",
+      "src": "/imgs/projects/html02.png",
+      "key01": "HTML",
+      "key02": "CSS",
+      "key03": "JS",
+      "script": "슬라이더 앞 뒤에 슬라이더를 복제하여 슬라이더가 무한으로 움직이는것 처럼 보이게 만들었습니다. overflow 히든을 설정해 여분의 슬라이더를 숨기고 버튼을 클릭할때마다 translate값을 넓이만큼 변경하여 슬라이더를 움직이게 만들었습니다."
+    }
+  ]
+}
