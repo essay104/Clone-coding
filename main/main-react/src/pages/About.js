@@ -4,6 +4,8 @@ import person from "../imgs/person.png";
 import Skill from "../component/Skill";
 import { Tablet, Desktop } from "../MediaQueries";
 import { useState } from "react";
+import test from "../imgs/test.png";
+import { width } from "@fortawesome/free-brands-svg-icons/fa42Group";
 
 const About = () => {
   const [sectionOpen, setSectionOpen] = useState(false);
@@ -25,7 +27,38 @@ const About = () => {
           onClick={() => sectionOpenHandler(1)}
         >
           <SectionHeader sectionOpen={sectionOpen[1]}>My Info</SectionHeader>
-          <Script sectionOpen={sectionOpen[1]}></Script>
+          <Script sectionOpen={sectionOpen[1]}>
+            <ScriptWrap>
+              <div>
+                <img src={person} />
+              </div>
+              <div>
+                <h1
+                  style={{
+                    fontSize: "2rem",
+                    color: "#000",
+                    paddingLeft: "100px",
+                  }}
+                >
+                  김사도
+                </h1>
+                <h1
+                  style={{
+                    fontSize: "2rem",
+                    color: "#000",
+                    paddingLeft: "100px",
+                  }}
+                >
+                  1995.05.15
+                </h1>
+              </div>
+              <div style={{ display: "flex", float: "right" }}>
+                <div>
+                  <img src={test} />
+                </div>
+              </div>
+            </ScriptWrap>
+          </Script>
           <Background />
         </Section>
         <Section
@@ -90,7 +123,7 @@ const Section = styled.section`
   overflow: hidden;
   position: relative;
   background-color: ${(props) =>
-    props.sectionOpen ? `rgba(0, 0, 0, 0.2)` : `rgba(0, 0, 0, 0.8)`};
+    props.sectionOpen ? `rgba(0, 0, 0, 0.0)` : `rgba(0, 0, 0, 0.6)`};
   color: #fff;
   transition: all 0.5s;
   display: flex;
@@ -116,8 +149,18 @@ const Background = styled.div`
   background-image: url("https://images.chosun.com/resizer/w_kZ9ojyxd1qXZOb3ySmXLt_om4=/2560x0/smart/cloudfront-ap-northeast-1.images.arcpublishing.com/chosun/FX4XSGRSANESLN3UVVPCIQAKX4.jpg");
 `;
 
-const Script = styled.h5`
+const Script = styled.div`
   text-align: center;
   font-size: 1rem;
   display: ${(props) => (props.sectionOpen ? "block" : "none")};
+  width: 100%;
+  height: 100%;
+`;
+
+const ScriptWrap = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 `;
