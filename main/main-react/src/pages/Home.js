@@ -18,11 +18,14 @@ const HomeContainer = styled.div`
   background-size: contain;
   flex-direction: column;
   gap: 20px;
+  font-family: "NEXON Lv2 Gothic";
+
   p {
     color: ${({ theme }) => theme.fontColor};
     text-align: center;
     font-weight: bold;
     text-transform: uppercase;
+    font-family: "MaplestoryOTFBold";
   }
 `;
 
@@ -50,8 +53,11 @@ const HomeContainerTablet = styled.div`
 const HomeLogo = styled.span`
   color: ${({ theme }) => theme.fontColor};
   font-size: 4rem;
-  font-family: "Playfair Display";
   text-shadow: 0px 0px 30px rgba(255, 255, 255, 1);
+  font-family: "NEXON Lv2 Gothic";
+  font-weight: bold;
+  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3), 6px 6px 10px rgba(0, 0, 0, 0.2),
+    9px 9px 15px rgba(0, 0, 0, 0.1);
 `;
 
 const LogoDeco = styled.span`
@@ -68,7 +74,7 @@ const Home = () => {
     <>
       <Desktop>
         <HomeContainer>
-          <HomeLogo>PORTFOLIO</HomeLogo>
+          <HomeLogo>김사도의 PORTFOLIO</HomeLogo>
           <p>no pain no gain</p>
         </HomeContainer>
       </Desktop>

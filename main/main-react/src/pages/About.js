@@ -3,191 +3,121 @@ import styled from "styled-components";
 import person from "../imgs/person.png";
 import Skill from "../component/Skill";
 import { Tablet, Desktop } from "../MediaQueries";
-
-const Container = styled.div`
-  width: 100%;
-  height: 100vh;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  height: auto;
-
-  @media (max-width: 768px) {
-    height: auto;
-    padding-top: 0;
-  }
-`;
-
-const Profile = styled.div`
-  width: 100%;
-  height: 510px;
-  display: flex;
-  justify-content: center;
-  position: relative;
-  transform: translateY(25%);
-  img {
-    margin-left: 0%;
-  }
-  p {
-    font-size: 2rem;
-    color: ${({ theme }) => theme.fontColor2};
-    white-space: nowrap;
-    position: absolute;
-    z-index: 99;
-    top: 60%;
-  }
-`;
-
-const MainProfile = styled.div`
-  width: 100%;
-  max-width: 768px;
-  height: 185px;
-  background: #fff;
-  transform: translateY(5%);
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  gap: 50px;
-  font-size: 26px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
-  border-radius: 5px;
-  margin: 0 auto;
-
-  @media (max-width: 768px) {
-    width: 80%;
-    flex-direction: column;
-    height: auto;
-    padding: 50px;
-  }
-`;
-
-const MyInfo = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 58px;
-  justify-content: center;
-  align-items: center;
-  & span:first-child {
-    font-size: 18px;
-    color: #777;
-  }
-
-  @media (max-width: 768px) {
-    gap: 8px;
-  }
-`;
-
-const Edu = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 7px;
-  & span {
-    font-size: 18px;
-    color: #1a1a1a;
-  }
-  & div {
-    display: flex;
-    gap: 10px;
-  }
-`;
-
-const EduInfo = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-`;
-
-const SkillBox = styled.div`
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 30px;
-  margin-top: 100px;
-  padding-bottom: 50px;
-`;
+import { useState } from "react";
 
 const About = () => {
+  const [sectionOpen, setSectionOpen] = useState(false);
+
+  const sectionOpenHandler = (id) => {
+    setSectionOpen((prev) => ({
+      ...prev,
+      [id]: !prev[id],
+    }));
+  };
+
+  console.log(sectionOpen);
+
   return (
-    <>
-      <Desktop>
-        <Container>
-          <div style={{ width: "100%" }}>
-            <Profile>
-              <img src={person} alt="img" />
-              <p>안녕하세요 신입 퍼블리셔를 꿈꾸는 김사도입니다!</p>
-            </Profile>
-            <MainProfile>
-              <MyInfo>
-                <span>생년월일</span>
-                <span>1995.05.15</span>
-              </MyInfo>
-              <Edu>
-                <span style={{ color: "#777" }}>학업</span>
-                <div>
-                  <EduInfo>
-                    <span>2014.3</span>
-                    <span>2021.3</span>
-                    <span>2021.6</span>
-                  </EduInfo>
-                  <EduInfo>
-                    <span>선덕고 졸업</span>
-                    <span>신한대 졸업</span>
-                    <span>이젠아카데미 퍼블리셔반 수료</span>
-                  </EduInfo>
-                </div>
-              </Edu>
-            </MainProfile>
-          </div>
-          <SkillBox>
-            <Skill></Skill>
-          </SkillBox>
-        </Container>
-      </Desktop>
-      <Tablet>
-        <Container>
-          <div style={{ width: "100%" }}>
-            <Profile>
-              <img src={person} alt="img" />
-              <p style={{ transform: "translateY(-50%)", textAlign: "center" }}>
-                안녕하세요 <br />
-                신입 퍼블리셔를 <br />
-                꿈꾸는 김사도입니다!
-              </p>
-            </Profile>
-            <MainProfile>
-              <MyInfo>
-                <span>생년월일</span>
-                <span>1995.05.15</span>
-              </MyInfo>
-              <Edu>
-                <span style={{ color: "#777" }}>학업</span>
-                <div>
-                  <EduInfo>
-                    <span>2014.3</span>
-                    <span>2021.3</span>
-                    <span>2024.6</span>
-                  </EduInfo>
-                  <EduInfo>
-                    <span>선덕고 졸업</span>
-                    <span>신한대 졸업</span>
-                    <span>이젠아카데미 퍼블리셔반 수료</span>
-                  </EduInfo>
-                </div>
-              </Edu>
-            </MainProfile>
-          </div>
-          <SkillBox>
-            <Skill></Skill>
-          </SkillBox>
-        </Container>
-      </Tablet>
-    </>
+    <Wrap>
+      <Container>
+        <Section
+          sectionOpen={sectionOpen[1]}
+          onClick={() => sectionOpenHandler(1)}
+        >
+          <SectionHeader sectionOpen={sectionOpen[1]}>My Info</SectionHeader>
+          <Script sectionOpen={sectionOpen[1]}></Script>
+          <Background />
+        </Section>
+        <Section
+          onClick={() => sectionOpenHandler(2)}
+          sectionOpen={sectionOpen[2]}
+        >
+          <SectionHeader sectionOpen={sectionOpen[2]}>My Skills</SectionHeader>
+          <Script sectionOpen={sectionOpen[2]}>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+            culpa qui officia deserunt mollit anim id est laborum.
+          </Script>
+        </Section>
+        <Section
+          onClick={() => sectionOpenHandler(3)}
+          sectionOpen={sectionOpen[3]}
+        >
+          <SectionHeader sectionOpen={sectionOpen[3]}>My Dream</SectionHeader>
+          <Script sectionOpen={sectionOpen[3]}>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+            culpa qui officia deserunt mollit anim id est laborum.
+          </Script>
+        </Section>
+      </Container>
+    </Wrap>
   );
 };
 
 export default About;
+
+const Wrap = styled.body`
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 100px;
+`;
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 95%;
+  height: 80vh;
+`;
+
+const Section = styled.section`
+  flex: ${(props) => (props.sectionOpen ? 5 : 1)};
+  border: 1px solid #000;
+  transition: flex 0.5s;
+  cursor: pointer;
+  padding: 40px;
+  overflow: hidden;
+  position: relative;
+  background-color: ${(props) =>
+    props.sectionOpen ? `rgba(0, 0, 0, 0.2)` : `rgba(0, 0, 0, 0.8)`};
+  color: #fff;
+  transition: all 0.5s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+`;
+
+const SectionHeader = styled.h1`
+  display: ${(props) => (props.sectionOpen ? "none" : "block")};
+`;
+
+const Background = styled.div`
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -99;
+  top: 0;
+  right: 0;
+  transition: all 1s;
+  background-position: center;
+  background-image: url("https://images.chosun.com/resizer/w_kZ9ojyxd1qXZOb3ySmXLt_om4=/2560x0/smart/cloudfront-ap-northeast-1.images.arcpublishing.com/chosun/FX4XSGRSANESLN3UVVPCIQAKX4.jpg");
+`;
+
+const Script = styled.h5`
+  text-align: center;
+  font-size: 1rem;
+  display: ${(props) => (props.sectionOpen ? "block" : "none")};
+`;

@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Production from "./pages/Production";
+import Projects from "./pages/Projects";
 import Reset from "./Reset";
 import Header from "./component/Header";
 import { darkTheme, lightTheme } from "./theme";
@@ -17,10 +18,10 @@ function App() {
   const [theme, setTheme] = useState("dark");
 
   const toggleTheme = () => {
-    setTheme(theme === "dark" ? "light" : "dark");
+    setTheme(theme === "light" ? "dark" : "light");
   };
 
-  const currentTheme = theme === "dark" ? darkTheme : lightTheme;
+  const currentTheme = theme === "light" ? darkTheme : lightTheme;
 
   const mobileModalHandler = () => {
     setIsModalOpen(!isModalOpen);
@@ -96,7 +97,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route path="/production/" element={<Production />} />
+          {/* <Route path="/production/" element={<Production />} /> */}
+          <Route path="/projects/" element={<Projects />} />
         </Routes>
       </BrowserRouter>
     </ThemeProvider>

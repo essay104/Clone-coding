@@ -1,0 +1,78 @@
+[
+  {
+    "id": "html01",
+    "name": "회전애니메이션",
+    "src": "/projects/html01.png",
+    "key01": "HTML",
+    "key02": "CSS",
+    "script": "호텔을 소개하는 페이지를 CSS Keyframe을 활용하여 애니메이션으로 만들었습니다. 각 섹션마다 transform rotate를 적용하여 회전 모양으로 만들었고 translateZ로 시점을 바깥에서 보는것처럼 보이게 만들었습니다."
+  },
+  {
+    "id": "html02",
+    "name": "무한슬라이더",
+    "src": "/projects/html02.png",
+    "key01": "HTML",
+    "key02": "CSS",
+    "key03": "JS",
+    "script": "슬라이더 앞 뒤에 슬라이더를 복제하여 슬라이더가 무한으로 움직이는것 처럼 보이게 만들었습니다. overflow 히든을 설정해 여분의 슬라이더를 숨기고 버튼을 클릭할때마다 translate값을 넓이만큼 변경하여 슬라이더를 움직이게 만들었습니다."
+  },
+  {
+    "id": "html03",
+    "name": "리그테이블",
+    "src": "/projects/html03.png",
+    "key01": "JS",
+    "key02": "JSON",
+    "script": "Pl의 각 팀의 순위를 JSON데이터로 만들어서 출력하고 각 데이터로 오름차순, 내림차순 정렬을 할 수 있게 만들었습니다."
+  },
+  {
+    "id": "html04",
+    "name": "카카오 맛집 API",
+    "src": "/projects/html04.png",
+    "key01": "CSS",
+    "key02": "JS",
+    "key03": "API",
+    "script": "카카오 맵 API를 통해 우리 동네의 지도를 가져오고 마커로 맛집의 위치를 표시하였습니다. 또한 마커를 클릭하면 모달창이 출력되어 맛집에 관한 정보가 나오도록 만들었습니다."
+  },
+  {
+    "id": "html05",
+    "name": "Fixed Nes",
+    "src": "/projects/html05.png",
+    "key01": "HTML",
+    "key02": "CSS",
+    "script": "Iframe을 통해 각각의 뉴스 페이지로 이동할 수 있게 만들었으며 position fixed 효과로 화면을 역동적으로 만들었습니다."
+  },
+  {
+    "id": "html06",
+    "name": "Kanban board",
+    "src": "/projects/html06.png",
+    "key01": "HTML",
+    "key02": "CSS",
+    "key03": "JS",
+    "script": ""
+  },
+  {
+    "id": "html07",
+    "name": "오토슬라이더",
+    "src": "/projects/html07.png",
+    "key01": "HTML",
+    "key02": "CSS",
+    "key03": "JS",
+    "script": ""
+  },
+  {
+    "id": "html08",
+    "name": "Toggle menu",
+    "src": "/projects/html08.png",
+    "key01": "HTML",
+    "key02": "CSS",
+    "script": ""
+  },
+  {
+    "id": "html09",
+    "name": "여행지 소개",
+    "src": "/projects/html09.png",
+    "key01": "HTML",
+    "key02": "CSS",
+    "script": ""
+  }
+]
