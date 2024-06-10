@@ -111,7 +111,7 @@ const SkillBox = styled.div`
   padding-bottom: 50px;
 `;
 
-const About = () => {
+const About = ({ isVisible }) => {
   return (
     <>
       <Desktop>

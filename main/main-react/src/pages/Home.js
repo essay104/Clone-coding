@@ -4,6 +4,7 @@ import styled from "styled-components";
 import mainBg from "../imgs/mainbg.png";
 import { useScroll, useAnimation } from "framer-motion";
 import { Tablet, Desktop } from "../MediaQueries";
+import { motion } from "framer-motion";
 
 const HomeContainer = styled.div`
   width: 100%;
@@ -62,16 +63,20 @@ const HomeLogo = styled.span`
 
 const LogoDeco = styled.span`
   width: 100%;
-  height: 80px;
+  height: 180px;
   background-color: ${({ theme }) => theme.mainHeaderColor};
-  transform: translateY(-20%);
+  transform: translateY(0%);
   position: absolute;
   z-index: -999;
 `;
 
 const Home = () => {
   return (
-    <>
+    <motion.div
+      initial={{ x: 300, opacity: 0 }}
+      animate={{ x: 0, opacity: 1 }}
+      exit={{ x: -300, opacity: 0 }}
+    >
       <Desktop>
         <HomeContainer>
           <HomeLogo>김사도의 PORTFOLIO</HomeLogo>
@@ -85,7 +90,7 @@ const Home = () => {
           <LogoDeco />
         </HomeContainerTablet>
       </Tablet>
-    </>
+    </motion.div>
   );
 };
 

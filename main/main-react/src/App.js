@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import About from "./pages/About";
+import Skills from "./pages/Skills";
 import Production from "./pages/Production";
 import Projects from "./pages/Projects";
 import Reset from "./Reset";
@@ -12,6 +13,7 @@ import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faX } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
+import { AnimatePresence, motion } from "framer-motion";
 
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -88,18 +90,21 @@ function App() {
               <Link to="/about" onClick={mobileModalHandler}>
                 About
               </Link>
-              <Link to="/production" onClick={mobileModalHandler}>
+              <Link to="/projects" onClick={mobileModalHandler}>
                 Projects
               </Link>
             </ModalControl>
           </Modal>
         )}
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          {/* <Route path="/production/" element={<Production />} /> */}
-          <Route path="/projects/" element={<Projects />} />
-        </Routes>
+        <AnimatePresence>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/about/mySkills" element={<Skills />} />
+            {/* <Route path="/production/" element={<Production />} /> */}
+            <Route path="/projects/" element={<Projects />} />
+          </Routes>
+        </AnimatePresence>
       </BrowserRouter>
     </ThemeProvider>
   );

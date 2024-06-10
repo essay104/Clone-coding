@@ -48,128 +48,165 @@ const Production = () => {
 
   return (
     <Container>
-      <FullPageContainer>
-        <SectionsContainer {...options}>
-          <SectionStyled>
-            <HTMLContainer>
-              <HTMLContents>
-                {projects.map((project) => (
-                  <HTMLContnet key={project.id} className="project">
-                    <HTMLImg>
-                      <img src={project.src} alt={project.name} />
-                    </HTMLImg>
-                    <HTMLTitle>
-                      <h4>{project.name}</h4>
-                      <SkillBoxContainer>
-                        {project.key01 && (
-                          <SkillsMini skillName={project.key01} />
-                        )}
-                        {project.key02 && (
-                          <SkillsMini skillName={project.key02} />
-                        )}
-                        {project.key03 && (
-                          <SkillsMini skillName={project.key03} />
-                        )}
-                      </SkillBoxContainer>
-                    </HTMLTitle>
-                  </HTMLContnet>
-                ))}
-              </HTMLContents>
-            </HTMLContainer>
-          </SectionStyled>
-          <SectionStyled>
-            <MobileContainer>
-              <MobileContents>
-                <MobileImg>
-                  <ImageManager imageKey="mobile01" />
-                </MobileImg>
-                <Mobileinfo>
-                  <h2>로봇청소기 쇼핑</h2>
-                  <p>
-                    로봇 청소기를 쇼핑하는 웹페이지를 작성하였습니다. 여러
-                    페이지를 인터렉티브하게 움직일 수 있도록 구현하였고 모달
-                    화면, 피젯스피너, 구매 폼 등을 구현했습니다.
-                  </p>
-                </Mobileinfo>
-                <MobileStyle />
-              </MobileContents>
-              <MobileContents>
-                <MobileImg>
-                  <ImageManager imageKey="mobile02" />
-                </MobileImg>
-                <Mobileinfo>
-                  <h2>모바일 Todo리스트</h2>
-                  <p>
-                    피젯스피너로 로딩화면을 구현했고 Todo리스트를 넣고 수정할 수
-                    있는 기능을 커스터마이징 하였습니다. 또한 남은 체크박스를
-                    누르면 완료 횟수가 올라가고 남은 시간이 표시됩니다.
-                  </p>
-                </Mobileinfo>
-                <MobileStyle />
-              </MobileContents>
-            </MobileContainer>
-          </SectionStyled>
-          <SectionStyled>
-            <CloneContainer>
-              <CloneContents>
-                <CloneContent>
-                  <CloneImg>
-                    <ImageManager imageKey="clone1" />
-                  </CloneImg>
-                  <CloneSize>
-                    <li>1920px</li>
-                    <li>768px</li>
-                    <li>390px</li>
-                  </CloneSize>
-                  <CloneDetail>
-                    <h3>뚜레쥬르</h3>
+      <Desktop>
+        <FullPageContainer>
+          <SectionsContainer {...options}>
+            <SectionStyled>
+              <HTMLContainer>
+                <HTMLContents>
+                  {projects.map((project) => (
+                    <HTMLContnet key={project.id} className="project">
+                      <HTMLImg>
+                        <img src={project.src} alt={project.name} />
+                      </HTMLImg>
+                      <HTMLTitle>
+                        <h4>{project.name}</h4>
+                        <SkillBoxContainer>
+                          {project.key01 && (
+                            <SkillsMini skillName={project.key01} />
+                          )}
+                          {project.key02 && (
+                            <SkillsMini skillName={project.key02} />
+                          )}
+                          {project.key03 && (
+                            <SkillsMini skillName={project.key03} />
+                          )}
+                        </SkillBoxContainer>
+                      </HTMLTitle>
+                    </HTMLContnet>
+                  ))}
+                </HTMLContents>
+              </HTMLContainer>
+            </SectionStyled>
+            <SectionStyled>
+              <MobileContainer>
+                <MobileContents>
+                  <MobileImg>
+                    <ImageManager imageKey="mobile01" />
+                  </MobileImg>
+                  <Mobileinfo>
+                    <h2>로봇청소기 쇼핑</h2>
                     <p>
-                      메인 이미지화 헤더를 고정시킨 채 메인 메뉴가 위아래로
-                      움직이는 것을 pixed로 구현했습니다. 또한 오토슬라이드도
-                      자바스크립트 반복문으로 작성했습니다.
+                      로봇 청소기를 쇼핑하는 웹페이지를 작성하였습니다. 여러
+                      페이지를 인터렉티브하게 움직일 수 있도록 구현하였고 모달
+                      화면, 피젯스피너, 구매 폼 등을 구현했습니다.
                     </p>
-                  </CloneDetail>
-                </CloneContent>
-                <CloneContent>
-                  <CloneImg>
-                    <ImageManager imageKey="clone2" />
-                  </CloneImg>
-                  <CloneSize>
-                    <li>1920px</li>
-                    <li>768px</li>
-                    <li>390px</li>
-                  </CloneSize>
-                  <CloneDetail>
-                    <h3>에뛰드</h3>
+                  </Mobileinfo>
+                  <MobileStyle />
+                </MobileContents>
+                <MobileContents>
+                  <MobileImg>
+                    <ImageManager imageKey="mobile02" />
+                  </MobileImg>
+                  <Mobileinfo>
+                    <h2>모바일 Todo리스트</h2>
                     <p>
-                      팀프로젝트로 작성했습니다. 이미지의 적절한 배치를 위해
-                      HTML구조를 이해하고자 노력했고 스크롤에 따라 이미지가
-                      역동적으로 출현할 수 있게 자바스크립트로 작성하였습니다.
+                      피젯스피너로 로딩화면을 구현했고 Todo리스트를 넣고 수정할
+                      수 있는 기능을 커스터마이징 하였습니다. 또한 남은
+                      체크박스를 누르면 완료 횟수가 올라가고 남은 시간이
+                      표시됩니다.
                     </p>
-                  </CloneDetail>
-                </CloneContent>
-                <CloneContent>
-                  <CloneImg>
-                    <ImageManager imageKey="clone3" />
-                  </CloneImg>
-                  <CloneSize>
-                    <li>1920px</li>
-                    <li>768px</li>
-                    <li>390px</li>
-                  </CloneSize>
-                  <CloneDetail>
-                    <h3>빙그레</h3>
-                    <p>
-                      각종 슬라이더가 담겨져 있는 페이지 입니다. 미디어 쿼리에
-                      따라 유연하게 페이지 화면이 변경할 수 있도록 노력했습니다.
-                    </p>
-                  </CloneDetail>
-                </CloneContent>
-              </CloneContents>
-            </CloneContainer>
-          </SectionStyled>
-        </SectionsContainer>
-      </FullPageContainer>
+                  </Mobileinfo>
+                  <MobileStyle />
+                </MobileContents>
+              </MobileContainer>
+            </SectionStyled>
+            <SectionStyled>
+              <CloneContainer>
+                <CloneContents>
+                  <CloneContent>
+                    <CloneImg>
+                      <ImageManager imageKey="clone1" />
+                    </CloneImg>
+                    <CloneSize>
+                      <li>1920px</li>
+                      <li>768px</li>
+                      <li>390px</li>
+                    </CloneSize>
+                    <CloneDetail>
+                      <h3>뚜레쥬르</h3>
+                      <p>
+                        메인 이미지화 헤더를 고정시킨 채 메인 메뉴가 위아래로
+                        움직이는 것을 pixed로 구현했습니다. 또한 오토슬라이드도
+                        자바스크립트 반복문으로 작성했습니다.
+                      </p>
+                    </CloneDetail>
+                  </CloneContent>
+                  <CloneContent>
+                    <CloneImg>
+                      <ImageManager imageKey="clone2" />
+                    </CloneImg>
+                    <CloneSize>
+                      <li>1920px</li>
+                      <li>768px</li>
+                      <li>390px</li>
+                    </CloneSize>
+                    <CloneDetail>
+                      <h3>에뛰드</h3>
+                      <p>
+                        팀프로젝트로 작성했습니다. 이미지의 적절한 배치를 위해
+                        HTML구조를 이해하고자 노력했고 스크롤에 따라 이미지가
+                        역동적으로 출현할 수 있게 자바스크립트로 작성하였습니다.
+                      </p>
+                    </CloneDetail>
+                  </CloneContent>
+                  <CloneContent>
+                    <CloneImg>
+                      <ImageManager imageKey="clone3" />
+                    </CloneImg>
+                    <CloneSize>
+                      <li>1920px</li>
+                      <li>768px</li>
+                      <li>390px</li>
+                    </CloneSize>
+                    <CloneDetail>
+                      <h3>빙그레</h3>
+                      <p>
+                        각종 슬라이더가 담겨져 있는 페이지 입니다. 미디어 쿼리에
+                        따라 유연하게 페이지 화면이 변경할 수 있도록
+                        노력했습니다.
+                      </p>
+                    </CloneDetail>
+                  </CloneContent>
+                </CloneContents>
+              </CloneContainer>
+            </SectionStyled>
+          </SectionsContainer>
+        </FullPageContainer>
+      </Desktop>
+      <Tablet>
+        <HTMLTabletWrap></HTMLTabletWrap>
+        {/* <MobileContainer>
+          <MobileContents>
+            <MobileImg>
+              <ImageManager imageKey="mobile01" />
+            </MobileImg>
+            <Mobileinfo>
+              <h2>로봇청소기 쇼핑</h2>
+              <p>
+                로봇 청소기를 쇼핑하는 웹페이지를 작성하였습니다. 여러 페이지를
+                인터렉티브하게 움직일 수 있도록 구현하였고 모달 화면,
+                피젯스피너, 구매 폼 등을 구현했습니다.
+              </p>
+            </Mobileinfo>
+            <MobileStyle />
+          </MobileContents>
+          <MobileContents>
+            <MobileImg>
+              <ImageManager imageKey="mobile02" />
+            </MobileImg>
+            <Mobileinfo>
+              <h2>모바일 Todo리스트</h2>
+              <p>
+                피젯스피너로 로딩화면을 구현했고 Todo리스트를 넣고 수정할 수
+                있는 기능을 커스터마이징 하였습니다. 또한 남은 체크박스를 누르면
+                완료 횟수가 올라가고 남은 시간이 표시됩니다.
+              </p>
+            </Mobileinfo>
+            <MobileStyle />
+          </MobileContents>
+        </MobileContainer> */}
+      </Tablet>
     </Container>
   );
 };
@@ -178,6 +215,7 @@ export default Production;
 
 const Container = styled.div`
   color: ${({ theme }) => theme.fontColor};
+  font-family: "NEXON Lv1 Gothic OTF";
 `;
 
 const FullPageContainer = styled.div`
@@ -422,4 +460,11 @@ const Button = styled.button`
     border: 1px solid #fff;
     transition: all 0.3s;
   }
+`;
+
+const HTMLTabletWrap = styled.div`
+  margin-top: 120px;
+  width: 100%;
+  height: auto;
+  border: 1px solid #000;
 `;
