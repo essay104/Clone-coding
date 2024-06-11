@@ -6,8 +6,10 @@ import { Tablet, Desktop } from "../MediaQueries";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
+import MoveToRight from "../component/MoveToRight";
+import MoveToLeft from "../component/MoveToLeft";
 
-const About = ({ isVisible }) => {
+const About = () => {
   const [sectionOpen, setSectionOpen] = useState(false);
   const navegate = useNavigate();
 
@@ -19,74 +21,81 @@ const About = ({ isVisible }) => {
   };
 
   return (
-    <motion.div
-      initial={{ x: 300, opacity: 0 }}
-      animate={{ x: 0, opacity: 1 }}
-      exit={{ x: -300, opacity: 0 }}
-    >
-      <Wrap>
-        <Container>
-          <Section
-            sectionOpen={sectionOpen[1]}
-            onClick={() => sectionOpenHandler(1)}
-          >
-            <SectionHeader sectionOpen={sectionOpen[1]}>
-              Introduce
-            </SectionHeader>
-            <Script sectionOpen={sectionOpen[1]}>
-              <ScriptWrap>
-                <ScriptImg>
-                  <img src={person} alt="im" />
-                </ScriptImg>
-                <ScriptIntroduce>
-                  <h2>안녕하세요 신입 퍼블리셔를 꿈꾸는 김사도입니다!</h2>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    Duis aute irure dolor in reprehenderit in voluptate velit
-                    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-                    occaecat cupidatat non proident, sunt in culpa qui officia
-                    deserunt mollit anim id est laborum.
-                  </p>
-                </ScriptIntroduce>
-              </ScriptWrap>
-            </Script>
-          </Section>
-          <Section
-            onClick={() => sectionOpenHandler(2)}
-            sectionOpen={sectionOpen[2]}
-          >
-            <SectionHeader sectionOpen={sectionOpen[2]}>My Info</SectionHeader>
-            <Script sectionOpen={sectionOpen[2]}>
-              <ScriptWrap>
-                <Infobox>
-                  <img
-                    src="https://i.pinimg.com/736x/3f/94/70/3f9470b34a8e3f526dbdb022f9f19cf7.jpg"
-                    style={{ width: "80%" }}
-                  />
-                  <p>프로필 사진(임시)</p>
-                </Infobox>
-                <Infobox>
-                  <b>1995. 05. 15</b>
-                  <b>서울시 도봉구 거주</b>
-                </Infobox>
-                <Infobox></Infobox>
-                <Infobox></Infobox>
-                <Infobox></Infobox>
-              </ScriptWrap>
-            </Script>
-          </Section>
-          <Section onClick={() => navegate(`./mySkills`)}>
-            <SectionHeader>My Skills</SectionHeader>
-            <Script>
-              <ScriptWrap></ScriptWrap>
-            </Script>
-          </Section>
-        </Container>
-      </Wrap>
-    </motion.div>
+    <>
+      <motion.div
+        initial={{ opacity: 0, x: -500 }}
+        animate={{ opacity: 1, x: 0 }}
+        exit={{ opacity: 0, x: -500 }}
+        transition={{ duration: 0.8 }}
+      >
+        <Wrap>
+          <Container>
+            <Section
+              sectionOpen={sectionOpen[1]}
+              onClick={() => sectionOpenHandler(1)}
+            >
+              <SectionHeader sectionOpen={sectionOpen[1]}>
+                Introduce
+              </SectionHeader>
+              <Script sectionOpen={sectionOpen[1]}>
+                <ScriptWrap>
+                  <ScriptImg>
+                    <img src={person} alt="im" />
+                  </ScriptImg>
+                  <ScriptIntroduce>
+                    <h2>안녕하세요 신입 퍼블리셔를 꿈꾸는 김사도입니다!</h2>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Duis aute irure dolor in reprehenderit in voluptate velit
+                      esse cillum dolore eu fugiat nulla pariatur. Excepteur
+                      sint occaecat cupidatat non proident, sunt in culpa qui
+                      officia deserunt mollit anim id est laborum.
+                    </p>
+                  </ScriptIntroduce>
+                </ScriptWrap>
+              </Script>
+            </Section>
+            <Section
+              onClick={() => sectionOpenHandler(2)}
+              sectionOpen={sectionOpen[2]}
+            >
+              <SectionHeader sectionOpen={sectionOpen[2]}>
+                My Info
+              </SectionHeader>
+              <Script sectionOpen={sectionOpen[2]}>
+                <ScriptWrap>
+                  <Infobox>
+                    <img
+                      src="https://i.pinimg.com/736x/3f/94/70/3f9470b34a8e3f526dbdb022f9f19cf7.jpg"
+                      style={{ width: "80%" }}
+                    />
+                    <p>프로필 사진(임시)</p>
+                  </Infobox>
+                  <Infobox>
+                    <b>1995. 05. 15</b>
+                    <b>서울시 도봉구 거주</b>
+                  </Infobox>
+                  <Infobox></Infobox>
+                  <Infobox></Infobox>
+                  <Infobox></Infobox>
+                </ScriptWrap>
+              </Script>
+            </Section>
+            <Section onClick={() => navegate(`./mySkills`)}>
+              <SectionHeader>My Skills</SectionHeader>
+              <Script>
+                <ScriptWrap></ScriptWrap>
+              </Script>
+            </Section>
+          </Container>
+        </Wrap>
+      </motion.div>
+      <MoveToRight />
+      <MoveToLeft />
+    </>
   );
 };
 
@@ -196,6 +205,7 @@ const Infobox = styled.div`
   position: relative;
   transition: transform 0.3s;
   overflow: hidden;
+  color: #000;
   &:nth-child(3) {
     background: url(https://s3.ap-northeast-2.amazonaws.com/event-localnaeil/FileData/Article/202206/42301513-f583-4fda-b36c-d9bb134a9713.jpg) center/cover no-repeat;
   }

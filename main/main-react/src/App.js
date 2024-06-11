@@ -3,17 +3,17 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Skills from "./pages/Skills";
-import Production from "./pages/Production";
 import Projects from "./pages/Projects";
 import Reset from "./Reset";
 import Header from "./component/Header";
 import { darkTheme, lightTheme } from "./theme";
 import { ThemeProvider } from "styled-components";
+import Pager from "./component/Pager";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faX } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -96,6 +96,7 @@ function App() {
             </ModalControl>
           </Modal>
         )}
+        <Pager />
         <AnimatePresence>
           <Routes>
             <Route path="/" element={<Home />} />

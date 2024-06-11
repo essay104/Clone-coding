@@ -5,6 +5,12 @@ import { motion, useAnimation, useScroll } from "framer-motion";
 import { Desktop, Tablet } from "../MediaQueries";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
+import {
+  faLocationDot,
+  faCloud,
+  faTemperatureHalf,
+  faClock,
+} from "@fortawesome/free-solid-svg-icons";
 
 const Header = ({ toggleTheme, mobileModalHandler }) => {
   const [time, setTime] = useState(``);
@@ -80,7 +86,7 @@ const Header = ({ toggleTheme, mobileModalHandler }) => {
 
     timer();
 
-    // setInterval(timer, 1000);
+    setInterval(timer, 1000);
   }, []);
 
   const [justifyContent, setJustifyContent] = useState("flex-start");
@@ -100,21 +106,34 @@ const Header = ({ toggleTheme, mobileModalHandler }) => {
     <div>
       <Desktop>
         <HeaderBox variants={navVariants} initial="top">
-          <ModeChange
-            onClick={() => modeHandler()}
-            justifyContent={justifyContent}
-          >
-            <span
-              layout
-              transition={{ type: "spring", stiffness: 300, damping: 20 }}
-            />
-          </ModeChange>
+          <div>
+            <ModeChange
+              onClick={() => modeHandler()}
+              justifyContent={justifyContent}
+            >
+              <motion.span
+                layout
+                transition={{ type: "spring", stiffness: 300, damping: 20 }}
+              />
+            </ModeChange>
+          </div>
           <CurrentWether>
-            <p>Location : {weatherData?.name}</p>
-            <p>Weather : {weatherData?.weather[0].main}</p>
-            <p>Temperature : {weatherData?.main.temp} ℃ </p>
+            <WeatherInfo>
+              <FontAwesomeIcon icon={faLocationDot} />
+              {weatherData?.name}
+            </WeatherInfo>
+            <WeatherInfo>
+              <FontAwesomeIcon icon={faCloud} />
+              {weatherData?.weather[0].main}
+            </WeatherInfo>
+            <WeatherInfo>
+              <FontAwesomeIcon icon={faTemperatureHalf} />
+              {weatherData?.main.temp} ℃
+            </WeatherInfo>
           </CurrentWether>
-          <CurrentTime>{time}</CurrentTime>
+          <CurrentTime>
+            <FontAwesomeIcon icon={faClock} /> {time}
+          </CurrentTime>
           <HeaderList>
             <li>
               <Link to="/">Home</Link>
@@ -154,7 +173,7 @@ const HeaderBox = styled(motion.div)`
   width: calc(100% - 48px);
   height: 80px;
   background: ${({ theme }) => theme.mainHeaderColor};
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.8);
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
   position: fixed;
   top: 20px;
   left: 50%;
@@ -271,6 +290,12 @@ const CurrentWether = styled.div`
   @media (max-width: 1220px) {
     font-size: 0.8rem;
   }
+`;
+
+const WeatherInfo = styled.p`
+  display: flex;
+  gap: 10px;
+  align-items: center;
 `;
 
 const navVariants = {

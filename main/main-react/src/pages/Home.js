@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "../component/Header";
 import styled from "styled-components";
 import mainBg from "../imgs/mainbg.png";
 import { useScroll, useAnimation } from "framer-motion";
 import { Tablet, Desktop } from "../MediaQueries";
 import { motion } from "framer-motion";
+import MoveToRight from "../component/MoveToRight";
 
 const HomeContainer = styled.div`
   width: 100%;
@@ -72,15 +73,18 @@ const LogoDeco = styled.span`
 
 const Home = () => {
   return (
-    <motion.div
-      initial={{ x: 300, opacity: 0 }}
-      animate={{ x: 0, opacity: 1 }}
-      exit={{ x: -300, opacity: 0 }}
-    >
+    <>
       <Desktop>
         <HomeContainer>
-          <HomeLogo>김사도의 PORTFOLIO</HomeLogo>
-          <p>no pain no gain</p>
+          <motion.div
+            initial={{ opacity: 0, x: -500 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -500 }}
+            transition={{ duration: 0.8 }}
+          >
+            <HomeLogo>김사도의 PORTFOLIO</HomeLogo>
+            <p>no pain no gain</p>
+          </motion.div>
         </HomeContainer>
       </Desktop>
       <Tablet>
@@ -90,7 +94,8 @@ const Home = () => {
           <LogoDeco />
         </HomeContainerTablet>
       </Tablet>
-    </motion.div>
+      <MoveToRight />
+    </>
   );
 };
 
