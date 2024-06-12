@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import styled, { keyframes } from "styled-components";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
+import { usePager } from "../context/pagerContext";
 
 const ArrowAnimation = keyframes`
   0% {
@@ -38,8 +40,13 @@ const LeftArrow = styled(motion.div)`
   }
 `;
 
-const MoveToLeft = () => {
-  return <LeftArrow>&lang;</LeftArrow>;
+const MoveToLeft = ({ onClick }) => {
+  const [toLeft, setToLeft] = useState();
+  const { pager, setPagerChanger } = usePager();
+  const moveToLeft = () => {};
+  const navigate = useNavigate();
+
+  return <LeftArrow onClick={onClick}>&lang;</LeftArrow>;
 };
 
 export default MoveToLeft;

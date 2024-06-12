@@ -13,9 +13,14 @@ import {
 import { SectionsContainer, Section } from "react-fullpage";
 import { width } from "@fortawesome/free-brands-svg-icons/fa42Group";
 import MoveToLeft from "../component/MoveToLeft";
+import { PagerProvider } from "../context/pagerContext";
+import { useNavigate } from "react-router-dom";
+import { usePager } from "../context/pagerContext";
 
 const Production = () => {
   const [projects, setProjects] = useState([]);
+
+  const { pager, setPagerChanger } = usePager();
 
   const getProjects = async () => {
     const url = `/db.json`;
@@ -27,8 +32,6 @@ const Production = () => {
   useEffect(() => {
     getProjects();
   }, []);
-
-  console.log(projects);
 
   const [visible, setVisible] = useState(1);
   const [back, setBack] = useState(false);
@@ -46,6 +49,8 @@ const Production = () => {
     scrollBar: false,
     delay: 800,
   };
+
+  const navigate = useNavigate();
 
   return (
     <>
@@ -183,6 +188,11 @@ const Production = () => {
               </SectionsContainer>
             </motion.div>
           </FullPageContainer>
+          <PagerProvider>
+            <MoveToLeft
+              onClick={() => (setPagerChanger(2))}
+            />
+          </PagerProvider>
         </Desktop>
         <Tablet>
           <HTMLTabletWrap></HTMLTabletWrap>
@@ -218,8 +228,6 @@ const Production = () => {
         </MobileContainer> */}
         </Tablet>
       </Container>
-
-      <MoveToLeft />
     </>
   );
 };

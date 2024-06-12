@@ -11,6 +11,7 @@ import {
   faTemperatureHalf,
   faClock,
 } from "@fortawesome/free-solid-svg-icons";
+import { usePager } from "../context/pagerContext";
 
 const Header = ({ toggleTheme, mobileModalHandler }) => {
   const [time, setTime] = useState(``);
@@ -47,7 +48,6 @@ const Header = ({ toggleTheme, mobileModalHandler }) => {
       const nowHour = theDay.getHours();
       const nowMin = theDay.getMinutes();
       const nowSec = theDay.getSeconds();
-
       const month = [
         "Jan",
         "Feb",
@@ -62,7 +62,6 @@ const Header = ({ toggleTheme, mobileModalHandler }) => {
         "Nov",
         "Dec",
       ];
-
       const day = [
         "Sunday",
         "Monday",
@@ -72,20 +71,15 @@ const Header = ({ toggleTheme, mobileModalHandler }) => {
         "Friday",
         "Saturday",
       ];
-
       const monthName = month[nowMonth];
       const dayName = day[nowDay];
-
       const crrHour =
         nowHour >= 12 ? `오후 ${nowHour - 12}` : `오전 ${nowHour}`;
-
       setTime(
         `${monthName} ${dayName} ${nowDate}일 ${crrHour}시 ${nowMin}분 ${nowSec}초`
       );
     };
-
     timer();
-
     setInterval(timer, 1000);
   }, []);
 
@@ -101,6 +95,8 @@ const Header = ({ toggleTheme, mobileModalHandler }) => {
   const scrolltoTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
+
+  const { pager, setPagerChanger } = usePager();
 
   return (
     <div>
@@ -136,14 +132,19 @@ const Header = ({ toggleTheme, mobileModalHandler }) => {
           </CurrentTime>
           <HeaderList>
             <li>
-              <Link to="/">Home</Link>
+              <Link to="/" onClick={() => setPagerChanger(1)}>
+                Home
+              </Link>
             </li>
             <li>
-              <Link to="/about">About</Link>
+              <Link to="/about" onClick={() => setPagerChanger(2)}>
+                About
+              </Link>
             </li>
             <li>
-              {/* <Link to="/production">Projects</Link> */}
-              <Link to="/projects">Projects</Link>
+              <Link to="/projects" onClick={() => setPagerChanger(3)}>
+                Projects
+              </Link>
             </li>
           </HeaderList>
         </HeaderBox>

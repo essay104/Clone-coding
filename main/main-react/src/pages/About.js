@@ -8,10 +8,13 @@ import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import MoveToRight from "../component/MoveToRight";
 import MoveToLeft from "../component/MoveToLeft";
+import { PagerProvider } from "../context/pagerContext";
+import { usePager } from "../context/pagerContext";
 
 const About = () => {
   const [sectionOpen, setSectionOpen] = useState(false);
-  const navegate = useNavigate();
+  const { pager, setPagerChanger } = usePager();
+  const navigate = useNavigate();
 
   const sectionOpenHandler = (id) => {
     setSectionOpen((prev) => ({
@@ -84,7 +87,7 @@ const About = () => {
                 </ScriptWrap>
               </Script>
             </Section>
-            <Section onClick={() => navegate(`./mySkills`)}>
+            <Section onClick={() => navigate(`./mySkills`)}>
               <SectionHeader>My Skills</SectionHeader>
               <Script>
                 <ScriptWrap></ScriptWrap>
@@ -93,8 +96,12 @@ const About = () => {
           </Container>
         </Wrap>
       </motion.div>
-      <MoveToRight />
-      <MoveToLeft />
+      <PagerProvider>
+        <MoveToRight
+          onClick={() => (setPagerChanger(3))}
+        />
+        <MoveToLeft onClick={() => (setPagerChanger(1))} />
+      </PagerProvider>
     </>
   );
 };

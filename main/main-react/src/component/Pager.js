@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { usePager } from "../context/pagerContext";
 
 const Pagers = styled(motion.div)`
   width: 500px;
@@ -25,39 +25,25 @@ const EachPager = styled(motion.span)`
 `;
 
 const Pager = () => {
-  const [pager, setPager] = useState({ 1: true, 2: false, 3: false });
-  const navegate = useNavigate();
-
-  const setPagerChanger = (id) => {
-    setPager({
-      1: id === 1,
-      2: id === 2,
-      3: id === 3,
-    });
-  };
-
-  console.log(pager);
+  const { pager, setPagerChanger } = usePager();
 
   return (
     <Pagers>
       <EachPager
         onClick={() => {
           setPagerChanger(1);
-          navegate(`./`);
         }}
         setPager={pager[1]}
       />
       <EachPager
         onClick={() => {
           setPagerChanger(2);
-          navegate(`./about`);
         }}
         setPager={pager[2]}
       />
       <EachPager
         onClick={() => {
           setPagerChanger(3);
-          navegate(`./projects`);
         }}
         setPager={pager[3]}
       />

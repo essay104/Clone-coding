@@ -1,6 +1,7 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
 import { motion } from "framer-motion";
+import { usePager } from "../context/pagerContext";
 
 const ArrowAnimation = keyframes`
   0% {
@@ -39,8 +40,8 @@ const RightArrow = styled(motion.div)`
   }
 `;
 
-const MoveToRight = () => {
-  return <RightArrow>&rang;</RightArrow>;
+const MoveToRight = ({ onClick }) => {
+  return <RightArrow onClick={onClick}>&rang;</RightArrow>;
 };
 
 export default MoveToRight;

@@ -6,6 +6,8 @@ import { useScroll, useAnimation } from "framer-motion";
 import { Tablet, Desktop } from "../MediaQueries";
 import { motion } from "framer-motion";
 import MoveToRight from "../component/MoveToRight";
+import { useNavigate } from "react-router-dom";
+import { usePager } from "../context/pagerContext";
 
 const HomeContainer = styled.div`
   width: 100%;
@@ -71,7 +73,24 @@ const LogoDeco = styled.span`
   z-index: -999;
 `;
 
+const HomeNavMenu = styled.ul`
+  display: flex;
+  width: 400px;
+  height: 80px;
+  margin: 30px auto;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+`;
+
 const Home = () => {
+  const navigate = useNavigate();
+
+  const { pager, setPagerChanger } = usePager();
+
   return (
     <>
       <Desktop>
@@ -83,9 +102,14 @@ const Home = () => {
             transition={{ duration: 0.8 }}
           >
             <HomeLogo>김사도의 PORTFOLIO</HomeLogo>
-            <p>no pain no gain</p>
+            <HomeNavMenu>
+              <li>nav1</li>
+              <li>nav2</li>
+              <li>nav3</li>
+            </HomeNavMenu>
           </motion.div>
         </HomeContainer>
+        <MoveToRight onClick={() => setPagerChanger(2)} />
       </Desktop>
       <Tablet>
         <HomeContainerTablet>
@@ -94,7 +118,6 @@ const Home = () => {
           <LogoDeco />
         </HomeContainerTablet>
       </Tablet>
-      <MoveToRight />
     </>
   );
 };

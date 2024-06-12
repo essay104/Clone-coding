@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import HtmlIcon from "../imgs/Html-icon.png";
@@ -7,6 +7,8 @@ import CssIcon from "../imgs/css-icon.png";
 import JSIcon from "../imgs/js-icon.png";
 import ReactIcon from "../imgs/react-icon.png";
 import TSIcon from "../imgs/ts-icon.png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faX } from "@fortawesome/free-solid-svg-icons";
 
 const Container = styled.section`
   width: 95%;
@@ -47,11 +49,25 @@ const SkillScript = styled.div`
   padding: 20px;
 `;
 
+const BackToPrevPage = styled(FontAwesomeIcon)`
+  font-size: 45px;
+  cursor: pointer;
+  position: absolute;
+  top: 20%;
+  right: 5%;
+  color: ${({ theme }) => theme.fontColor3};
+  transition: all 0.5s;
+  &:hover {
+    color: ${({ theme }) => theme.pager2};
+    scale: 1.2;
+  }
+`;
+
 const Skills = () => {
   const navigate = useNavigate();
 
   return (
-    <Container onClick={() => navigate(`/about`)}>
+    <Container>
       <SkillIntro>
         <SkillScript>
           <div style={{ display: "flex", gap: "15px", alignItems: "center" }}>
@@ -132,6 +148,7 @@ const Skills = () => {
           </p>
         </SkillScript>
       </SkillIntro>
+      <BackToPrevPage icon={faX} onClick={() => navigate(`/about`)} />
     </Container>
   );
 };

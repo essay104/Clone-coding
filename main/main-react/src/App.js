@@ -14,6 +14,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faX } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
+import { PagerProvider } from "./context/pagerContext";
 
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -76,36 +77,38 @@ function App() {
     <ThemeProvider theme={currentTheme}>
       <Reset />
       <BrowserRouter>
-        <Header
-          toggleTheme={toggleTheme}
-          mobileModalHandler={mobileModalHandler}
-        />
-        {isModalOpen && (
-          <Modal>
-            <StyledIcon2 icon={faX} onClick={mobileModalHandler} />
-            <ModalControl>
-              <Link to="/" onClick={mobileModalHandler}>
-                Home
-              </Link>
-              <Link to="/about" onClick={mobileModalHandler}>
-                About
-              </Link>
-              <Link to="/projects" onClick={mobileModalHandler}>
-                Projects
-              </Link>
-            </ModalControl>
-          </Modal>
-        )}
-        <Pager />
-        <AnimatePresence>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/about/mySkills" element={<Skills />} />
-            {/* <Route path="/production/" element={<Production />} /> */}
-            <Route path="/projects/" element={<Projects />} />
-          </Routes>
-        </AnimatePresence>
+        <PagerProvider>
+          <Header
+            toggleTheme={toggleTheme}
+            mobileModalHandler={mobileModalHandler}
+          />
+          {isModalOpen && (
+            <Modal>
+              <StyledIcon2 icon={faX} onClick={mobileModalHandler} />
+              <ModalControl>
+                <Link to="/" onClick={mobileModalHandler}>
+                  Home
+                </Link>
+                <Link to="/about" onClick={mobileModalHandler}>
+                  About
+                </Link>
+                <Link to="/projects" onClick={mobileModalHandler}>
+                  Projects
+                </Link>
+              </ModalControl>
+            </Modal>
+          )}
+          <Pager />
+          <AnimatePresence>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/about/mySkills" element={<Skills />} />
+              {/* <Route path="/production/" element={<Production />} /> */}
+              <Route path="/projects" element={<Projects />} />
+            </Routes>
+          </AnimatePresence>
+        </PagerProvider>
       </BrowserRouter>
     </ThemeProvider>
   );
