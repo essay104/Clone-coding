@@ -3,23 +3,16 @@ import { Desktop, Tablet } from "../MediaQueries";
 import styled from "styled-components";
 import SkillsMini from "../component/SkillsMini";
 import ImageManager from "../component/imgs";
-import {
-  motion,
-  AnimatePresence,
-  useMotionValue,
-  useTransform,
-  useScroll,
-} from "framer-motion";
+import { motion } from "framer-motion";
 import { SectionsContainer, Section } from "react-fullpage";
-import { width } from "@fortawesome/free-brands-svg-icons/fa42Group";
 import MoveToLeft from "../component/MoveToLeft";
 import { PagerProvider } from "../context/pagerContext";
-import { useNavigate } from "react-router-dom";
 import { usePager } from "../context/pagerContext";
+import { AnimatePresence } from "framer-motion";
 
-const Production = () => {
+const Production = ({}) => {
   const [projects, setProjects] = useState([]);
-
+  const [selectedId, setSelectedId] = useState(null);
   const { pager, setPagerChanger } = usePager();
 
   const getProjects = async () => {
@@ -33,24 +26,24 @@ const Production = () => {
     getProjects();
   }, []);
 
-  const [visible, setVisible] = useState(1);
-  const [back, setBack] = useState(false);
-  const prevPlease = () => {
-    setBack(true);
-    setVisible((prev) => (prev === 1 ? 10 : prev - 1));
-  };
-  const nextPlease = () => {
-    setBack(false);
-    setVisible((prev) => (prev === 10 ? 1 : prev + 1));
-  };
+  const selectedProject = projects.find((project) => project.id === selectedId);
+
+  // const [visible, setVisible] = useState(1);
+  // const [back, setBack] = useState(false);
+  // const prevPlease = () => {
+  //   setBack(true);
+  //   setVisible((prev) => (prev === 1 ? 10 : prev - 1));
+  // };
+  // const nextPlease = () => {
+  //   setBack(false);
+  //   setVisible((prev) => (prev === 10 ? 1 : prev + 1));
+  // };
 
   const options = {
     anchors: ["sectionOne", "sectionTwo", "sectionThree"],
     scrollBar: false,
     delay: 800,
   };
-
-  const navigate = useNavigate();
 
   return (
     <>
@@ -68,7 +61,11 @@ const Production = () => {
                   <HTMLContainer>
                     <HTMLContents>
                       {projects.map((project) => (
-                        <HTMLContnet key={project.id} className="project">
+                        <HTMLContent
+                          key={project.id}
+                          layoutId={selectedId}
+                          onClick={() => setSelectedId(project.id)}
+                        >
                           <HTMLImg>
                             <img src={project.src} alt={project.name} />
                           </HTMLImg>
@@ -86,8 +83,25 @@ const Production = () => {
                               )}
                             </SkillBoxContainer>
                           </HTMLTitle>
-                        </HTMLContnet>
+                        </HTMLContent>
                       ))}
+                      <AnimatePresence>
+                        {selectedId && selectedProject && (
+                          <HTMLModalContent layoutId={selectedId.toString()}>
+                            <motion.h1>{selectedProject.name}</motion.h1>
+                            <div style={{ width: "300px" }}>
+                              <img
+                                src={selectedProject.src}
+                                style={{ width: "100%" }}
+                              />
+                            </div>
+                            <p>{selectedProject.script}</p>
+                            <button onClick={() => setSelectedId(null)}>
+                              x
+                            </button>
+                          </HTMLModalContent>
+                        )}
+                      </AnimatePresence>
                     </HTMLContents>
                   </HTMLContainer>
                 </SectionStyled>
@@ -189,9 +203,7 @@ const Production = () => {
             </motion.div>
           </FullPageContainer>
           <PagerProvider>
-            <MoveToLeft
-              onClick={() => (setPagerChanger(2))}
-            />
+            <MoveToLeft onClick={() => setPagerChanger(2)} />
           </PagerProvider>
         </Desktop>
         <Tablet>
@@ -272,9 +284,10 @@ const HTMLContents = styled.div`
   justify-content: center;
   align-items: center;
   gap: 30px;
+  position: relative;
 `;
 
-const HTMLContnet = styled.div`
+const HTMLContent = styled(motion.div)`
   width: 300px;
   height: 200px;
   display: flex;
@@ -488,4 +501,21 @@ const HTMLTabletWrap = styled.div`
   width: 100%;
   height: auto;
   border: 1px solid #000;
+`;
+
+const HTMLModalContent = styled(motion.div)`
+  width: 800px;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+  padding: 5px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.6s;
 `;

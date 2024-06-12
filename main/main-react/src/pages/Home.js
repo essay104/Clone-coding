@@ -102,11 +102,11 @@ const Home = () => {
             transition={{ duration: 0.8 }}
           >
             <HomeLogo>김사도의 PORTFOLIO</HomeLogo>
-            <HomeNavMenu>
+            {/* <HomeNavMenu>
               <li>nav1</li>
               <li>nav2</li>
               <li>nav3</li>
-            </HomeNavMenu>
+            </HomeNavMenu> */}
           </motion.div>
         </HomeContainer>
         <MoveToRight onClick={() => setPagerChanger(2)} />
