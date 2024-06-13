@@ -84,11 +84,13 @@ const Header = ({ toggleTheme, mobileModalHandler }) => {
   }, []);
 
   const [justifyContent, setJustifyContent] = useState("flex-start");
+  const [currentMode, setCurrentMode] = useState("Dark Mode");
 
   const modeHandler = () => {
     setJustifyContent(
       justifyContent === "flex-start" ? "flex-end" : "flex-start"
     );
+    setCurrentMode(currentMode === "Dark Mode" ? "Light Mode" : "Dark Mode");
     toggleTheme();
   };
 
@@ -112,6 +114,7 @@ const Header = ({ toggleTheme, mobileModalHandler }) => {
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
               />
             </ModeChange>
+            <ModeName>{currentMode}</ModeName>
           </div>
           <CurrentWether>
             <WeatherInfo>
@@ -230,7 +233,7 @@ const ModeChange = styled(motion.div)`
   // left: 20px;
   // bottom: 50%;
   // transform: translateY(50%);
-  width: 50px;
+  width: 80px;
   height: 25px;
   border-radius: 12.5px;
   background-color: #ddd;
@@ -248,6 +251,11 @@ const ModeChange = styled(motion.div)`
     background-color: #1b1b1b;
     border: none;
   }
+`;
+
+const ModeName = styled.div`
+  margin-top: 5px;
+  color: ${({ theme }) => theme.fontColor};
 `;
 
 const TabletHeader = styled.h3`
