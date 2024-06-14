@@ -56,10 +56,10 @@ const HomeContainerTablet = styled.div`
 
 const HomeLogo = styled.span`
   color: ${({ theme }) => theme.fontColor};
-  font-size: 4rem;
+  font-size: 8rem;
   text-shadow: 0px 0px 30px rgba(255, 255, 255, 1);
   font-family: "NEXON Lv2 Gothic";
-  font-weight: bold;
+  font-weight: 800;
   text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3), 6px 6px 10px rgba(0, 0, 0, 0.2),
     9px 9px 15px rgba(0, 0, 0, 0.1);
 `;
@@ -96,12 +96,14 @@ const Home = () => {
       <Desktop>
         <HomeContainer>
           <motion.div
-            initial={{ opacity: 0, x: -500 }}
+            initial={{ opacity: 0, x: 500 }}
             animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -500 }}
+            exit={{ opacity: 0, x: 500 }}
             transition={{ duration: 0.8 }}
           >
-            <HomeLogo>김사도의 PORTFOLIO</HomeLogo>
+            <HomeLogo>
+              SADO's <br /> PORTFOLIO
+            </HomeLogo>
             {/* <HomeNavMenu>
               <li>nav1</li>
               <li>nav2</li>

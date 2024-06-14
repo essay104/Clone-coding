@@ -26,9 +26,9 @@ const About = () => {
   return (
     <>
       <motion.div
-        initial={{ opacity: 0, x: -500 }}
+        initial={{ opacity: 0, x: 500 }}
         animate={{ opacity: 1, x: 0 }}
-        exit={{ opacity: 0, x: -500 }}
+        exit={{ opacity: 0, x: 500 }}
         transition={{ duration: 0.8 }}
       >
         <Wrap>
@@ -48,14 +48,14 @@ const About = () => {
                   <ScriptIntroduce>
                     <h2>안녕하세요 신입 퍼블리셔를 꿈꾸는 김사도입니다!</h2>
                     <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                      Duis aute irure dolor in reprehenderit in voluptate velit
-                      esse cillum dolore eu fugiat nulla pariatur. Excepteur
-                      sint occaecat cupidatat non proident, sunt in culpa qui
-                      officia deserunt mollit anim id est laborum.
+                      저는 컴퓨터를 다루는 것을 좋아하며 문제를 해결할때 보람을
+                      느낍니다.
+                      <br />
+                      사용자가 이용할때 편안함과 즐거움을 느끼는 웹 페이지를
+                      만들고 싶습니다.
+                      <br />
+                      다양한 웹 프로그래밍 언어를 배우며 프로젝트를 개발하여
+                      훌륭한 개발자가 되고 싶습니다.
                     </p>
                   </ScriptIntroduce>
                 </ScriptWrap>
@@ -97,10 +97,8 @@ const About = () => {
         </Wrap>
       </motion.div>
       <PagerProvider>
-        <MoveToRight
-          onClick={() => (setPagerChanger(3))}
-        />
-        <MoveToLeft onClick={() => (setPagerChanger(1))} />
+        <MoveToRight onClick={() => setPagerChanger(3)} />
+        <MoveToLeft onClick={() => setPagerChanger(1)} />
       </PagerProvider>
     </>
   );
@@ -270,6 +268,8 @@ const ScriptImg = styled.div`
 const ScriptIntroduce = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  margin-right: 300px;
   gap: 30px;
   text-align: left;
   font-family: "NEXON Lv1 Gothic OTF";
